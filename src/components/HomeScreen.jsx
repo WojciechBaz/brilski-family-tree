@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const BG_IMAGE = "/images/brilski-sepia.png";
+const BG_IMAGE = `${import.meta.env.BASE_URL}images/brilski-sepia.png`
 
 export default function HomeScreen({ onEnter }) {
   const [opening, setOpening] = useState(false);
