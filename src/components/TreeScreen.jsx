@@ -82,7 +82,7 @@ export default function TreeScreen({ onBackToArchive }) {
               }}
             >
               <img
-                src="/genealogy-tree.svg"
+                src={`${import.meta.env.BASE_URL}genealogy-tree.svg`
                 alt="Genealogy tree"
                 draggable={false}
                 className="pointer-events-none block max-w-none select-none"
