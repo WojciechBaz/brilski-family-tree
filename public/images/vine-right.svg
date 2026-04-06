@@ -1,0 +1,92 @@
+<svg viewBox="0 0 420 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vineStrokeRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c89a61" stop-opacity="0.68"/>
+      <stop offset="50%" stop-color="#e0c48a" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#b07b49" stop-opacity="0.62"/>
+    </linearGradient>
+
+    <linearGradient id="leafFillRight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e6c98f" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#9a6a3d" stop-opacity="0.66"/>
+    </linearGradient>
+
+    <filter id="softGlowRight" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0.84
+                0 1 0 0 0.72
+                0 0 1 0 0.52
+                0 0 0 0.18 0"/>
+    </filter>
+  </defs>
+
+  <!-- glow -->
+  <path
+    d="M215 1200
+       C270 1020, 155 910, 217 760
+       C278 615, 162 505, 218 356
+       C272 214, 178 118, 238 0"
+    stroke="url(#vineStrokeRight)"
+    stroke-width="8"
+    fill="none"
+    opacity="0.16"
+    filter="url(#softGlowRight)"
+  />
+
+  <!-- main vine -->
+  <path
+    d="M215 1200
+       C270 1020, 155 910, 217 760
+       C278 615, 162 505, 218 356
+       C272 214, 178 118, 238 0"
+    stroke="url(#vineStrokeRight)"
+    stroke-width="3.8"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0.82"
+  />
+
+  <!-- branches -->
+  <path d="M214 898 C160 868, 116 830, 72 782"
+        stroke="url(#vineStrokeRight)" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M217 770 C290 732, 330 689, 362 638"
+        stroke="url(#vineStrokeRight)" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M218 604 C162 566, 120 526, 82 480"
+        stroke="url(#vineStrokeRight)" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.66"/>
+  <path d="M222 438 C282 400, 322 366, 354 324"
+        stroke="url(#vineStrokeRight)" stroke-width="2.1" stroke-linecap="round" fill="none" opacity="0.64"/>
+  <path d="M226 250 C174 214, 132 178, 94 136"
+        stroke="url(#vineStrokeRight)" stroke-width="2.1" stroke-linecap="round" fill="none" opacity="0.62"/>
+
+  <!-- leaves -->
+  <g fill="url(#leafFillRight)" opacity="0.78">
+    <path d="M94 786 C109 773, 127 773, 141 785 C126 795, 111 799, 94 786 Z"/>
+    <path d="M114 808 C128 797, 145 797, 158 807 C145 817, 130 820, 114 808 Z"/>
+    <path d="M346 640 C330 628, 313 629, 302 642 C318 650, 332 652, 346 640 Z"/>
+    <path d="M324 668 C309 658, 293 660, 282 674 C297 679, 311 681, 324 668 Z"/>
+    <path d="M100 482 C115 469, 133 469, 146 481 C130 491, 115 495, 100 482 Z"/>
+    <path d="M121 506 C134 495, 150 495, 163 505 C149 515, 135 518, 121 506 Z"/>
+    <path d="M334 326 C318 314, 301 315, 290 328 C306 335, 320 338, 334 326 Z"/>
+    <path d="M313 354 C298 344, 283 346, 272 360 C287 365, 300 367, 313 354 Z"/>
+    <path d="M112 140 C128 127, 145 127, 158 139 C143 149, 128 152, 112 140 Z"/>
+    <path d="M133 164 C146 153, 162 153, 175 163 C162 173, 148 176, 133 164 Z"/>
+  </g>
+
+  <!-- leaf veins -->
+  <g stroke="#f0ddb4" stroke-opacity="0.24" stroke-width="1" fill="none">
+    <path d="M94 786 C110 786, 123 786, 137 784"/>
+    <path d="M346 640 C331 640, 318 641, 305 642"/>
+    <path d="M100 482 C115 482, 129 482, 142 480"/>
+    <path d="M334 326 C319 326, 306 327, 293 328"/>
+    <path d="M112 140 C127 140, 141 140, 155 138"/>
+  </g>
+
+  <!-- small berry lights -->
+  <circle cx="123" cy="805" r="6" fill="#ead7b0" fill-opacity="0.18"/>
+  <circle cx="334" cy="668" r="5" fill="#ead7b0" fill-opacity="0.14"/>
+  <circle cx="109" cy="480" r="5" fill="#ead7b0" fill-opacity="0.14"/>
+  <circle cx="303" cy="352" r="4.5" fill="#ead7b0" fill-opacity="0.12"/>
+</svg>

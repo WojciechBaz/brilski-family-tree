@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* ===== ARCHIVE DECORATIVE BACKGROUND ===== */
+
+.archive-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.archive-vine {
+  position: absolute;
+  bottom: -40px;
+  width: 520px;
+  height: 120%;
+  opacity: 0.22;
+  filter: drop-shadow(0 0 12px rgba(215, 187, 134, 0.25));
+  will-change: transform;
+}
+
+.archive-vine-left {
+  left: -60px;
+  background: url("/images/vine-left.svg") no-repeat bottom left;
+  background-size: contain;
+  animation: vineFloat 14s ease-in-out infinite;
+}
+
+.archive-vine-right {
+  right: -60px;
+  background: url("/images/vine-right.svg") no-repeat bottom right;
+  background-size: contain;
+  animation: vineFloatReverse 18s ease-in-out infinite;
+}
+
+@keyframes vineFloat {
+  0% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.26;
+  }
+  100% {
+    opacity: 0.18;
+  }
+}
+
+@keyframes vineFloatReverse {
+  0% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.26;
+  }
+  100% {
+    opacity: 0.18;
+  }
+}
+
+.archive-glow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #f5e6c8 0%, #e0c48a 40%, transparent 70%);
+  border-radius: 999px;
+  opacity: 0.5;
+  animation: glowPulse 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(2.2);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+/* ===== PAPER / DUST OVERLAY ===== */
+
+.archive-paper-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.24;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 230, 180, 0.045) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 18%, rgba(255, 230, 180, 0.035) 0 1px, transparent 2px),
+    radial-gradient(circle at 66% 72%, rgba(255, 230, 180, 0.03) 0 1px, transparent 2px),
+    radial-gradient(circle at 34% 80%, rgba(255, 230, 180, 0.03) 0 1px, transparent 2px),
+    linear-gradient(to right, rgba(255, 220, 180, 0.025), transparent 14%, transparent 86%, rgba(255, 220, 180, 0.025)),
+    linear-gradient(to bottom, rgba(255, 240, 210, 0.04), rgba(80, 48, 25, 0.03) 30%, rgba(25, 15, 9, 0.04) 100%);
+  background-size:
+    260px 260px,
+    320px 320px,
+    280px 280px,
+    300px 300px,
+    100% 100%,
+    100% 100%;
+  mix-blend-mode: screen;
+}
+
+.archive-paper-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(255, 235, 200, 0.01) 4px
+    );
+}
+
+.archive-paper-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 225, 170, 0.04), transparent 32%),
+    radial-gradient(circle at 0% 50%, rgba(255, 225, 170, 0.025), transparent 24%),
+    radial-gradient(circle at 100% 50%, rgba(255, 225, 170, 0.025), transparent 24%);
+}
