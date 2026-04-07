@@ -29,54 +29,26 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
   const audioRef = useRef(null);
 
   useEffect(() => {
+    audioRef.current = new Audio();
+    audioRef.current.loop = true;
+    audioRef.current.volume = DEFAULT_VOLUME;
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = "";
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollOffset(window.scrollY || 0);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio || !audioEnabled) return;
-
-    const src = CHAPTER_AUDIO_MAP[activeChapterId];
-
-    if (!src) {
-      audio.pause();
-      audio.removeAttribute("src");
-      audio.load();
-      setIsPlaying(false);
-      return;
-    }
-
-    if (audio.getAttribute("src") !== src) {
-      audio.src = src;
-      audio.load();
-    }
-
-    audio.loop = true;
-    audio.muted = isMuted;
-    audio.volume = DEFAULT_VOLUME;
-
-    audio
-      .play()
-      .then(() => setIsPlaying(true))
-      .catch((err) => {
-        console.warn("Audio play failed:", err);
-        setIsPlaying(false);
-      });
-  }, [activeChapterId, audioEnabled, isMuted]);
-
-  useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
   }, []);
 
   const activeChapter =
@@ -101,9 +73,39 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
     }));
   };
 
-  const handleChapterClick = (chapterId) => {
+  const playChapterAudio = async (chapterId) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const src = CHAPTER_AUDIO_MAP[chapterId];
+    if (!src) {
+      audio.pause();
+      audio.src = "";
+      setIsPlaying(false);
+      return;
+    }
+
+    try {
+      if (audio.src !== src) {
+        audio.src = src;
+      }
+
+      audio.loop = true;
+      audio.muted = isMuted;
+      audio.volume = DEFAULT_VOLUME;
+
+      await audio.play();
+      setIsPlaying(true);
+      setAudioEnabled(true);
+    } catch (err) {
+      console.warn("Audio play failed:", err);
+      setIsPlaying(false);
+    }
+  };
+
+  const handleChapterClick = async (chapterId) => {
     setActiveChapterId(chapterId);
-    setAudioEnabled(true);
+    await playChapterAudio(chapterId);
   };
 
   const togglePlayback = async () => {
@@ -111,7 +113,7 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
     if (!audio) return;
 
     if (!audioEnabled) {
-      setAudioEnabled(true);
+      await playChapterAudio(activeChapterId);
       return;
     }
 
@@ -132,7 +134,6 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
   const toggleMute = () => {
     const audio = audioRef.current;
     const nextMuted = !isMuted;
-
     setIsMuted(nextMuted);
 
     if (audio) {
@@ -146,8 +147,6 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
 
   return (
     <>
-      <audio ref={audioRef} preload="auto" />
-
       <div className="archive-background">
         <div
           className="archive-vine archive-vine-left"
