@@ -1,18 +1,22 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import FamilyTreeOrbit from "./FamilyTreeOrbit";
 import RecordsArticleModal from "./RecordsArticleModal";
 import ARCHIVE_CHAPTERS from "../data/sideInfoPanels";
 
-const CHAPTER_AUDIO_MAP = {
-  "old-poland": `${import.meta.env.BASE_URL}audio/freesound_community-village-79043.mp3`,
-  "migration-times": `${import.meta.env.BASE_URL}audio/freesound_community-120616-boat-horn-harbour-tour-nyc-35905.mp3`,
-  // "modern-times": `${import.meta.env.BASE_URL}audio/your-modern-track.mp3`,
-};
+const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
 
-const DEFAULT_VOLUME = 0.55;
-
-export default function ArchiveScreen({ onBack, onEnterTree }) {
+export default function ArchiveScreen({
+  onBack,
+  onEnterTree,
+  onPlayChapterAudio,
+  onPauseAudio,
+  onPlayHomeAudio,
+  isMuted,
+  toggleMute,
+  isPlaying,
+  currentTrack,
+}) {
   const [activeChapterId, setActiveChapterId] = useState("old-poland");
   const [activeItemMap, setActiveItemMap] = useState(() =>
     Object.fromEntries(
@@ -21,25 +25,6 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
   );
   const [expandedArticle, setExpandedArticle] = useState(null);
   const [scrollOffset, setScrollOffset] = useState(0);
-
-  const [audioEnabled, setAudioEnabled] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    audioRef.current = new Audio();
-    audioRef.current.loop = true;
-    audioRef.current.volume = DEFAULT_VOLUME;
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = "";
-      }
-    };
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,72 +58,23 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
     }));
   };
 
-  const playChapterAudio = async (chapterId) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const src = CHAPTER_AUDIO_MAP[chapterId];
-    if (!src) {
-      audio.pause();
-      audio.src = "";
-      setIsPlaying(false);
-      return;
-    }
-
-    try {
-      if (audio.src !== src) {
-        audio.src = src;
-      }
-
-      audio.loop = true;
-      audio.muted = isMuted;
-      audio.volume = DEFAULT_VOLUME;
-
-      await audio.play();
-      setIsPlaying(true);
-      setAudioEnabled(true);
-    } catch (err) {
-      console.warn("Audio play failed:", err);
-      setIsPlaying(false);
-    }
-  };
-
   const handleChapterClick = async (chapterId) => {
     setActiveChapterId(chapterId);
-    await playChapterAudio(chapterId);
+    await onPlayChapterAudio(chapterId);
   };
 
-  const togglePlayback = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (!audioEnabled) {
-      await playChapterAudio(activeChapterId);
+  const handlePlaybackToggle = async () => {
+    if (isPlaying) {
+      onPauseAudio();
       return;
     }
 
-    if (audio.paused) {
-      try {
-        await audio.play();
-        setIsPlaying(true);
-      } catch (err) {
-        console.warn("Audio resume failed:", err);
-        setIsPlaying(false);
-      }
-    } else {
-      audio.pause();
-      setIsPlaying(false);
+    if (currentTrack && !currentTrack.includes(HOME_AUDIO)) {
+      await onPlayChapterAudio(activeChapterId);
+      return;
     }
-  };
 
-  const toggleMute = () => {
-    const audio = audioRef.current;
-    const nextMuted = !isMuted;
-    setIsMuted(nextMuted);
-
-    if (audio) {
-      audio.muted = nextMuted;
-    }
+    await onPlayHomeAudio();
   };
 
   return (
@@ -222,7 +158,7 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
 
                   <div className="mt-6 flex flex-wrap items-center gap-3">
                     <button
-                      onClick={togglePlayback}
+                      onClick={handlePlaybackToggle}
                       className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
                     >
                       {isPlaying ? "Pause ambience" : "Play ambience"}
@@ -301,52 +237,54 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
 
             <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
               <div className="relative">
-                <div className="absolute left-[18px] top-3 bottom-3 w-px bg-[linear-gradient(to_bottom,rgba(182,138,87,0.12),rgba(215,187,134,0.48),rgba(182,138,87,0.12))]" />
+                <div className="archive-timeline-scroll max-h-[540px] overflow-y-auto pr-2">
+                  <div className="relative space-y-5">
+                    <div className="absolute left-[18px] top-3 bottom-3 w-px bg-[linear-gradient(to_bottom,rgba(182,138,87,0.12),rgba(215,187,134,0.48),rgba(182,138,87,0.12))]" />
 
-                <div className="space-y-5">
-                  {activeChapter.items.map((item) => {
-                    const isActive = item.id === activeItem.id;
+                    {activeChapter.items.map((item) => {
+                      const isActive = item.id === activeItem.id;
 
-                    return (
-                      <button
-                        key={item.id}
-                        onClick={() => setActiveItem(item.id)}
-                        className="relative flex w-full items-start gap-4 text-left"
-                      >
-                        <div
-                          className={`relative z-10 mt-1.5 h-9 w-9 shrink-0 rounded-full border transition-all ${
-                            isActive
-                              ? "border-[#e4c58f]/80 bg-[#e4c58f]/18 shadow-[0_0_20px_rgba(228,197,143,0.2)]"
-                              : "border-[#b68a57]/24 bg-[#2c1b10]"
-                          }`}
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => setActiveItem(item.id)}
+                          className="relative flex w-full items-start gap-4 text-left"
                         >
-                          {isActive && (
-                            <div className="absolute inset-2 rounded-full bg-[#ead7b0]" />
-                          )}
-                        </div>
-
-                        <div
-                          className={`w-full rounded-[1.4rem] border px-4 py-4 transition-all ${
-                            isActive
-                              ? "border-[#c79860]/26 bg-[linear-gradient(180deg,rgba(73,47,30,0.72),rgba(42,28,18,0.78))] shadow-[inset_0_0_20px_rgba(255,220,180,0.02)]"
-                              : "border-transparent bg-transparent hover:border-[#b68a57]/16 hover:bg-[#2a1b11]/34"
-                          }`}
-                        >
-                          <div className="text-[11px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
-                            {item.year} · {item.label}
+                          <div
+                            className={`relative z-10 mt-1.5 h-9 w-9 shrink-0 rounded-full border transition-all ${
+                              isActive
+                                ? "border-[#e4c58f]/80 bg-[#e4c58f]/18 shadow-[0_0_20px_rgba(228,197,143,0.2)]"
+                                : "border-[#b68a57]/24 bg-[#2c1b10]"
+                            }`}
+                          >
+                            {isActive && (
+                              <div className="absolute inset-2 rounded-full bg-[#ead7b0]" />
+                            )}
                           </div>
 
-                          <div className="mt-2 text-lg text-[#f0ddb4]">
-                            {item.title}
-                          </div>
+                          <div
+                            className={`w-full rounded-[1.4rem] border px-4 py-4 transition-all ${
+                              isActive
+                                ? "border-[#c79860]/26 bg-[linear-gradient(180deg,rgba(73,47,30,0.72),rgba(42,28,18,0.78))] shadow-[inset_0_0_20px_rgba(255,220,180,0.02)]"
+                                : "border-transparent bg-transparent hover:border-[#b68a57]/16 hover:bg-[#2a1b11]/34"
+                            }`}
+                          >
+                            <div className="text-[11px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
+                              {item.year} · {item.label}
+                            </div>
 
-                          <div className="mt-2 text-sm text-[#e8d6b0]/48">
-                            {item.subtitle}
+                            <div className="mt-2 text-lg text-[#f0ddb4]">
+                              {item.title}
+                            </div>
+
+                            <div className="mt-2 text-sm text-[#e8d6b0]/48">
+                              {item.subtitle}
+                            </div>
                           </div>
-                        </div>
-                      </button>
-                    );
-                  })}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 

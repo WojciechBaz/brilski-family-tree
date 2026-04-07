@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 const BG_IMAGE = `${import.meta.env.BASE_URL}images/brilski-sepia.png`;
-const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
-const HOME_VOLUME = 0.45;
 
 const revealUp = {
   hidden: {
@@ -20,45 +18,19 @@ const revealUp = {
   },
 };
 
-export default function HomeScreen({ onEnter }) {
+export default function HomeScreen({ onEnter, onBegin, audioUnlocked }) {
   const [opening, setOpening] = useState(false);
   const [introStarted, setIntroStarted] = useState(false);
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    const audio = new Audio(HOME_AUDIO);
-    audio.loop = true;
-    audio.volume = HOME_VOLUME;
-    audioRef.current = audio;
-
-    return () => {
-      audio.pause();
-      audio.src = "";
-    };
-  }, []);
 
   const handleBegin = async () => {
     if (introStarted) return;
 
-    try {
-      if (audioRef.current) {
-        audioRef.current.currentTime = 0;
-        await audioRef.current.play();
-      }
-    } catch (err) {
-      console.warn("Home audio start failed:", err);
-    }
-
+    await onBegin();
     setIntroStarted(true);
   };
 
   const handleEnter = () => {
     if (opening) return;
-
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
 
     setOpening(true);
 
@@ -108,6 +80,12 @@ export default function HomeScreen({ onEnter }) {
                 >
                   Begin
                 </motion.button>
+
+                {!audioUnlocked && (
+                  <div className="mt-4 text-[10px] uppercase tracking-[0.28em] text-[#d9bf8e]/45">
+                    click to awaken the archive
+                  </div>
+                )}
               </motion.div>
             ) : (
               <motion.div
@@ -153,8 +131,8 @@ export default function HomeScreen({ onEnter }) {
                   transition={{ duration: 1.8, delay: 3.8, ease: "easeOut" }}
                   className="mx-auto mt-6 max-w-xl text-sm text-[#f0dfbb]/80 sm:text-base"
                 >
-                  A quiet entrance into memory, migration, records, and lives carried
-                  across generations.
+                  A quiet entrance into memory, migration, records, and lives
+                  carried across generations.
                 </motion.p>
 
                 <motion.button

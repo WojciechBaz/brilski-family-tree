@@ -1,9 +1,17 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence } from "motion/react";
 import timelinePeople from "./data/timelinePeople";
 import HomeScreen from "./components/HomeScreen";
 import ArchiveScreen from "./components/ArchiveScreen";
 import TreeScreen from "./components/TreeScreen";
+
+const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
+
+const CHAPTER_AUDIO_MAP = {
+  "old-poland": `${import.meta.env.BASE_URL}audio/freesound_community-village-79043.mp3`,
+  "migration-times": `${import.meta.env.BASE_URL}audio/freesound_community-120616-boat-horn-harbour-tour-nyc-35905.mp3`,
+  // "modern-times": `${import.meta.env.BASE_URL}audio/your-modern-track.mp3`,
+};
 
 export default function App() {
   const [view, setView] = useState("home");
@@ -11,6 +19,96 @@ export default function App() {
   const [slideMap, setSlideMap] = useState(() =>
     Object.fromEntries(timelinePeople.map((p) => [p.id, 0]))
   );
+
+  const [audioUnlocked, setAudioUnlocked] = useState(false);
+  const [currentTrack, setCurrentTrack] = useState("");
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const audio = new Audio();
+    audio.loop = true;
+    audio.volume = 0.45;
+    audioRef.current = audio;
+
+    return () => {
+      audio.pause();
+      audio.src = "";
+    };
+  }, []);
+
+  const playTrack = async (src, { loop = true, volume = 0.45, forceRestart = false } = {}) => {
+    const audio = audioRef.current;
+    if (!audio || !src) return false;
+
+    try {
+      const currentResolvedSrc = audio.currentSrc || audio.src || "";
+      const shouldReplace = forceRestart || !currentResolvedSrc.includes(src);
+
+      if (shouldReplace) {
+        audio.src = src;
+        audio.load();
+      }
+
+      audio.loop = loop;
+      audio.volume = volume;
+      audio.muted = isMuted;
+
+      await audio.play();
+      setCurrentTrack(src);
+      setIsPlaying(true);
+      return true;
+    } catch (err) {
+      console.warn("Audio play failed:", err);
+      setIsPlaying(false);
+      return false;
+    }
+  };
+
+  const pauseAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.pause();
+    setIsPlaying(false);
+  };
+
+  const startHomeAudio = async ({ forceRestart = false } = {}) => {
+    const ok = await playTrack(HOME_AUDIO, {
+      loop: true,
+      volume: 0.45,
+      forceRestart,
+    });
+
+    if (ok) {
+      setAudioUnlocked(true);
+    }
+  };
+
+  const startChapterAudio = async (chapterId) => {
+    const src = CHAPTER_AUDIO_MAP[chapterId];
+    if (!src) return;
+
+    const ok = await playTrack(src, {
+      loop: true,
+      volume: 0.55,
+      forceRestart: false,
+    });
+
+    if (ok) {
+      setAudioUnlocked(true);
+    }
+  };
+
+  const toggleMuteGlobal = () => {
+    const nextMuted = !isMuted;
+    setIsMuted(nextMuted);
+
+    if (audioRef.current) {
+      audioRef.current.muted = nextMuted;
+    }
+  };
 
   const activePerson =
     useMemo(
@@ -57,7 +155,12 @@ export default function App() {
       <main className="relative z-10 min-h-screen">
         <AnimatePresence mode="wait">
           {view === "home" && (
-            <HomeScreen key="home-screen" onEnter={() => setView("archive")} />
+            <HomeScreen
+              key="home-screen"
+              onEnter={() => setView("archive")}
+              onBegin={() => startHomeAudio({ forceRestart: true })}
+              audioUnlocked={audioUnlocked}
+            />
           )}
 
           {view === "archive" && (
@@ -71,6 +174,14 @@ export default function App() {
               onBack={() => setView("home")}
               onEnterTree={() => setView("tree")}
               timelinePeople={timelinePeople}
+              onPlayChapterAudio={startChapterAudio}
+              onPauseAudio={pauseAudio}
+              onPlayHomeAudio={startHomeAudio}
+              isMuted={isMuted}
+              toggleMute={toggleMuteGlobal}
+              isPlaying={isPlaying}
+              currentTrack={currentTrack}
+              homeTrack={HOME_AUDIO}
             />
           )}
 
