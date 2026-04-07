@@ -5,10 +5,9 @@ import RecordsArticleModal from "./RecordsArticleModal";
 import ARCHIVE_CHAPTERS from "../data/sideInfoPanels";
 
 const CHAPTER_AUDIO_MAP = {
-  "old-poland": "/audio/freesound_community-village-79043.mp3",
-  "migration-times":
-    "/audio/freesound_community-120616-boat-horn-harbour-tour-nyc-35905.mp3",
-  // "modern-times": "/audio/your-modern-track.mp3",
+  "old-poland": `${import.meta.env.BASE_URL}audio/freesound_community-village-79043.mp3`,
+  "migration-times": `${import.meta.env.BASE_URL}audio/freesound_community-120616-boat-horn-harbour-tour-nyc-35905.mp3`,
+  // "modern-times": `${import.meta.env.BASE_URL}audio/your-modern-track.mp3`,
 };
 
 const DEFAULT_VOLUME = 0.55;
