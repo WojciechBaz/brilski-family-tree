@@ -22,7 +22,7 @@ const revealUp = {
 
 export default function HomeScreen({ onEnter }) {
   const [opening, setOpening] = useState(false);
-  const [audioUnlocked, setAudioUnlocked] = useState(false);
+  const [introStarted, setIntroStarted] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -37,28 +37,20 @@ export default function HomeScreen({ onEnter }) {
     };
   }, []);
 
-  useEffect(() => {
-    if (audioUnlocked || opening) return;
+  const handleBegin = async () => {
+    if (introStarted) return;
 
-    const unlockAudio = async () => {
-      if (!audioRef.current) return;
-
-      try {
+    try {
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
         await audioRef.current.play();
-        setAudioUnlocked(true);
-      } catch (err) {
-        console.warn("Home audio unlock failed:", err);
       }
-    };
+    } catch (err) {
+      console.warn("Home audio start failed:", err);
+    }
 
-    window.addEventListener("pointerdown", unlockAudio, { once: true });
-    window.addEventListener("keydown", unlockAudio, { once: true });
-
-    return () => {
-      window.removeEventListener("pointerdown", unlockAudio);
-      window.removeEventListener("keydown", unlockAudio);
-    };
-  }, [audioUnlocked, opening]);
+    setIntroStarted(true);
+  };
 
   const handleEnter = () => {
     if (opening) return;
@@ -88,57 +80,96 @@ export default function HomeScreen({ onEnter }) {
 
       <div className="relative z-20 flex min-h-screen items-center justify-center px-6">
         <div className="text-center">
-          <motion.div
-            variants={revealUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 1.8, delay: 0.4, ease: "easeOut" }}
-            className="mb-5 text-[11px] uppercase tracking-[0.35em] text-[#ead7b0]/70"
-          >
-            Family Archive
-          </motion.div>
+          <AnimatePresence mode="wait">
+            {!introStarted ? (
+              <motion.div
+                key="begin"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
+                className="flex flex-col items-center"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.4, ease: "easeOut" }}
+                  className="mb-6 text-[11px] uppercase tracking-[0.42em] text-[#ead7b0]/65"
+                >
+                  Family Archive
+                </motion.div>
 
-          <motion.h1
-            variants={revealUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 2.2, delay: 1.2, ease: "easeOut" }}
-            className="font-serif text-5xl tracking-[0.08em] text-[#f2dfb7] sm:text-7xl md:text-8xl"
-          >
-            The Brilski
-          </motion.h1>
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.3, delay: 0.4, ease: "easeOut" }}
+                  onClick={handleBegin}
+                  className="rounded-full border border-[#d7bb86]/40 bg-[#22160f]/45 px-8 py-3 text-sm uppercase tracking-[0.28em] text-[#f0ddb4] shadow-[0_0_22px_rgba(215,187,134,0.08)] transition hover:bg-[#342317]/70 hover:shadow-[0_0_30px_rgba(215,187,134,0.12)]"
+                >
+                  Begin
+                </motion.button>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="main-intro"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <motion.div
+                  variants={revealUp}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 1.8, delay: 0.2, ease: "easeOut" }}
+                  className="mb-5 text-[11px] uppercase tracking-[0.35em] text-[#ead7b0]/70"
+                >
+                  Family Archive
+                </motion.div>
 
-          <motion.span
-            variants={revealUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 2.3, delay: 4.5, ease: "easeOut" }}
-            className="mt-2 block font-serif text-5xl tracking-[0.08em] text-[#dcc08a] sm:text-7xl md:text-8xl"
-          >
-            History
-          </motion.span>
+                <motion.h1
+                  variants={revealUp}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 2.2, delay: 0.9, ease: "easeOut" }}
+                  className="font-serif text-5xl tracking-[0.08em] text-[#f2dfb7] sm:text-7xl md:text-8xl"
+                >
+                  The Brilski
+                </motion.h1>
 
-          <motion.p
-            variants={revealUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 1.8, delay: 6.1, ease: "easeOut" }}
-            className="mx-auto mt-6 max-w-xl text-sm text-[#f0dfbb]/80 sm:text-base"
-          >
-            A quiet entrance into memory, migration, records, and lives carried
-            across generations.
-          </motion.p>
+                <motion.span
+                  variants={revealUp}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 2.3, delay: 2.2, ease: "easeOut" }}
+                  className="mt-2 block font-serif text-5xl tracking-[0.08em] text-[#dcc08a] sm:text-7xl md:text-8xl"
+                >
+                  History
+                </motion.span>
 
-          <motion.button
-            variants={revealUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 1.6, delay: 7.2, ease: "easeOut" }}
-            onClick={handleEnter}
-            className="mt-10 rounded-full border border-[#d7bb86]/45 bg-[#2a1c12]/55 px-7 py-3 text-sm uppercase tracking-[0.22em] text-[#f0ddb4] transition hover:bg-[#3a2818]/70"
-          >
-            {opening ? "Opening..." : "Enter the Archive"}
-          </motion.button>
+                <motion.p
+                  variants={revealUp}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 1.8, delay: 3.8, ease: "easeOut" }}
+                  className="mx-auto mt-6 max-w-xl text-sm text-[#f0dfbb]/80 sm:text-base"
+                >
+                  A quiet entrance into memory, migration, records, and lives carried
+                  across generations.
+                </motion.p>
+
+                <motion.button
+                  variants={revealUp}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 1.6, delay: 5, ease: "easeOut" }}
+                  onClick={handleEnter}
+                  className="mt-10 rounded-full border border-[#d7bb86]/45 bg-[#2a1c12]/55 px-7 py-3 text-sm uppercase tracking-[0.22em] text-[#f0ddb4] transition hover:bg-[#3a2818]/70"
+                >
+                  {opening ? "Opening..." : "Enter the Archive"}
+                </motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
