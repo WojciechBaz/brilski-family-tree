@@ -1,8 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import FamilyTreeOrbit from "./FamilyTreeOrbit";
 import RecordsArticleModal from "./RecordsArticleModal";
 import ARCHIVE_CHAPTERS from "../data/sideInfoPanels";
+
+const CHAPTER_AUDIO_MAP = {
+  "old-poland": "/audio/freesound_community-village-79043.mp3",
+  "migration-times":
+    "/audio/freesound_community-120616-boat-horn-harbour-tour-nyc-35905.mp3",
+  // "modern-times": "/audio/your-modern-track.mp3",
+};
+
+const DEFAULT_VOLUME = 0.55;
+const FADE_DURATION = 450;
+const FADE_INTERVAL = 50;
 
 export default function ArchiveScreen({ onBack, onEnterTree }) {
   const [activeChapterId, setActiveChapterId] = useState("old-poland");
@@ -14,6 +25,14 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
   const [expandedArticle, setExpandedArticle] = useState(null);
   const [scrollOffset, setScrollOffset] = useState(0);
 
+  const [audioEnabled, setAudioEnabled] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const audioRef = useRef(null);
+  const fadeIntervalRef = useRef(null);
+  const currentSrcRef = useRef("");
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollOffset(window.scrollY || 0);
@@ -21,8 +40,172 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    return () => {
+      clearFadeInterval();
+
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
+
+  const clearFadeInterval = () => {
+    if (fadeIntervalRef.current) {
+      clearInterval(fadeIntervalRef.current);
+      fadeIntervalRef.current = null;
+    }
+  };
+
+  const fadeVolume = (audio, from, to, duration, onComplete) => {
+    clearFadeInterval();
+
+    const steps = Math.max(1, Math.floor(duration / FADE_INTERVAL));
+    const stepSize = (to - from) / steps;
+    let currentStep = 0;
+
+    audio.volume = Math.max(0, Math.min(1, from));
+
+    fadeIntervalRef.current = setInterval(() => {
+      currentStep += 1;
+
+      const nextVolume = from + stepSize * currentStep;
+      audio.volume = Math.max(0, Math.min(1, nextVolume));
+
+      if (currentStep >= steps) {
+        clearFadeInterval();
+        audio.volume = Math.max(0, Math.min(1, to));
+        if (onComplete) onComplete();
+      }
+    }, FADE_INTERVAL);
+  };
+
+  const startAudioForChapter = async (chapterId) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const nextSrc = CHAPTER_AUDIO_MAP[chapterId];
+
+    if (!nextSrc) {
+      audio.pause();
+      audio.currentTime = 0;
+      currentSrcRef.current = "";
+      setIsPlaying(false);
+      return;
+    }
+
+    audio.loop = true;
+    audio.muted = isMuted;
+
+    if (currentSrcRef.current === nextSrc) {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+        if (!isMuted) {
+          fadeVolume(audio, audio.volume || 0.15, DEFAULT_VOLUME, 250);
+        }
+      } catch (error) {
+        console.warn("Audio resume failed:", error);
+        setIsPlaying(false);
+      }
+      return;
+    }
+
+    const switchTrack = async () => {
+      audio.pause();
+      audio.src = nextSrc;
+      audio.load();
+      currentSrcRef.current = nextSrc;
+      audio.volume = isMuted ? 0 : 0.01;
+
+      try {
+        await audio.play();
+        setIsPlaying(true);
+
+        if (!isMuted) {
+          fadeVolume(audio, 0.01, DEFAULT_VOLUME, FADE_DURATION);
+        }
+      } catch (error) {
+        console.warn("Audio play failed:", error);
+        setIsPlaying(false);
+      }
+    };
+
+    if (!audio.paused && currentSrcRef.current) {
+      fadeVolume(audio, audio.volume, 0, FADE_DURATION, switchTrack);
+    } else {
+      await switchTrack();
+    }
+  };
+
+  const stopAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (audio.paused) {
+      setIsPlaying(false);
+      return;
+    }
+
+    fadeVolume(audio, audio.volume, 0, 250, () => {
+      audio.pause();
+      setIsPlaying(false);
+    });
+  };
+
+  const togglePlayback = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!audioEnabled) {
+      setAudioEnabled(true);
+      await startAudioForChapter(activeChapterId);
+      return;
+    }
+
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      await startAudioForChapter(activeChapterId);
+    }
+  };
+
+  const handleChapterClick = async (chapterId) => {
+    setActiveChapterId(chapterId);
+
+    if (!audioEnabled) {
+      setAudioEnabled(true);
+      return;
+    }
+
+    await startAudioForChapter(chapterId);
+  };
+
+  const toggleMute = () => {
+    const audio = audioRef.current;
+    const nextMuted = !isMuted;
+
+    setIsMuted(nextMuted);
+
+    if (!audio) return;
+
+    audio.muted = nextMuted;
+
+    if (!nextMuted && isPlaying) {
+      audio.volume = DEFAULT_VOLUME;
+    }
+  };
+
+  useEffect(() => {
+    if (!audioEnabled) return;
+    startAudioForChapter(activeChapterId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [audioEnabled]);
 
   const activeChapter =
     useMemo(
@@ -46,8 +229,14 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
     }));
   };
 
+  const currentTrackLabel = audioEnabled
+    ? activeChapter.title
+    : "Audio off until first chapter click";
+
   return (
     <>
+      <audio ref={audioRef} preload="auto" />
+
       <div className="archive-background">
         <div
           className="archive-vine archive-vine-left"
@@ -124,6 +313,26 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
                     period, then browse its family branches or articles through
                     the reader panel below.
                   </p>
+
+                  <div className="mt-6 flex flex-wrap items-center gap-3">
+                    <button
+                      onClick={togglePlayback}
+                      className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                    >
+                      {isPlaying ? "Pause ambience" : "Play ambience"}
+                    </button>
+
+                    <button
+                      onClick={toggleMute}
+                      className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                    >
+                      {isMuted ? "Unmute" : "Mute"}
+                    </button>
+
+                    <div className="text-xs uppercase tracking-[0.22em] text-[#d9bf8e]/58">
+                      {currentTrackLabel}
+                    </div>
+                  </div>
                 </div>
 
                 <button
@@ -145,7 +354,7 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
               return (
                 <button
                   key={chapter.id}
-                  onClick={() => setActiveChapterId(chapter.id)}
+                  onClick={() => handleChapterClick(chapter.id)}
                   className={`group relative overflow-hidden rounded-[1.8rem] border px-6 py-6 text-left transition-all duration-300 ${
                     isActive
                       ? "border-[#c79860]/34 bg-[linear-gradient(180deg,rgba(76,50,31,0.72),rgba(42,26,16,0.8))] shadow-[0_0_40px_rgba(160,108,56,0.12),inset_0_0_30px_rgba(255,220,180,0.02)]"
