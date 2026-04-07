@@ -5,6 +5,21 @@ const BG_IMAGE = `${import.meta.env.BASE_URL}images/brilski-sepia.png`;
 const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
 const HOME_VOLUME = 0.45;
 
+const revealUp = {
+  hidden: {
+    opacity: 0,
+    y: 22,
+    filter: "blur(10px)",
+    textShadow: "0 0 22px rgba(0,0,0,0.75)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    textShadow: "0 0 0px rgba(0,0,0,0)",
+  },
+};
+
 export default function HomeScreen({ onEnter }) {
   const [opening, setOpening] = useState(false);
   const audioRef = useRef(null);
@@ -52,33 +67,59 @@ export default function HomeScreen({ onEnter }) {
       <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(10,6,3,0.9)]" />
 
       <div className="relative z-20 flex min-h-screen items-center justify-center px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1 }}
-          className="text-center"
-        >
-          <div className="mb-5 text-[11px] uppercase tracking-[0.35em] text-[#ead7b0]/70">
+        <div className="text-center">
+          <motion.div
+            variants={revealUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1.8, delay: 0.4, ease: "easeOut" }}
+            className="mb-5 text-[11px] uppercase tracking-[0.35em] text-[#ead7b0]/70"
+          >
             Family Archive
-          </div>
+          </motion.div>
 
-          <h1 className="font-serif text-5xl tracking-[0.08em] text-[#f2dfb7] sm:text-7xl md:text-8xl">
+          <motion.h1
+            variants={revealUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 2.2, delay: 1.2, ease: "easeOut" }}
+            className="font-serif text-5xl tracking-[0.08em] text-[#f2dfb7] sm:text-7xl md:text-8xl"
+          >
             The Brilski
-            <span className="mt-2 block text-[#dcc08a]">History</span>
-          </h1>
+          </motion.h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-sm text-[#f0dfbb]/80 sm:text-base">
+          <motion.span
+            variants={revealUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 2.3, delay: 2.5, ease: "easeOut" }}
+            className="mt-2 block font-serif text-5xl tracking-[0.08em] text-[#dcc08a] sm:text-7xl md:text-8xl"
+          >
+            History
+          </motion.span>
+
+          <motion.p
+            variants={revealUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1.8, delay: 4.1, ease: "easeOut" }}
+            className="mx-auto mt-6 max-w-xl text-sm text-[#f0dfbb]/80 sm:text-base"
+          >
             A quiet entrance into memory, migration, records, and lives carried
             across generations.
-          </p>
+          </motion.p>
 
-          <button
+          <motion.button
+            variants={revealUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1.6, delay: 5.2, ease: "easeOut" }}
             onClick={handleEnter}
             className="mt-10 rounded-full border border-[#d7bb86]/45 bg-[#2a1c12]/55 px-7 py-3 text-sm uppercase tracking-[0.22em] text-[#f0ddb4] transition hover:bg-[#3a2818]/70"
           >
             {opening ? "Opening..." : "Enter the Archive"}
-          </button>
-        </motion.div>
+          </motion.button>
+        </div>
       </div>
 
       <AnimatePresence>
