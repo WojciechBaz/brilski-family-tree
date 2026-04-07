@@ -132,3 +132,12 @@
     radial-gradient(circle at 0% 50%, rgba(255, 225, 170, 0.025), transparent 24%),
     radial-gradient(circle at 100% 50%, rgba(255, 225, 170, 0.025), transparent 24%);
 }
+
+.archive-timeline-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.archive-timeline-scroll::-webkit-scrollbar {
+  display: none;
+}
