@@ -11,8 +11,6 @@ const CHAPTER_AUDIO_MAP = {
 };
 
 const DEFAULT_VOLUME = 0.55;
-const FADE_DURATION = 450;
-const FADE_INTERVAL = 50;
 
 export default function ArchiveScreen({ onBack, onEnterTree }) {
   const [activeChapterId, setActiveChapterId] = useState("old-poland");
@@ -29,8 +27,6 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const audioRef = useRef(null);
-  const fadeIntervalRef = useRef(null);
-  const currentSrcRef = useRef("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,167 +40,44 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
   }, []);
 
   useEffect(() => {
-    return () => {
-      clearFadeInterval();
-
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }
-    };
-  }, []);
-
-  const clearFadeInterval = () => {
-    if (fadeIntervalRef.current) {
-      clearInterval(fadeIntervalRef.current);
-      fadeIntervalRef.current = null;
-    }
-  };
-
-  const fadeVolume = (audio, from, to, duration, onComplete) => {
-    clearFadeInterval();
-
-    const steps = Math.max(1, Math.floor(duration / FADE_INTERVAL));
-    const stepSize = (to - from) / steps;
-    let currentStep = 0;
-
-    audio.volume = Math.max(0, Math.min(1, from));
-
-    fadeIntervalRef.current = setInterval(() => {
-      currentStep += 1;
-
-      const nextVolume = from + stepSize * currentStep;
-      audio.volume = Math.max(0, Math.min(1, nextVolume));
-
-      if (currentStep >= steps) {
-        clearFadeInterval();
-        audio.volume = Math.max(0, Math.min(1, to));
-        if (onComplete) onComplete();
-      }
-    }, FADE_INTERVAL);
-  };
-
-  const startAudioForChapter = async (chapterId) => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || !audioEnabled) return;
 
-    const nextSrc = CHAPTER_AUDIO_MAP[chapterId];
+    const src = CHAPTER_AUDIO_MAP[activeChapterId];
 
-    if (!nextSrc) {
+    if (!src) {
       audio.pause();
-      audio.currentTime = 0;
-      currentSrcRef.current = "";
+      audio.removeAttribute("src");
+      audio.load();
       setIsPlaying(false);
       return;
+    }
+
+    if (audio.getAttribute("src") !== src) {
+      audio.src = src;
+      audio.load();
     }
 
     audio.loop = true;
     audio.muted = isMuted;
+    audio.volume = DEFAULT_VOLUME;
 
-    if (currentSrcRef.current === nextSrc) {
-      try {
-        await audio.play();
-        setIsPlaying(true);
-        if (!isMuted) {
-          fadeVolume(audio, audio.volume || 0.15, DEFAULT_VOLUME, 250);
-        }
-      } catch (error) {
-        console.warn("Audio resume failed:", error);
+    audio
+      .play()
+      .then(() => setIsPlaying(true))
+      .catch((err) => {
+        console.warn("Audio play failed:", err);
         setIsPlaying(false);
-      }
-      return;
-    }
-
-    const switchTrack = async () => {
-      audio.pause();
-      audio.src = nextSrc;
-      audio.load();
-      currentSrcRef.current = nextSrc;
-      audio.volume = isMuted ? 0 : 0.01;
-
-      try {
-        await audio.play();
-        setIsPlaying(true);
-
-        if (!isMuted) {
-          fadeVolume(audio, 0.01, DEFAULT_VOLUME, FADE_DURATION);
-        }
-      } catch (error) {
-        console.warn("Audio play failed:", error);
-        setIsPlaying(false);
-      }
-    };
-
-    if (!audio.paused && currentSrcRef.current) {
-      fadeVolume(audio, audio.volume, 0, FADE_DURATION, switchTrack);
-    } else {
-      await switchTrack();
-    }
-  };
-
-  const stopAudio = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (audio.paused) {
-      setIsPlaying(false);
-      return;
-    }
-
-    fadeVolume(audio, audio.volume, 0, 250, () => {
-      audio.pause();
-      setIsPlaying(false);
-    });
-  };
-
-  const togglePlayback = async () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (!audioEnabled) {
-      setAudioEnabled(true);
-      await startAudioForChapter(activeChapterId);
-      return;
-    }
-
-    if (isPlaying) {
-      stopAudio();
-    } else {
-      await startAudioForChapter(activeChapterId);
-    }
-  };
-
-  const handleChapterClick = async (chapterId) => {
-    setActiveChapterId(chapterId);
-
-    if (!audioEnabled) {
-      setAudioEnabled(true);
-      return;
-    }
-
-    await startAudioForChapter(chapterId);
-  };
-
-  const toggleMute = () => {
-    const audio = audioRef.current;
-    const nextMuted = !isMuted;
-
-    setIsMuted(nextMuted);
-
-    if (!audio) return;
-
-    audio.muted = nextMuted;
-
-    if (!nextMuted && isPlaying) {
-      audio.volume = DEFAULT_VOLUME;
-    }
-  };
+      });
+  }, [activeChapterId, audioEnabled, isMuted]);
 
   useEffect(() => {
-    if (!audioEnabled) return;
-    startAudioForChapter(activeChapterId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [audioEnabled]);
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, []);
 
   const activeChapter =
     useMemo(
@@ -226,6 +99,45 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
       ...prev,
       [activeChapter.id]: itemId,
     }));
+  };
+
+  const handleChapterClick = (chapterId) => {
+    setActiveChapterId(chapterId);
+    setAudioEnabled(true);
+  };
+
+  const togglePlayback = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!audioEnabled) {
+      setAudioEnabled(true);
+      return;
+    }
+
+    if (audio.paused) {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.warn("Audio resume failed:", err);
+        setIsPlaying(false);
+      }
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const audio = audioRef.current;
+    const nextMuted = !isMuted;
+
+    setIsMuted(nextMuted);
+
+    if (audio) {
+      audio.muted = nextMuted;
+    }
   };
 
   const currentTrackLabel = audioEnabled
