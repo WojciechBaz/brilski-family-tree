@@ -1,13 +1,37 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const BG_IMAGE = `${import.meta.env.BASE_URL}images/brilski-sepia.png`
+const BG_IMAGE = `${import.meta.env.BASE_URL}images/brilski-sepia.png`;
+const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
+const HOME_VOLUME = 0.45;
 
 export default function HomeScreen({ onEnter }) {
   const [opening, setOpening] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const audio = new Audio(HOME_AUDIO);
+    audio.loop = true;
+    audio.volume = HOME_VOLUME;
+    audioRef.current = audio;
+
+    audio.play().catch((err) => {
+      console.warn("Home audio autoplay blocked:", err);
+    });
+
+    return () => {
+      audio.pause();
+      audio.src = "";
+    };
+  }, []);
 
   const handleEnter = () => {
     if (opening) return;
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
 
     setOpening(true);
 
@@ -18,18 +42,15 @@ export default function HomeScreen({ onEnter }) {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${BG_IMAGE})` }}
       />
 
-      {/* Overlays */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(25,18,12,0.2),rgba(25,18,12,0.75))]" />
       <div className="absolute inset-0 bg-[#3b2818]/40 mix-blend-multiply" />
       <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(10,6,3,0.9)]" />
 
-      {/* Content */}
       <div className="relative z-20 flex min-h-screen items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -60,7 +81,6 @@ export default function HomeScreen({ onEnter }) {
         </motion.div>
       </div>
 
-      {/* Opening gates */}
       <AnimatePresence>
         {opening && (
           <>

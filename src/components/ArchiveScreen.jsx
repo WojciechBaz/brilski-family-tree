@@ -141,10 +141,6 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
     }
   };
 
-  const currentTrackLabel = audioEnabled
-    ? activeChapter.title
-    : "Audio off until first chapter click";
-
   return (
     <>
       <div className="archive-background">
@@ -238,10 +234,6 @@ export default function ArchiveScreen({ onBack, onEnterTree }) {
                     >
                       {isMuted ? "Unmute" : "Mute"}
                     </button>
-
-                    <div className="text-xs uppercase tracking-[0.22em] text-[#d9bf8e]/58">
-                      {currentTrackLabel}
-                    </div>
                   </div>
                 </div>
 
