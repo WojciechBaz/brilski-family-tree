@@ -112,7 +112,7 @@ export default function HomeScreen({ onEnter }) {
             variants={revealUp}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 2.3, delay: 2.5, ease: "easeOut" }}
+            transition={{ duration: 2.3, delay: 4.5, ease: "easeOut" }}
             className="mt-2 block font-serif text-5xl tracking-[0.08em] text-[#dcc08a] sm:text-7xl md:text-8xl"
           >
             History
@@ -122,7 +122,7 @@ export default function HomeScreen({ onEnter }) {
             variants={revealUp}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1.8, delay: 4.1, ease: "easeOut" }}
+            transition={{ duration: 1.8, delay: 6.1, ease: "easeOut" }}
             className="mx-auto mt-6 max-w-xl text-sm text-[#f0dfbb]/80 sm:text-base"
           >
             A quiet entrance into memory, migration, records, and lives carried
@@ -133,7 +133,7 @@ export default function HomeScreen({ onEnter }) {
             variants={revealUp}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 1.6, delay: 5.2, ease: "easeOut" }}
+            transition={{ duration: 1.6, delay: 7.2, ease: "easeOut" }}
             onClick={handleEnter}
             className="mt-10 rounded-full border border-[#d7bb86]/45 bg-[#2a1c12]/55 px-7 py-3 text-sm uppercase tracking-[0.22em] text-[#f0ddb4] transition hover:bg-[#3a2818]/70"
           >
