@@ -22,6 +22,7 @@ const revealUp = {
 
 export default function HomeScreen({ onEnter }) {
   const [opening, setOpening] = useState(false);
+  const [audioUnlocked, setAudioUnlocked] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -30,15 +31,34 @@ export default function HomeScreen({ onEnter }) {
     audio.volume = HOME_VOLUME;
     audioRef.current = audio;
 
-    audio.play().catch((err) => {
-      console.warn("Home audio autoplay blocked:", err);
-    });
-
     return () => {
       audio.pause();
       audio.src = "";
     };
   }, []);
+
+  useEffect(() => {
+    if (audioUnlocked || opening) return;
+
+    const unlockAudio = async () => {
+      if (!audioRef.current) return;
+
+      try {
+        await audioRef.current.play();
+        setAudioUnlocked(true);
+      } catch (err) {
+        console.warn("Home audio unlock failed:", err);
+      }
+    };
+
+    window.addEventListener("pointerdown", unlockAudio, { once: true });
+    window.addEventListener("keydown", unlockAudio, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
+    };
+  }, [audioUnlocked, opening]);
 
   const handleEnter = () => {
     if (opening) return;
