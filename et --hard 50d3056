@@ -1,0 +1,29 @@
+[33mc8fbce5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m article gallery fix
+[33m9cfcc3b[m major refacture before articles
+[33m50d3056[m change to tree
+[33m4e63ac6[m Add files via upload
+[33m4eb74b9[m Delete public/genealogy-tree1.svg
+[33m1098a1c[m czange to app archive home constant music
+[33mc6e3e4a[m homescreen begin button
+[33mc2db5c5[m i zmiana index css
+[33mdec543a[m added times to homescreen text
+[33md880256[m home muzyka
+[33m7676e23[m Brilski from shadow
+[33m566ac54[m audio to home screen
+[33mfe96338[m audio 4 test
+[33m3497e6a[m audio test 3
+[33mce1d1e5[m audio corrected ver 2
+[33mbd2e0e5[m added audio
+[33m0a1a1a0[m Update TreeScreen.jsx
+[33m9031833[m Add files via upload
+[33m1795674[m Add files via upload
+[33m04c3b1f[m Update TreeScreen.jsx
+[33m4efb933[m Update TreeScreen.jsx
+[33mc33d8dc[m Update HomeScreen.jsx
+[33m9c75ae6[m Update deploy.yml
+[33m02d9ae9[m Update package.json
+[33mba342d1[m add to index css tailwind
+[33m9aa4b62[m Add tailwind
+[33m04820d6[m Remove Tailwind import from index.css
+[33me61f401[m Add GitHub Pages deployment
+[33m30a29cb[m Initial commit

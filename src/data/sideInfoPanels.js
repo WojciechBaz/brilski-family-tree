@@ -1,4 +1,14 @@
-const PLACEHOLDER_IMAGE = "/images/brilski-sepia.png";
+const BASE_URL = import.meta.env.BASE_URL;
+const PLACEHOLDER_IMAGE = `${BASE_URL}images/brilski-sepia.png`;
+
+const PRZASNYSZ_REGION_IMAGES = [
+  `${BASE_URL}region/przasnysz-market-1920s.jpg`,
+  `${BASE_URL}region/przasnysz-market-early.PNG`,
+  `${BASE_URL}region/przasnysz-parish-archive.jpg`,
+  `${BASE_URL}region/przasnysz-parish-modern.jpg`,
+  `${BASE_URL}region/przasnysz-street-archive.PNG`,
+  `${BASE_URL}region/przasnysz-townhall-modern.jpg`,
+];
 
 const ARCHIVE_CHAPTERS = [
   {
@@ -9,6 +19,56 @@ const ARCHIVE_CHAPTERS = [
     intro:
       "The earliest chapter of the archive, focused on villages, parish records, branch origins, and the first stable anchors of identity.",
     items: [
+      {
+        id: "przasnysz-leszno-overview",
+        year: "1840s–1890s",
+        label: "Article",
+        title: "Przasnysz and Leszno: A Concise Historical Overview",
+        subtitle: "Regional setting, parish life, and local historical context",
+        preview:
+          "A concise historical overview of Przasnysz and Leszno, introducing the local world in which the earliest family records emerged: parish structure, village life, local continuity, and the broader setting before migration.",
+        pages: [
+          {
+            title: "Przasnysz and Leszno: A Concise Historical Overview",
+            subtitle: "Regional introduction",
+            images: [
+              PRZASNYSZ_REGION_IMAGES[0],
+              PRZASNYSZ_REGION_IMAGES[1],
+            ],
+            content: `Przasnysz and Leszno belonged to a world shaped by parish life, local custom, agricultural rhythms, and the slow administrative order of the nineteenth century. For families rooted in this landscape, identity was recorded less through modern civil systems and more through church books, household continuity, village belonging, and kinship ties that stretched across neighboring communities.
+
+This article serves as a concise historical introduction to that environment. Its purpose is not only to frame the earliest family records geographically, but also to show the social and cultural setting in which those entries were created. Names found later in parish books or migration records did not emerge in isolation. They were part of a stable local world made of church structures, market links, inherited occupations, and long-standing community memory.
+
+In this sense, Przasnysz and Leszno should be understood not simply as locations on a map, but as the background world of the archive itself: the place where identities were first anchored before later disruption, movement, and migration altered how the family appeared in the record.`,
+          },
+          {
+            title: "Parish life and documentary continuity",
+            subtitle: "The church as the keeper of identity",
+            images: [
+              PRZASNYSZ_REGION_IMAGES[2],
+              PRZASNYSZ_REGION_IMAGES[3],
+            ],
+            content: `In nineteenth-century rural Poland, the parish often formed the strongest and most reliable framework of recorded identity. Baptisms, marriages, and deaths were preserved through church registers, which in practice became the backbone of family continuity across generations. For many families, the parish was not only a religious institution but also the main documentary anchor of existence.
+
+This matters for genealogical reconstruction because many early references to a family line survive precisely through that ecclesiastical structure. A surname might shift in spelling, a household might move slightly within the same area, and local usage might differ from formal notation, yet the parish record often preserves the thread that holds the branch together.
+
+Understanding this local system helps explain why the earliest archive chapter is built around villages, parish books, and branch origins. Before migration, family identity was often local first, administrative second, and only much later national or transatlantic in the way modern descendants would recognize it.`,
+          },
+          {
+            title: "Town, market, and local movement",
+            subtitle: "How regional life connected families",
+            images: [
+              PRZASNYSZ_REGION_IMAGES[4],
+              PRZASNYSZ_REGION_IMAGES[5],
+            ],
+            content: `The region around Przasnysz was not isolated, even if daily life remained strongly local. Towns, parish centers, markets, roads, and neighboring settlements created regular points of contact through which families worked, traded, married, worshipped, and maintained wider ties. A market town was therefore more than a commercial location: it was one of the places where the rhythms of regional life became visible.
+
+For families that later appear scattered across records, this local interconnectedness is important. It reminds us that branch development in Old Poland did not happen in total isolation. Even when people remained close to home, their lives were shaped by movement between village and town, by church attendance, by economic exchange, and by the social habits of the district.
+
+Seen in that way, Przasnysz and Leszno form part of a larger historical fabric. They belong to the early world of the archive: a rooted landscape of parish memory, regional connection, and family continuity that existed before Atlantic migration began to transform how those same lives would later be recorded.`,
+          },
+        ],
+      },
       {
         id: "brejlak",
         year: "1840s",
@@ -21,21 +81,21 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Branch overview",
             subtitle: "Earliest known outline",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This is a temporary first page for the Brejlak family branch. Later you can place here the broad overview of the family line, the oldest confirmed records, possible village ties, and the first working reconstruction of the branch.",
           },
           {
             title: "Records and village context",
             subtitle: "Parish and locality notes",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later hold specific parish references, surrounding local history, notes about handwriting, variants in spelling, and how the family appears in early records from the region.",
           },
           {
             title: "Working interpretation",
             subtitle: "Research notes",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "Use this page for uncertain links, theory building, branch reconstruction, and evidence interpretation. It works well for genealogical commentary that is too detailed for the short preview panel.",
           },
@@ -53,21 +113,21 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Branch overview",
             subtitle: "Family entry",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This is a placeholder first page for the Wojcicki branch. Later it can summarize the branch, its place in the wider archive, and the earliest strong records connected to the family.",
           },
           {
             title: "Parish structure",
             subtitle: "Old Poland background",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later describe church life, regional structure, local marriage patterns, and how the branch appears in parish material before migration reshapes the archive.",
           },
           {
             title: "Research notes",
             subtitle: "Open questions",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This section is ideal for uncertainties, spelling shifts, related households, and hypotheses that connect the branch with neighboring lines.",
           },
@@ -85,21 +145,21 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Branch overview",
             subtitle: "Identity and structure",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This is a placeholder first page for the Olszewski branch. Later it can contain the basic entry point into this family line and its place in the archive.",
           },
           {
             title: "Document layer",
             subtitle: "Record connections",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later be used for document interpretation, linked entries, and branch-specific notes that do not fit into the short preview.",
           },
           {
             title: "Context and notes",
             subtitle: "Working archive",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "Use this page for open genealogical questions, name variants, branch ambiguities, and any notes that help reconstruct the family line.",
           },
@@ -117,21 +177,21 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Branch overview",
             subtitle: "Family entry",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This is a placeholder opening page for the Dobrzanski family branch. Later it can present the main branch summary and key genealogical anchors.",
           },
           {
             title: "Sources and evidence",
             subtitle: "Archive material",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later hold evidence notes, parish references, linked documents, and branch-specific observations drawn from your research.",
           },
           {
             title: "Interpretation",
             subtitle: "Working branch notes",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "Use this page for interpretation, uncertain relationships, branch reconstruction, and long-form explanatory text.",
           },
@@ -159,14 +219,14 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Departure",
             subtitle: "Leaving the old world",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This is a placeholder article page for departure. Later you can use it for port departure, family separation, first migration decisions, and the earliest traces of movement.",
           },
           {
             title: "Crossing",
             subtitle: "Transit and uncertainty",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later describe the crossing itself, incomplete information, travel conditions, and how migration began to reshape identity.",
           },
@@ -184,14 +244,14 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Arrival",
             subtitle: "Entry into a new archive",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This placeholder page is meant for arrival records, first official registration, and the new archival reality created by immigration processing.",
           },
           {
             title: "Guardianship",
             subtitle: "Why records can differ",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later explain why siblings or guardians may appear as parents in later documents, and how migration changed recorded family structure.",
           },
@@ -209,14 +269,14 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Settlement",
             subtitle: "New households",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later be used for marriages, census appearances, first settled addresses, and the creation of new family units in America.",
           },
           {
             title: "New branches",
             subtitle: "Identity after migration",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can describe surname shifts, branch splitting, and the early shape of descendant lines after settlement.",
           },
@@ -244,14 +304,14 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Later descendants",
             subtitle: "Family continuity",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later summarise later generations, branch continuity, and the way family structure continues beyond migration-era records.",
           },
           {
             title: "Branch development",
             subtitle: "Expanding lines",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page is useful for showing how branches grew, separated, or stayed connected across the twentieth century.",
           },
@@ -269,14 +329,14 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Memory",
             subtitle: "Oral history and recollection",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later hold remembered stories, oral family tradition, and the traces that survive outside official documentation.",
           },
           {
             title: "Photographs",
             subtitle: "Visual archive",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later be used for photos, captions, visual notes, and the emotional layer of the archive.",
           },
@@ -294,14 +354,14 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Reconstruction",
             subtitle: "The archive today",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can later describe the research process itself, the current reconstruction effort, and the method behind reconnecting scattered lines.",
           },
           {
             title: "Looking forward",
             subtitle: "Future work",
-            image: PLACEHOLDER_IMAGE,
+            images: [PLACEHOLDER_IMAGE],
             content:
               "This page can close the chapter by describing future research directions, remaining uncertainties, and the living nature of the archive.",
           },

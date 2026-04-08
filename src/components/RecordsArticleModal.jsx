@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function RecordsArticleModal({ article, onClose }) {
@@ -13,11 +13,13 @@ export default function RecordsArticleModal({ article, onClose }) {
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") onClose();
+
       if (event.key === "ArrowRight") {
         setPageIndex((prev) =>
           prev === article.pages.length - 1 ? 0 : prev + 1
         );
       }
+
       if (event.key === "ArrowLeft") {
         setPageIndex((prev) =>
           prev === 0 ? article.pages.length - 1 : prev - 1
@@ -32,6 +34,18 @@ export default function RecordsArticleModal({ article, onClose }) {
   if (!article) return null;
 
   const currentPage = article.pages[pageIndex];
+
+  const currentImages = useMemo(() => {
+    if (Array.isArray(currentPage.images) && currentPage.images.length > 0) {
+      return currentPage.images;
+    }
+
+    if (currentPage.image) {
+      return [currentPage.image];
+    }
+
+    return [];
+  }, [currentPage]);
 
   const goPrev = () => {
     setPageIndex((prev) => (prev === 0 ? article.pages.length - 1 : prev - 1));
@@ -105,14 +119,29 @@ export default function RecordsArticleModal({ article, onClose }) {
               <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
                 <div className="border-b border-[#b68a57]/12 lg:border-b-0 lg:border-r lg:border-[#b68a57]/12">
                   <div className="p-5 md:p-7">
-                    <div className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]">
-                      <div className="aspect-[4/5] bg-[#120b07]">
-                        <img
-                          src={currentPage.image}
-                          alt={currentPage.title}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
+                    <div className="grid gap-4">
+                      {currentImages.length > 0 ? (
+                        currentImages.map((imageSrc, imageIndex) => (
+                          <div
+                            key={`${article.id}-${pageIndex}-image-${imageIndex}`}
+                            className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]"
+                          >
+                            <div className="aspect-[4/5] bg-[#120b07]">
+                              <img
+                                src={imageSrc}
+                                alt={`${currentPage.title} image ${imageIndex + 1}`}
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]">
+                          <div className="flex aspect-[4/5] items-center justify-center bg-[#120b07] text-sm text-[#d9bf8e]/45">
+                            No image available
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     <div className="mt-4 rounded-[1.3rem] border border-[#b68a57]/14 bg-[#24170f]/45 p-4">
@@ -145,7 +174,7 @@ export default function RecordsArticleModal({ article, onClose }) {
                         {currentPage.title}
                       </h4>
 
-                      <p className="mt-6 text-sm leading-8 text-[#ead7b0]/78 md:text-[15px]">
+                      <p className="mt-6 text-sm leading-8 text-[#ead7b0]/78 md:text-[15px] whitespace-pre-line">
                         {currentPage.content}
                       </p>
 
