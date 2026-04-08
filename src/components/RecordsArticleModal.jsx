@@ -4,38 +4,41 @@ import { motion, AnimatePresence } from "motion/react";
 export default function RecordsArticleModal({ article, onClose }) {
   const [pageIndex, setPageIndex] = useState(0);
 
+  const pages = useMemo(() => {
+    if (!article || !Array.isArray(article.pages)) return [];
+    return article.pages;
+  }, [article]);
+
   useEffect(() => {
     setPageIndex(0);
   }, [article]);
 
   useEffect(() => {
-    if (!article) return;
+    if (!article || pages.length === 0) return;
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") onClose();
 
       if (event.key === "ArrowRight") {
-        setPageIndex((prev) =>
-          prev === article.pages.length - 1 ? 0 : prev + 1
-        );
+        setPageIndex((prev) => (prev === pages.length - 1 ? 0 : prev + 1));
       }
 
       if (event.key === "ArrowLeft") {
-        setPageIndex((prev) =>
-          prev === 0 ? article.pages.length - 1 : prev - 1
-        );
+        setPageIndex((prev) => (prev === 0 ? pages.length - 1 : prev - 1));
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [article, onClose]);
+  }, [article, onClose, pages]);
 
   if (!article) return null;
 
-  const currentPage = article.pages[pageIndex];
+  const currentPage = pages[pageIndex] ?? pages[0] ?? null;
 
   const currentImages = useMemo(() => {
+    if (!currentPage) return [];
+
     if (Array.isArray(currentPage.images) && currentPage.images.length > 0) {
       return currentPage.images;
     }
@@ -48,17 +51,19 @@ export default function RecordsArticleModal({ article, onClose }) {
   }, [currentPage]);
 
   const goPrev = () => {
-    setPageIndex((prev) => (prev === 0 ? article.pages.length - 1 : prev - 1));
+    if (pages.length === 0) return;
+    setPageIndex((prev) => (prev === 0 ? pages.length - 1 : prev - 1));
   };
 
   const goNext = () => {
-    setPageIndex((prev) => (prev === article.pages.length - 1 ? 0 : prev + 1));
+    if (pages.length === 0) return;
+    setPageIndex((prev) => (prev === pages.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <AnimatePresence>
       <motion.div
-        key={`article-modal-${article.id}`}
+        key={`article-modal-${article.id ?? "unknown"}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -79,15 +84,15 @@ export default function RecordsArticleModal({ article, onClose }) {
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <div className="text-[11px] uppercase tracking-[0.26em] text-[#d9bf8e]/60">
-                      {article.year} · {article.label}
+                      {article.year ?? "Unknown year"} · {article.label ?? "Article"}
                     </div>
 
                     <h3 className="mt-3 font-serif text-3xl text-[#f2dfb7] md:text-4xl">
-                      {article.title}
+                      {article.title ?? "Untitled article"}
                     </h3>
 
                     <div className="mt-2 text-sm text-[#e8d6b0]/52">
-                      {article.subtitle}
+                      {article.subtitle ?? ""}
                     </div>
                   </div>
 
@@ -123,13 +128,13 @@ export default function RecordsArticleModal({ article, onClose }) {
                       {currentImages.length > 0 ? (
                         currentImages.map((imageSrc, imageIndex) => (
                           <div
-                            key={`${article.id}-${pageIndex}-image-${imageIndex}`}
+                            key={`${article.id ?? "article"}-${pageIndex}-image-${imageIndex}`}
                             className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]"
                           >
                             <div className="aspect-[4/5] bg-[#120b07]">
                               <img
                                 src={imageSrc}
-                                alt={`${currentPage.title} image ${imageIndex + 1}`}
+                                alt={`${currentPage?.title ?? "Article image"} ${imageIndex + 1}`}
                                 className="h-full w-full object-cover"
                               />
                             </div>
@@ -149,8 +154,11 @@ export default function RecordsArticleModal({ article, onClose }) {
                         Page
                       </div>
                       <div className="mt-2 text-sm text-[#ead7b0]/72">
-                        {String(pageIndex + 1).padStart(2, "0")} /{" "}
-                        {String(article.pages.length).padStart(2, "0")}
+                        {pages.length > 0
+                          ? `${String(pageIndex + 1).padStart(2, "0")} / ${String(
+                              pages.length
+                            ).padStart(2, "0")}`
+                          : "No pages"}
                       </div>
                     </div>
                   </div>
@@ -159,7 +167,7 @@ export default function RecordsArticleModal({ article, onClose }) {
                 <div className="max-h-[80vh] overflow-y-auto px-5 py-5 md:px-8 md:py-7">
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={`${article.id}-${pageIndex}`}
+                      key={`${article.id ?? "article"}-${pageIndex}`}
                       initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -167,19 +175,19 @@ export default function RecordsArticleModal({ article, onClose }) {
                       className="max-w-3xl"
                     >
                       <div className="text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
-                        {currentPage.subtitle}
+                        {currentPage?.subtitle ?? "No subtitle"}
                       </div>
 
                       <h4 className="mt-3 font-serif text-3xl text-[#f1deba] md:text-4xl">
-                        {currentPage.title}
+                        {currentPage?.title ?? "No page title"}
                       </h4>
 
-                      <p className="mt-6 text-sm leading-8 text-[#ead7b0]/78 md:text-[15px] whitespace-pre-line">
-                        {currentPage.content}
+                      <p className="mt-6 whitespace-pre-line text-sm leading-8 text-[#ead7b0]/78 md:text-[15px]">
+                        {currentPage?.content ?? "No content available for this page yet."}
                       </p>
 
                       <div className="mt-8 flex items-center gap-2">
-                        {article.pages.map((_, index) => (
+                        {pages.map((_, index) => (
                           <div
                             key={index}
                             className={`h-2.5 rounded-full transition-all ${
