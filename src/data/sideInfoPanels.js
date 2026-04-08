@@ -62,19 +62,19 @@ Seen in that way, Przasnysz and Leszno form part of a larger historical fabric. 
         ],
       },
       {
-  id: "story-of-a-name",
-  year: "Late 19th c. – 1904+",
-  label: "Article",
-  title: "This is a story of a name",
-  subtitle: "From Brejlak to Brylski and Brilski",
-  preview:
-    "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
-  pages: [
-    {
-      title: "This is a story of a name",
-      subtitle: "Brejlak before emigration",
-      images: [],
-      content: `Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
+        id: "story-of-a-name",
+        year: "Late 19th c. – 1904+",
+        label: "Article",
+        title: "This is a story of a name",
+        subtitle: "From Brejlak to Brylski and Brilski",
+        preview:
+          "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
+        pages: [
+          {
+            title: "This is a story of a name",
+            subtitle: "Brejlak before emigration",
+            images: [],
+            content: `Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
 
 There is no way to know with certainty why the change happened. Was it a conscious decision made by Victor Brylski and Frank Brilski when they came in 1904, with the rest of the family simply following later? Was it the result of deeper cultural, historical, and linguistic processes already underway in Poland? Or perhaps a combination of both.
 
@@ -83,12 +83,12 @@ We will probably never know the exact moment or motivation, but we can explore t
 The first theory suggests that the surname change was a clear, deliberate shift that took place after the first family members arrived in the United States in 1904. This would not have been unusual. Many immigrants modified their surnames to simplify pronunciation, to fit English spelling patterns, or because the new form felt more practical in everyday American life. The ending -ski is strongly associated with Polish identity, so choosing Brylski or Brilski may have also been a way to signal their origins within Polish communities.
 
 However, this explanation does not fully match what happened later. Over time, the family went through naturalization, joined the U.S. military, and did not emphasize their Polish heritage. This makes it less likely that the change was motivated purely by a desire to highlight Polish identity and traditions.`,
-    },
-    {
-      title: "A change already underway",
-      subtitle: "Why Brylski may have existed in Poland first",
-      images: [],
-      content: `The second theory argues that the name Brylski was already in use in Poland before emigration, and several findings support this idea.
+          },
+          {
+            title: "A change already underway",
+            subtitle: "Why Brylski may have existed in Poland first",
+            images: [],
+            content: `The second theory argues that the name Brylski was already in use in Poland before emigration, and several findings support this idea.
 
 In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej Brylski. A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Brilski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska.
 
@@ -99,12 +99,12 @@ How did Brejlak become Brylski, though?
 The first part of the change—from Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination “ej” can be pronounced closer to “y,” making Brejlak sound more like Brylak. Especially in a heavily Russian-influenced environment, softer or altered pronunciation patterns may have been encouraged.
 
 The second part of the change—from -ak to -ski—is much more complex and tied to the political and cultural situation of the late nineteenth century.`,
-    },
-    {
-      title: "From Brylski to Brilski",
-      subtitle: "Polish, American, and linguistic influences",
-      images: [],
-      content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity.
+          },
+          {
+            title: "From Brylski to Brilski",
+            subtitle: "Polish, American, and linguistic influences",
+            images: [],
+            content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity.
 
 Changing names to more Polish-sounding forms could become a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
 
@@ -115,9 +115,9 @@ What is clear is that the family consistently preferred the Brylski/Brilski form
 The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexisted, linguistic and political factors encouraged variation, and both Polish and American environments contributed to the evolution.
 
 Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
-    },
-  ],
-},
+          },
+        ],
+      },
       {
         id: "brejlak",
         year: "1840s",
@@ -420,5 +420,80 @@ Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
   },
 ];
 
+const SPECIAL_ARTICLES = [
+  {
+    id: "a-word-for-matt",
+    year: "Today",
+    label: "Author note",
+    title: "A Word for Matt",
+    subtitle: "An opening note to a friend",
+    preview:
+      "A short opening note about how this archive began, how the research grew into something much bigger, and why the story remains both incomplete and deeply personal.",
+    pages: [
+      {
+        title: "A Word for Matt",
+        subtitle: "How this all began",
+        images: [],
+        content: `We honestly did not think this would turn into such a big thing. It all started pretty casually with a simple question: does the surname Brilski even exist in Poland? Because, apart from the ending, it did not really sound Polish. That was it. Just a bit of curiosity — and, well, look where it got us.
+
+I knew you had always been curious about your Polish roots, so we started digging. Before long, we found ourselves moving through archives, old records, church books, registers, and both Polish and American databases. We also horribly abused, misused, and overused ChatGPT, but honestly, I do not think we would have managed without it.
+
+At first, small pieces seemed to form a bigger picture — or at least so we thought. Because with every extra hour and every new document, we often ended up more confused than before. And so it went, step by step, date by date, record by record.`,
+      },
+      {
+        title: "Trying to build the bigger picture",
+        subtitle: "What this archive is and what it is not",
+        images: [],
+        content: `What we are sharing here is based on all the documents and records we were lucky enough to find. At the same time, we also tried to build a larger picture around them by adding historical, cultural, and linguistic context, especially the context of Poland in the late nineteenth and early twentieth century.
+
+I will not lie — we got pretty invested in this project, and it cost us a fair number of minor mental breakdowns. But it was worth it. There was something genuinely exciting in discovering the story piece by piece and trying to understand what happened, when it happened, and why.
+
+We did our best to make sense of everything and connect the dots. At some point, though, we also had to accept that we might never know the full story.`,
+      },
+      {
+        title: "An incomplete story, still worth telling",
+        subtitle: "What we hope you find here",
+        images: [],
+        content: `We know this history is not complete. There are gaps, inconsistencies, and quite possibly a few things we got wrong. That is part of the nature of this kind of work. The past rarely survives in a neat and orderly way, and family history is often preserved through fragments rather than certainty.
+
+Still, we wanted to bring everything together into one story and give you at least some of the answers you were looking for. Even if the archive cannot recover every missing detail, it can still restore connections, preserve memory, and make the past feel a little less distant.
+
+Hopefully, somewhere in these pages, you will find at least a little of what you came looking for.`,
+      },
+    ],
+  },
+  {
+    id: "how-we-researched-and-survived",
+    year: "Today",
+    label: "Behind the archive",
+    title: "How We Researched and Survived",
+    subtitle: "A short note on method, persistence, and chaos",
+    preview:
+      "A behind-the-scenes article on how the archive was built: document hunting, false leads, spelling variants, and the slow work of turning confusion into a story.",
+    pages: [
+      {
+        title: "How We Researched and Survived",
+        subtitle: "The first layer: confusion",
+        images: [PLACEHOLDER_IMAGE],
+        content: `No family archive begins in a clean or elegant way. It usually begins in confusion: inconsistent spellings, missing people, contradictory dates, unreadable handwriting, uncertain places, and documents that seem to answer one question only by creating three new ones.
+
+That was true here as well. The research moved between parish records, civil records, immigration lists, census data, military references, and scattered local clues. Often, a discovery that looked final would turn out to be only provisional. A surname shifted in spelling. A place appeared under multiple forms. A person could be listed differently depending on language, country, or decade.
+
+Surviving that stage required accepting uncertainty as part of the process. Instead of forcing immediate conclusions, the archive had to be built slowly, allowing fragments to remain unresolved until enough supporting evidence appeared around them.`,
+      },
+      {
+        title: "Method and persistence",
+        subtitle: "Working through fragments",
+        images: [PLACEHOLDER_IMAGE],
+        content: `The real method behind the archive was repetition. Looking again, comparing again, reading again, and returning to the same problems from slightly different angles. One document rarely solved anything alone. Meaning emerged through accumulation: one note confirming another, one record narrowing an uncertainty, one spelling variant making sense only after several other examples were found.
+
+At the same time, survival required patience. Not every lead worked. Some collapsed. Some remained ambiguous. Some seemed convincing for weeks before proving incomplete. But this is part of genealogical work as well. Research does not advance in a straight line. It advances through correction.
+
+What matters is that the archive now holds not only conclusions, but also the path that led to them: the uncertainties, the revisions, the false starts, and the persistence needed to continue anyway.`,
+      },
+    ],
+  },
+];
+
 export default ARCHIVE_CHAPTERS;
-export { ARCHIVE_CHAPTERS };
+export { ARCHIVE_CHAPTERS, SPECIAL_ARTICLES };

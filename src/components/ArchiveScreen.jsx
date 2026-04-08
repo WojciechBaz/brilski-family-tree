@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import FamilyTreeOrbit from "./FamilyTreeOrbit";
 import RecordsArticleModal from "./RecordsArticleModal";
-import ARCHIVE_CHAPTERS from "../data/sideInfoPanels";
+import ARCHIVE_CHAPTERS, { SPECIAL_ARTICLES } from "../data/sideInfoPanels";
 
 const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
 
@@ -75,6 +75,12 @@ export default function ArchiveScreen({
     }
 
     await onPlayHomeAudio();
+  };
+
+  const openArticle = (article) => {
+    if (article && Array.isArray(article.pages)) {
+      setExpandedArticle(article);
+    }
   };
 
   return (
@@ -171,6 +177,45 @@ export default function ArchiveScreen({
                       {isMuted ? "Unmute" : "Mute"}
                     </button>
                   </div>
+
+                  {SPECIAL_ARTICLES?.length > 0 && (
+                    <div className="mt-10">
+                      <div className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#d9bf8e]/58">
+                        Side notes
+                      </div>
+
+                      <div className="grid gap-4 md:grid-cols-2">
+                        {SPECIAL_ARTICLES.map((article) => (
+                          <button
+                            key={article.id}
+                            onClick={() => openArticle(article)}
+                            className="group relative overflow-hidden rounded-[1.6rem] border border-[#b68a57]/18 bg-[linear-gradient(180deg,rgba(56,36,24,0.56),rgba(29,18,12,0.7))] p-5 text-left transition hover:border-[#c79860]/28 hover:bg-[linear-gradient(180deg,rgba(64,42,28,0.62),rgba(33,21,14,0.76))]"
+                          >
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,187,134,0.08),transparent_50%)]" />
+                            <div className="absolute inset-[1px] rounded-[1.5rem] border border-[#f1d9ac]/[0.04]" />
+
+                            <div className="relative z-10">
+                              <div className="text-[11px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
+                                {article.label}
+                              </div>
+
+                              <div className="mt-3 font-serif text-2xl leading-tight text-[#f0ddb4]">
+                                {article.title}
+                              </div>
+
+                              <div className="mt-3 text-sm leading-7 text-[#e8d6b0]/60">
+                                {article.subtitle}
+                              </div>
+
+                              <div className="mt-5 inline-flex items-center rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/44 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-[#ead7b0]/70">
+                                Open article
+                              </div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <button
@@ -331,7 +376,7 @@ export default function ArchiveScreen({
                   </div>
 
                   <button
-                    onClick={() => setExpandedArticle(activeItem)}
+                    onClick={() => openArticle(activeItem)}
                     className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-5 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
                   >
                     Open full article
@@ -344,9 +389,13 @@ export default function ArchiveScreen({
       </section>
 
       <RecordsArticleModal
-  article={expandedArticle && Array.isArray(expandedArticle.pages) ? expandedArticle : null}
-  onClose={() => setExpandedArticle(null)}
-/>
+        article={
+          expandedArticle && Array.isArray(expandedArticle.pages)
+            ? expandedArticle
+            : null
+        }
+        onClose={() => setExpandedArticle(null)}
+      />
     </>
   );
 }
