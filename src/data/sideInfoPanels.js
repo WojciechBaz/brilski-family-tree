@@ -9,6 +9,9 @@ const REGION_IMAGES = {
   parishModern: `${BASE_URL}region/przasnysz-parish-modern.jpg`,
   streetArchive: `${BASE_URL}region/przasnysz-street-archive.PNG`,
   townhallModern: `${BASE_URL}region/przasnysz-townhall-modern.jpg`,
+  brilski1: `${BASE_URL}region/brilski1.png`,
+  brilski2: `${BASE_URL}region/brilski2.png`,
+  brilski3: `${BASE_URL}region/brilski3.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -73,7 +76,7 @@ Seen in that way, Przasnysz and Leszno form part of a larger historical fabric. 
           {
             title: "This is a story of a name",
             subtitle: "Brejlak before emigration",
-            images: [],
+            images: [REGION_IMAGES.brilski1],
             content: `Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
 
 There is no way to know with certainty why the change happened. Was it a conscious decision made by Victor Brylski and Frank Brilski when they came in 1904, with the rest of the family simply following later? Was it the result of deeper cultural, historical, and linguistic processes already underway in Poland? Or perhaps a combination of both.
@@ -87,7 +90,7 @@ However, this explanation does not fully match what happened later. Over time, t
           {
             title: "A change already underway",
             subtitle: "Why Brylski may have existed in Poland first",
-            images: [],
+            images: [REGION_IMAGES.brilski2],
             content: `The second theory argues that the name Brylski was already in use in Poland before emigration, and several findings support this idea.
 
 In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej Brylski. A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Brilski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska.
@@ -103,7 +106,7 @@ The second part of the change—from -ak to -ski—is much more complex and tied
           {
             title: "From Brylski to Brilski",
             subtitle: "Polish, American, and linguistic influences",
-            images: [],
+            images: [REGION_IMAGES.brilski3],
             content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity.
 
 Changing names to more Polish-sounding forms could become a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
