@@ -34,13 +34,16 @@ export default function RecordsArticleModal({ article, onClose }) {
 
   if (!article) return null;
 
-  const currentPage = pages[pageIndex] ?? pages[0] ?? null;
+  const safePageIndex =
+    pages.length > 0 ? Math.min(pageIndex, pages.length - 1) : 0;
+
+  const currentPage = pages[safePageIndex] ?? null;
 
   const currentImages = useMemo(() => {
     if (!currentPage) return [];
 
     if (Array.isArray(currentPage.images) && currentPage.images.length > 0) {
-      return currentPage.images;
+      return currentPage.images.filter(Boolean);
     }
 
     if (currentPage.image) {
@@ -128,7 +131,7 @@ export default function RecordsArticleModal({ article, onClose }) {
                       {currentImages.length > 0 ? (
                         currentImages.map((imageSrc, imageIndex) => (
                           <div
-                            key={`${article.id ?? "article"}-${pageIndex}-image-${imageIndex}`}
+                            key={`${article.id ?? "article"}-${safePageIndex}-image-${imageIndex}`}
                             className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]"
                           >
                             <div className="aspect-[4/5] bg-[#120b07]">
@@ -153,9 +156,10 @@ export default function RecordsArticleModal({ article, onClose }) {
                       <div className="text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
                         Page
                       </div>
+
                       <div className="mt-2 text-sm text-[#ead7b0]/72">
                         {pages.length > 0
-                          ? `${String(pageIndex + 1).padStart(2, "0")} / ${String(
+                          ? `${String(safePageIndex + 1).padStart(2, "0")} / ${String(
                               pages.length
                             ).padStart(2, "0")}`
                           : "No pages"}
@@ -167,7 +171,7 @@ export default function RecordsArticleModal({ article, onClose }) {
                 <div className="max-h-[80vh] overflow-y-auto px-5 py-5 md:px-8 md:py-7">
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={`${article.id ?? "article"}-${pageIndex}`}
+                      key={`${article.id ?? "article"}-${safePageIndex}`}
                       initial={{ opacity: 0, y: 14 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -191,7 +195,7 @@ export default function RecordsArticleModal({ article, onClose }) {
                           <div
                             key={index}
                             className={`h-2.5 rounded-full transition-all ${
-                              index === pageIndex
+                              index === safePageIndex
                                 ? "w-8 bg-[#ead7b0]"
                                 : "w-2.5 bg-[#ead7b0]/22"
                             }`}

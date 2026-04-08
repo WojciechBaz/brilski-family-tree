@@ -344,9 +344,9 @@ export default function ArchiveScreen({
       </section>
 
       <RecordsArticleModal
-        article={expandedArticle}
-        onClose={() => setExpandedArticle(null)}
-      />
+  article={expandedArticle && Array.isArray(expandedArticle.pages) ? expandedArticle : null}
+  onClose={() => setExpandedArticle(null)}
+/>
     </>
   );
 }

@@ -1,14 +1,15 @@
 const BASE_URL = import.meta.env.BASE_URL;
+
 const PLACEHOLDER_IMAGE = `${BASE_URL}images/brilski-sepia.png`;
 
-const PRZASNYSZ_REGION_IMAGES = [
-  `${BASE_URL}region/przasnysz-market-1920s.jpg`,
-  `${BASE_URL}region/przasnysz-market-early.PNG`,
-  `${BASE_URL}region/przasnysz-parish-archive.jpg`,
-  `${BASE_URL}region/przasnysz-parish-modern.jpg`,
-  `${BASE_URL}region/przasnysz-street-archive.PNG`,
-  `${BASE_URL}region/przasnysz-townhall-modern.jpg`,
-];
+const REGION_IMAGES = {
+  market1920s: `${BASE_URL}region/przasnysz-market-1920s.jpg`,
+  marketEarly: `${BASE_URL}region/przasnysz-market-early.PNG`,
+  parishArchive: `${BASE_URL}region/przasnysz-parish-archive.jpg`,
+  parishModern: `${BASE_URL}region/przasnysz-parish-modern.jpg`,
+  streetArchive: `${BASE_URL}region/przasnysz-street-archive.PNG`,
+  townhallModern: `${BASE_URL}region/przasnysz-townhall-modern.jpg`,
+};
 
 const ARCHIVE_CHAPTERS = [
   {
@@ -31,23 +32,17 @@ const ARCHIVE_CHAPTERS = [
           {
             title: "Przasnysz and Leszno: A Concise Historical Overview",
             subtitle: "Regional introduction",
-            images: [
-              PRZASNYSZ_REGION_IMAGES[0],
-              PRZASNYSZ_REGION_IMAGES[1],
-            ],
-            content: `Przasnysz and Leszno belonged to a world shaped by parish life, local custom, agricultural rhythms, and the slow administrative order of the nineteenth century. For families rooted in this landscape, identity was recorded less through modern civil systems and more through church books, household continuity, village belonging, and kinship ties that stretched across neighboring communities.
+            images: [REGION_IMAGES.market1920s, REGION_IMAGES.marketEarly],
+            content: `Przasnysz and Leszno belonged to a world shaped by parish life, local custom, agricultural rhythms, and the slower administrative order of the nineteenth century. For families rooted in this landscape, identity was recorded less through modern civil systems and more through church books, household continuity, village belonging, and kinship ties stretching across neighboring communities.
 
-This article serves as a concise historical introduction to that environment. Its purpose is not only to frame the earliest family records geographically, but also to show the social and cultural setting in which those entries were created. Names found later in parish books or migration records did not emerge in isolation. They were part of a stable local world made of church structures, market links, inherited occupations, and long-standing community memory.
+This article serves as a concise historical introduction to that environment. Its purpose is not only to frame the earliest family records geographically, but also to show the social and cultural setting in which those entries were created. Names that later appear in parish books or migration records did not emerge in isolation. They belonged to a stable local world of church structures, market links, inherited occupations, and community memory.
 
-In this sense, Przasnysz and Leszno should be understood not simply as locations on a map, but as the background world of the archive itself: the place where identities were first anchored before later disruption, movement, and migration altered how the family appeared in the record.`,
+In that sense, Przasnysz and Leszno should be understood not simply as locations on a map, but as part of the background world of the archive itself: the place where identities were first anchored before later disruption, movement, and migration altered how the family appeared in the historical record.`,
           },
           {
             title: "Parish life and documentary continuity",
-            subtitle: "The church as the keeper of identity",
-            images: [
-              PRZASNYSZ_REGION_IMAGES[2],
-              PRZASNYSZ_REGION_IMAGES[3],
-            ],
+            subtitle: "The church as a keeper of identity",
+            images: [REGION_IMAGES.parishArchive, REGION_IMAGES.parishModern],
             content: `In nineteenth-century rural Poland, the parish often formed the strongest and most reliable framework of recorded identity. Baptisms, marriages, and deaths were preserved through church registers, which in practice became the backbone of family continuity across generations. For many families, the parish was not only a religious institution but also the main documentary anchor of existence.
 
 This matters for genealogical reconstruction because many early references to a family line survive precisely through that ecclesiastical structure. A surname might shift in spelling, a household might move slightly within the same area, and local usage might differ from formal notation, yet the parish record often preserves the thread that holds the branch together.
@@ -57,10 +52,7 @@ Understanding this local system helps explain why the earliest archive chapter i
           {
             title: "Town, market, and local movement",
             subtitle: "How regional life connected families",
-            images: [
-              PRZASNYSZ_REGION_IMAGES[4],
-              PRZASNYSZ_REGION_IMAGES[5],
-            ],
+            images: [REGION_IMAGES.streetArchive, REGION_IMAGES.townhallModern],
             content: `The region around Przasnysz was not isolated, even if daily life remained strongly local. Towns, parish centers, markets, roads, and neighboring settlements created regular points of contact through which families worked, traded, married, worshipped, and maintained wider ties. A market town was therefore more than a commercial location: it was one of the places where the rhythms of regional life became visible.
 
 For families that later appear scattered across records, this local interconnectedness is important. It reminds us that branch development in Old Poland did not happen in total isolation. Even when people remained close to home, their lives were shaped by movement between village and town, by church attendance, by economic exchange, and by the social habits of the district.
