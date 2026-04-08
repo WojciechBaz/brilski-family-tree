@@ -9,6 +9,30 @@ export default function RecordsArticleModal({ article, onClose }) {
     return article.pages;
   }, [article]);
 
+  const safePageIndex = useMemo(() => {
+    if (pages.length === 0) return 0;
+    return Math.min(pageIndex, pages.length - 1);
+  }, [pageIndex, pages]);
+
+  const currentPage = useMemo(() => {
+    if (pages.length === 0) return null;
+    return pages[safePageIndex] ?? null;
+  }, [pages, safePageIndex]);
+
+  const currentImages = useMemo(() => {
+    if (!currentPage) return [];
+
+    if (Array.isArray(currentPage.images) && currentPage.images.length > 0) {
+      return currentPage.images.filter(Boolean);
+    }
+
+    if (currentPage.image) {
+      return [currentPage.image];
+    }
+
+    return [];
+  }, [currentPage]);
+
   useEffect(() => {
     setPageIndex(0);
   }, [article]);
@@ -32,27 +56,6 @@ export default function RecordsArticleModal({ article, onClose }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [article, onClose, pages]);
 
-  if (!article) return null;
-
-  const safePageIndex =
-    pages.length > 0 ? Math.min(pageIndex, pages.length - 1) : 0;
-
-  const currentPage = pages[safePageIndex] ?? null;
-
-  const currentImages = useMemo(() => {
-    if (!currentPage) return [];
-
-    if (Array.isArray(currentPage.images) && currentPage.images.length > 0) {
-      return currentPage.images.filter(Boolean);
-    }
-
-    if (currentPage.image) {
-      return [currentPage.image];
-    }
-
-    return [];
-  }, [currentPage]);
-
   const goPrev = () => {
     if (pages.length === 0) return;
     setPageIndex((prev) => (prev === 0 ? pages.length - 1 : prev - 1));
@@ -62,6 +65,8 @@ export default function RecordsArticleModal({ article, onClose }) {
     if (pages.length === 0) return;
     setPageIndex((prev) => (prev === pages.length - 1 ? 0 : prev + 1));
   };
+
+  if (!article) return null;
 
   return (
     <AnimatePresence>
