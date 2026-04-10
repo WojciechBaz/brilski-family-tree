@@ -144,8 +144,8 @@ export default function ArchiveScreen({
 
       <section className="relative z-10 min-h-screen px-6 py-10 md:px-10 lg:px-14">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="rounded-[2.2rem] border border-[#b68a57]/24 bg-[linear-gradient(180deg,rgba(70,46,29,0.58),rgba(25,15,10,0.72))] p-7 shadow-[inset_0_0_40px_rgba(0,0,0,0.25)] backdrop-blur-sm md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+            <div className="rounded-[2rem] border border-[#b68a57]/24 bg-[linear-gradient(180deg,rgba(70,46,29,0.58),rgba(25,15,10,0.72))] p-6 shadow-[inset_0_0_40px_rgba(0,0,0,0.25)] backdrop-blur-sm md:p-7">
               <div className="flex items-start justify-between gap-6">
                 <div className="max-w-4xl">
                   <div className="text-[11px] uppercase tracking-[0.32em] text-[#d9bf8e]/62">
@@ -184,30 +184,30 @@ export default function ArchiveScreen({
                         Side notes
                       </div>
 
-                      <div className="grid gap-4 md:grid-cols-2">
+                      <div className="grid gap-3 md:grid-cols-2">
                         {SPECIAL_ARTICLES.map((article) => (
                           <button
                             key={article.id}
                             onClick={() => openArticle(article)}
-                            className="group relative overflow-hidden rounded-[1.6rem] border border-[#b68a57]/18 bg-[linear-gradient(180deg,rgba(56,36,24,0.56),rgba(29,18,12,0.7))] p-5 text-left transition hover:border-[#c79860]/28 hover:bg-[linear-gradient(180deg,rgba(64,42,28,0.62),rgba(33,21,14,0.76))]"
+                            className="group relative overflow-hidden rounded-[1.35rem] border border-[#b68a57]/18 bg-[linear-gradient(180deg,rgba(56,36,24,0.56),rgba(29,18,12,0.7))] p-4 text-left transition hover:border-[#c79860]/28 hover:bg-[linear-gradient(180deg,rgba(64,42,28,0.62),rgba(33,21,14,0.76))]"
                           >
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,187,134,0.08),transparent_50%)]" />
-                            <div className="absolute inset-[1px] rounded-[1.5rem] border border-[#f1d9ac]/[0.04]" />
+                            <div className="absolute inset-[1px] rounded-[1.25rem] border border-[#f1d9ac]/[0.04]" />
 
                             <div className="relative z-10">
-                              <div className="text-[11px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
+                              <div className="text-[10px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
                                 {article.label}
                               </div>
 
-                              <div className="mt-3 font-serif text-2xl leading-tight text-[#f0ddb4]">
+                              <div className="mt-2 font-serif text-xl leading-tight text-[#f0ddb4] md:text-[1.45rem]">
                                 {article.title}
                               </div>
 
-                              <div className="mt-3 text-sm leading-7 text-[#e8d6b0]/60">
+                              <div className="mt-2 text-sm leading-6 text-[#e8d6b0]/60">
                                 {article.subtitle}
                               </div>
 
-                              <div className="mt-5 inline-flex items-center rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/44 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-[#ead7b0]/70">
+                              <div className="mt-4 inline-flex items-center rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/44 px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] text-[#ead7b0]/70">
                                 Open article
                               </div>
                             </div>
