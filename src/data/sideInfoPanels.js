@@ -12,6 +12,8 @@ const REGION_IMAGES = {
   brilski1: `${BASE_URL}region/brilski1.png`,
   brilski2: `${BASE_URL}region/brilski2.png`,
   brilski3: `${BASE_URL}region/brilski3.png`,
+  stanislawanna: `${BASE_URL}region/4.slub stanislawa i anny 76.jpg`,
+  andrzejagnieszka:`${BASE_URL}region/slub andrzej brejlak agnieszka sobiesiak 27.jpg`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -121,38 +123,82 @@ Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
     },
   ],
 },
-      {
-        id: "brejlak",
-        year: "1840s",
-        label: "Family branch",
-        title: "Brejlak",
-        subtitle: "Early branch notes",
-        preview:
-          "A placeholder article space for the Brejlak family branch. This area can later hold the oldest known records, village references, and possible links to the wider line.",
-        pages: [
-          {
-            title: "Branch overview",
-            subtitle: "Earliest known outline",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This is a temporary first page for the Brejlak family branch. Later you can place here the broad overview of the family line, the oldest confirmed records, possible village ties, and the first working reconstruction of the branch.",
-          },
-          {
-            title: "Records and village context",
-            subtitle: "Parish and locality notes",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later hold specific parish references, surrounding local history, notes about handwriting, variants in spelling, and how the family appears in early records from the region.",
-          },
-          {
-            title: "Working interpretation",
-            subtitle: "Research notes",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "Use this page for uncertain links, theory building, branch reconstruction, and evidence interpretation. It works well for genealogical commentary that is too detailed for the short preview panel.",
-          },
-        ],
-      },
+{
+  id: "brejlak",
+  year: "1840s",
+  label: "Family branch",
+  title: "The Brejlak Family",
+  subtitle: "Early branch notes",
+  preview:
+    "A placeholder article space for the Brejlak family branch. This area can later hold the oldest known records, village references, and possible links to the wider line.",
+  pages: [
+    {
+      title: "The Brejlak Family",
+      subtitle: "Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak)",
+      images: [REGION_IMAGES.stanislawanna],
+      content: `Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak): “It happened in [place], on 9/21 November 1881, at 4 o’clock in the afternoon. In the presence of the witnesses, this day a religious marriage was concluded between Stanisław … and Anna …. The banns had been proclaimed on three occasions. No marriage contract was entered into. This act was read aloud to those present, and since they could not write, it was signed only by us.”
+
+Record number: 76
+
+Date of the act: written as 9 / 21 November and the year appears to be 1881
+Place: the heading looks like Leszno i Golany / Gołany or a very similar place name
+The marriage was performed in the presence of two witnesses
+The groom is Stanisław
+The bride is Anna
+The record states that the usual marriage banns were announced
+It also says that no prenuptial agreement was made
+At the end it notes that the document was read aloud, and because the newlyweds and witnesses were illiterate / unable to write, the act was signed only by the priest / registrar`,
+    },
+    {
+      title: "The Brejlak Family",
+      subtitle: "Marriage of Andrzej Brejlak and Agnieszka Brejlak (Sobiesiak)",
+      images: [REGION_IMAGES.andrzejagnieszka],
+      content: `"It happened in the town of Przasnysz on 21 October / 2 November 1888 at 2 o’clock in the afternoon.
+We make it known that in the presence of the witnesses, a religious marriage was contracted on this day between Andrzej Brejlak, a bachelor, born in the village of Leszno in the parish of Przasnysz, son of Franciszek and Stanisława Brejlak, residents of Leszno, remaining with his parents, nineteen years of age; and Agnieszka Sobiesiak, maiden, daughter of Jan Sobiesiak and [mother’s name unclear], born in Leszno, residing there with her parents, twenty-one years of age.
+This marriage was preceded by three banns proclaimed in the parish of Przasnysz. The oral consent of the parents present was given. No prenuptial agreement was concluded. This act was read aloud to the illiterate parties present and signed only by us."
+
+Marriage record no. 27
+
+Place: Przasnysz
+Date: 21 October / 2 November 1888, at 2 p.m.
+(the record uses the old/new style double date)
+
+This record states that, in the presence of witnesses, a religious marriage was concluded between:
+
+Groom
+
+Andrzej Brejlak / Brylak
+
+a bachelor
+born in the village of Leszno, parish of Przasnysz
+son of Franciszek (or a very similar name) Brejlak/Brylak and Stanisława
+his parents were living in Leszno
+he was 19 years old
+he was still living with his parents
+
+Bride
+
+Agnieszka Sobiesiak
+
+a maiden
+daughter of Jan Sobiesiak and Marianna / Małgorzata? (the mother’s name is hard to read)
+connected with Grochowice / Trochowice or a similarly spelled place
+born in Leszno
+living in Leszno
+she was 21 years old
+she was also still living with her parents
+
+Additional details
+The marriage was preceded by the three banns.
+The banns were announced on:
+16, 23, and 30 October old style
+corresponding to 28 October, 4 November, and 11 November new style
+The record says that the oral consent of the parents present was given.
+It also states that the couple did not make a prenuptial agreement.
+The act was read aloud to those present, and because they did not know how to write, it was signed only by the priest / registrar.`,
+    },
+  ],
+},
       {
         id: "wojcicki",
         year: "1850s",
