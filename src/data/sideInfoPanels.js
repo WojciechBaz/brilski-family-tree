@@ -36,31 +36,35 @@ const ARCHIVE_CHAPTERS = [
             title: "Przasnysz and Leszno: A Concise Historical Overview",
             subtitle: "Regional introduction",
             images: [REGION_IMAGES.market1920s, REGION_IMAGES.marketEarly],
-            content: `Przasnysz and Leszno belonged to a world shaped by parish life, local custom, agricultural rhythms, and the slower administrative order of the nineteenth century. For families rooted in this landscape, identity was recorded less through modern civil systems and more through church books, household continuity, village belonging, and kinship ties stretching across neighboring communities.
+            content: `Przasnysz and Leszno: A Concise Historical Overview
 
-This article serves as a concise historical introduction to that environment. Its purpose is not only to frame the earliest family records geographically, but also to show the social and cultural setting in which those entries were created. Names that later appear in parish books or migration records did not emerge in isolation. They belonged to a stable local world of church structures, market links, inherited occupations, and community memory.
+Przasnysz  /pshah-snish/
 
-In that sense, Przasnysz and Leszno should be understood not simply as locations on a map, but as part of the background world of the archive itself: the place where identities were first anchored before later disruption, movement, and migration altered how the family appeared in the historical record.`,
+Leszno /lesh-noh/
+
+Przasnysz is one of the oldest towns in northern Mazovia, with origins dating back to the Middle Ages. It received town rights in the 14th century and developed as a regional center of trade, crafts, and administration. Its position along local routes connecting Mazovia with northern Poland supported its steady growth. By the 18th and 19th centuries, Przasnysz functioned as a typical Mazovian market town, with a parish church, a town square, and a population composed of both Christian and Jewish residents.
+
+Leszno, located a short distance south of Przasnysz, has a documented history reaching back to the 16th century, with written references appearing as early as 1567. It originated as a small agricultural settlement forming part of the rural surroundings of Przasnysz. For centuries, Leszno remained a farming village, with its residents engaged primarily in agriculture and connected to Przasnysz for trade, religious life, and administrative matters.`,
           },
           {
-            title: "Parish life and documentary continuity",
-            subtitle: "The church as a keeper of identity",
+            title: "Przasnysz and Leszno: A Concise Historical Overview",
+            subtitle: "19th-century local life",
             images: [REGION_IMAGES.parishArchive, REGION_IMAGES.parishModern],
-            content: `In nineteenth-century rural Poland, the parish often formed the strongest and most reliable framework of recorded identity. Baptisms, marriages, and deaths were preserved through church registers, which in practice became the backbone of family continuity across generations. For many families, the parish was not only a religious institution but also the main documentary anchor of existence.
+            content: `During the second half of the 19th century, both Przasnysz and Leszno were part of the Russian Partition of Poland. Przasnysz served as a county seat, giving it administrative significance despite its modest size. The town contained government offices, a courthouse, and schools, and it hosted weekly markets and annual fairs that supported the local economy. Small workshops, trade in agricultural goods, and services for surrounding villages formed the basis of daily life.
 
-This matters for genealogical reconstruction because many early references to a family line survive precisely through that ecclesiastical structure. A surname might shift in spelling, a household might move slightly within the same area, and local usage might differ from formal notation, yet the parish record often preserves the thread that holds the branch together.
-
-Understanding this local system helps explain why the earliest archive chapter is built around villages, parish books, and branch origins. Before migration, family identity was often local first, administrative second, and only much later national or transatlantic in the way modern descendants would recognize it.`,
+Leszno in this period retained its traditional rural structure. Wooden farmhouses, barns, and fields lined the village road, and most families worked small plots of land. The agricultural calendar shaped the rhythm of life, and literacy remained limited among rural residents. The village relied on Przasnysz for church services, schooling, and commerce.`,
           },
           {
-            title: "Town, market, and local movement",
-            subtitle: "How regional life connected families",
+            title: "Przasnysz and Leszno: A Concise Historical Overview",
+            subtitle: "From modernization to the present day",
             images: [REGION_IMAGES.streetArchive, REGION_IMAGES.townhallModern],
-            content: `The region around Przasnysz was not isolated, even if daily life remained strongly local. Towns, parish centers, markets, roads, and neighboring settlements created regular points of contact through which families worked, traded, married, worshipped, and maintained wider ties. A market town was therefore more than a commercial location: it was one of the places where the rhythms of regional life became visible.
+            content: `At the beginning of the 20th century, the region experienced gradual modernization. Roads improved, new buildings appeared in Przasnysz, and small industries began to develop. However, the area remained largely agricultural. World War I brought significant disruption, as Przasnysz became the site of major battles in 1915, resulting in damage to the town and hardship for surrounding villages.
 
-For families that later appear scattered across records, this local interconnectedness is important. It reminds us that branch development in Old Poland did not happen in total isolation. Even when people remained close to home, their lives were shaped by movement between village and town, by church attendance, by economic exchange, and by the social habits of the district.
+Today, Przasnysz is a modern town that continues to serve as a local administrative and economic center. It has expanded beyond its historical core, with new residential areas, schools, businesses, and cultural institutions. The old town square and several historic buildings remain important landmarks, reflecting the town’s long history.
 
-Seen in that way, Przasnysz and Leszno form part of a larger historical fabric. They belong to the early world of the archive: a rooted landscape of parish memory, regional connection, and family continuity that existed before Atlantic migration began to transform how those same lives would later be recorded.`,
+Leszno has also evolved, though it retains its rural character. According to 2021 data, the village has a population of around 800 residents, with a nearly even distribution of men and women. This represents approximately 11.6% of the population of the entire municipality. Modern homes, paved roads, and improved infrastructure have transformed daily life, but the village continues to be surrounded by fields and farmland. Many residents commute to Przasnysz for work, education, and services, maintaining the long-standing connection between the two communities.
+
+Together, Przasnysz and Leszno illustrate the development of a Mazovian town and its surrounding villages from their early origins through the changes of the 19th and 20th centuries to the present day. Their history reflects broader regional patterns: agricultural traditions, gradual modernization, and the continuity of local identity.`,
           },
         ],
       },
