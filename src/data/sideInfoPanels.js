@@ -14,7 +14,8 @@ const REGION_IMAGES = {
   brilski3: `${BASE_URL}region/brilski3.png`,
   stanislawanna: `${BASE_URL}region/4.slub stanislawa i anny 76.jpg`,
   andrzejagnieszka: `${BASE_URL}region/slub andrzej brejlak agnieszka sobiesiak 27.jpg`,
-  balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm8(1).jpg`,
+  balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm8 (1).jpg`,
+  slubstananna:`${BASE_URL}region/slub st brejlak, mar dobrzynska 73 (1).jpg`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -224,6 +225,41 @@ the death was confirmed
 the act was read aloud
 and signed by the priest / registrar, because the witnesses were unable to write`,
           },
+          {
+  title: "Marriage of Stanisław Brejlak and Marianna Dobrzyńska",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.slubstananna],
+  content: `It happened in [Leszno / Przasnysz], on the stated date, in the presence of witnesses. On this day a religious marriage was concluded between Stanisław Brejlak, bachelor, son of Andrzej Brejlak, and Marianna Dobrzyńska, maiden, daughter of Józef Dobrzyński and Teresa. The banns had been proclaimed, no prenuptial agreement was entered into, and after the act was read aloud, it was signed by the officiating priest.
+
+Record no.: 21
+Place: Leszno / parish of Przasnysz
+Page: 110
+Type: marriage record
+
+From what can be read, this is the marriage of:
+
+Stanisław Brejlak
+Marianna Dobrzyńska
+
+Groom
+
+Stanisław Brejlak
+
+a bachelor
+son of Andrzej Brejlak
+connected with Leszno
+the text appears to say he was living there
+his age looks to be in the twenties, but the exact number is hard to read from this image
+
+Bride
+
+Marianna Dobrzyńska
+
+a maiden
+daughter of Józef Dobrzyński and Teresa Dobrzyńska
+also connected with Leszno
+her age also looks to be in the twenties, but I would not want to overstate the exact number without a closer crop`,
+},
         ],
       },
       {
