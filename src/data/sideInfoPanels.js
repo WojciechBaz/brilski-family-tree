@@ -14,8 +14,9 @@ const REGION_IMAGES = {
   brilski3: `${BASE_URL}region/brilski3.png`,
   stanislawanna: `${BASE_URL}region/4.slub stanislawa i anny 76.jpg`,
   andrzejagnieszka: `${BASE_URL}region/slub andrzej brejlak agnieszka sobiesiak 27.jpg`,
-  balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm8 (1).jpg`,
+  balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm 8 (1).jpg`,
   slubstananna:`${BASE_URL}region/slub st brejlak, mar dobrzynska 73 (1).jpg`,
+  teklaludwik: `${BASE_URL}region/1.slub Ludwika i Tekli 11 (1).jpg`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -266,18 +267,55 @@ her age also looks to be in the twenties, but I would not want to overstate the 
         id: "wojcicki",
         year: "1850s",
         label: "Family branch",
-        title: "Wojcicki",
+        title: "The Wojcicki Family",
         subtitle: "Regional and parish context",
         preview:
           "A placeholder article area for the Wojcicki family branch. Use this later for core records, church references, and local family structure before migration.",
         pages: [
           {
-            title: "Branch overview",
-            subtitle: "Family entry",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This is a placeholder first page for the Wojcicki branch. Later it can summarize the branch, its place in the wider archive, and the earliest strong records connected to the family.",
-          },
+  title: "Marriage of Ludwik Wójcicki and Tekla Rosiakówna",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.teklaludwik],
+  content: `It took place in Opinogóra Hrabska on 25 October / 6 November 1849, at one o’clock in the afternoon.
+We make it known that, in the presence of witnesses, a religious marriage was concluded on this day between Ludwik Wójcicki, a young man, son of Andrzej and Agnieszka Wójcicki, born in Brzaski or a similarly spelled village and residing there, twenty-nine years of age, and Tekla Rosiakówna, a maiden, daughter of Józef and Zofia Rosiak, born in Kotomań or a similarly spelled village and now residing in Duce / Ducze / Ducach, nineteen years of age.
+This marriage was preceded by three banns. No impediment was discovered. No prenuptial agreement was entered into. The act was read aloud to the persons present, and since they did not know how to write, it was signed only by the priest.
+
+Main details
+Record number: 11
+Place: Opinogóra Hrabska
+Date: 25 October / 6 November 1849
+Time: 1 p.m.
+
+Groom
+
+Ludwik Wójcicki
+
+described as a young man / bachelor
+son of Andrzej and Agnieszka Wójcicki
+apparently born in Brzaski / Brzaskach or a similarly spelled place
+apparently residing there as well
+29 years old
+
+Bride
+
+Tekla Rosiakówna
+
+described as a maiden
+daughter of Józef and Zofia Rosiak
+apparently born in Kotomań / Kotomania or a similarly spelled place
+at the time of the marriage apparently residing in Duce / Ducze / Ducach or a similarly spelled place
+19 years old
+
+What else the record says
+
+The act also states that:
+
+the marriage was preceded by three banns
+no impediment to the marriage was found
+no prenuptial agreement was made
+the act was read aloud to those present
+because the parties and witnesses could not write, it was signed only by the priest`,
+},
           {
             title: "Parish structure",
             subtitle: "Old Poland background",
@@ -298,7 +336,7 @@ her age also looks to be in the twenties, but I would not want to overstate the 
         id: "olszewski",
         year: "1870s",
         label: "Family branch",
-        title: "Olszewski",
+        title: "The Olszewski Family",
         subtitle: "Branch reconstruction",
         preview:
           "A placeholder article area for the Olszewski line. This can later contain branch identity, record connections, and local context from Old Poland.",
