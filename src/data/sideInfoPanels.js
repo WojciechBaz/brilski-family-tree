@@ -130,11 +130,11 @@ Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
   title: "The Brejlak Family",
   subtitle: "Early branch notes",
   preview:
-    "A placeholder article space for the Brejlak family branch. This area can later hold the oldest known records, village references, and possible links to the wider line.",
+    "A collection of original applications, translations, and documents related to the Brejlak family.",
   pages: [
     {
-      title: "The Brejlak Family",
-      subtitle: "Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak)",
+      title: "Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak)",
+      subtitle: "Written records",
       images: [REGION_IMAGES.stanislawanna],
       content: `Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak): “It happened in [place], on 9/21 November 1881, at 4 o’clock in the afternoon. In the presence of the witnesses, this day a religious marriage was concluded between Stanisław … and Anna …. The banns had been proclaimed on three occasions. No marriage contract was entered into. This act was read aloud to those present, and since they could not write, it was signed only by us.”
 
@@ -150,8 +150,8 @@ It also says that no prenuptial agreement was made
 At the end it notes that the document was read aloud, and because the newlyweds and witnesses were illiterate / unable to write, the act was signed only by the priest / registrar`,
     },
     {
-      title: "The Brejlak Family",
-      subtitle: "Marriage of Andrzej Brejlak and Agnieszka Brejlak (Sobiesiak)",
+      title: "Marriage of Andrzej Brejlak and Agnieszka Brejlak (Sobiesiak)",
+      subtitle: "Written records",
       images: [REGION_IMAGES.andrzejagnieszka],
       content: `"It happened in the town of Przasnysz on 21 October / 2 November 1888 at 2 o’clock in the afternoon.
 We make it known that in the presence of the witnesses, a religious marriage was contracted on this day between Andrzej Brejlak, a bachelor, born in the village of Leszno in the parish of Przasnysz, son of Franciszek and Stanisława Brejlak, residents of Leszno, remaining with his parents, nineteen years of age; and Agnieszka Sobiesiak, maiden, daughter of Jan Sobiesiak and [mother’s name unclear], born in Leszno, residing there with her parents, twenty-one years of age.
