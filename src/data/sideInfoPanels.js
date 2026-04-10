@@ -69,62 +69,58 @@ Together, Przasnysz and Leszno illustrate the development of a Mazovian town and
         ],
       },
       {
-        id: "story-of-a-name",
-        year: "Late 19th c. – 1904+",
-        label: "Article",
-        title: "This is a story of a name",
-        subtitle: "From Brejlak to Brylski and Brilski",
-        preview:
-          "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
-        pages: [
-          {
-            title: "This is a story of a name",
-            subtitle: "Brejlak before emigration",
-            images: [REGION_IMAGES.brilski1],
-            content: `Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
+  id: "story-of-a-name",
+  year: "Late 19th c. – 1904+",
+  label: "Article",
+  title: "This is a story of a name",
+  subtitle: "From Brejlak to Brylski and Brilski",
+  preview:
+    "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
+  pages: [
+    {
+      title: "This is a story of a name",
+      subtitle: "Brejlak before emigration",
+      images: [REGION_IMAGES.brilski1],
+      content: `This is a story of a name
 
-There is no way to know with certainty why the change happened. Was it a conscious decision made by Victor Brylski and Frank Brilski when they came in 1904, with the rest of the family simply following later? Was it the result of deeper cultural, historical, and linguistic processes already underway in Poland? Or perhaps a combination of both.
+Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
 
-We will probably never know the exact moment or motivation, but we can explore the most likely explanations by looking at the broader context.
+There is no way to know with certainty why the change happened. Was it a conscious decision made by Victor Brylski and Frank Brilski, when they came in 1904 with the rest of the family simply following later? Was it the result of deeper cultural, historical, and linguistic processes already underway in Poland? Or perhaps a combination of both. We will probably never know the exact moment or motivation, but we can explore the most likely explanations by looking at the broader context.
 
 The first theory suggests that the surname change was a clear, deliberate shift that took place after the first family members arrived in the United States in 1904. This would not have been unusual. Many immigrants modified their surnames to simplify pronunciation, to fit English spelling patterns, or because the new form felt more practical in everyday American life. The ending -ski is strongly associated with Polish identity, so choosing Brylski or Brilski may have also been a way to signal their origins within Polish communities.
 
-However, this explanation does not fully match what happened later. Over time, the family went through naturalization, joined the U.S. military, and did not emphasize their Polish heritage. This makes it less likely that the change was motivated purely by a desire to highlight Polish identity and traditions.`,
-          },
-          {
-            title: "A change already underway",
-            subtitle: "Why Brylski may have existed in Poland first",
-            images: [REGION_IMAGES.brilski2],
-            content: `The second theory argues that the name Brylski was already in use in Poland before emigration, and several findings support this idea.
+However, this explanation does not fully match what happened later. Over time, the family went through naturalization, joined the U.S. military, and did not ephasize their Polish heritage. This makes it less likely that the change was motivated purely by a desire to highlight their Polish identity and traditions.`,
+    },
+    {
+      title: "A change already underway",
+      subtitle: "Why Brylski may have existed in Poland first",
+      images: [REGION_IMAGES.brilski2],
+      content: `The second theory argues that the name Brylski was already in use in Poland before emigration and several findings support this idea:
 
-In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej Brylski. A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Brilski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska.
+In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej  A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Blirski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska. This gradual shift strongly supports the idea that the transformation began before emigration.
 
-This gradual shift strongly supports the idea that the transformation began before emigration.
+How did Brejlak became Brylski tho?
 
-How did Brejlak become Brylski, though?
-
-The first part of the change—from Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination “ej” can be pronounced closer to “y,” making Brejlak sound more like Brylak. Especially in a heavily Russian-influenced environment, softer or altered pronunciation patterns may have been encouraged.
+The first part of the change—Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination ej can be pronounced closer to y, making Brejlak sound like Brylak. Especially in heavily russian influenced environment the softer way of pronouncing was encouraged.
 
 The second part of the change—from -ak to -ski—is much more complex and tied to the political and cultural situation of the late nineteenth century.`,
-          },
-          {
-            title: "From Brylski to Brilski",
-            subtitle: "Polish, American, and linguistic influences",
-            images: [REGION_IMAGES.brilski3],
-            content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity.
+    },
+    {
+      title: "From Brylski to Brilski",
+      subtitle: "Polish, American, and linguistic influences",
+      images: [REGION_IMAGES.brilski3],
+      content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity. Changing names to Polish-sounding forms became a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
 
-Changing names to more Polish-sounding forms could become a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
+The transition from Brylski to Brilski likely occurred later, most probably in the United States. The change from “y” to “i” fits English spelling habits making Brilski an Americanized verison of he nameki. The form Brylski is linguistically more natural in Polish, as the consonant cluster “bryl” fits typical phonetic patterns, whereas “bril” is unusual and does not sound natural in Polish usage.
 
-The transition from Brylski to Brilski likely occurred later, most probably in the United States. The change from “y” to “i” fits English spelling habits, making Brilski an Americanized version of the name. The form Brylski is linguistically more natural in Polish, as the consonant cluster “bryl” fits typical phonetic patterns, whereas “bril” is unusual and does not sound natural in Polish usage.
+What is clear is that the family consistently preferred the Brylski/Brilski form once they arrived in the United States. The name Brejlak appears only on the official passenger lists of the ship—such as for Leonora, and Władysław, siblings of Frank Brilski and the family of Victor Brylski—but never again in American records.
 
-What is clear is that the family consistently preferred the Brylski/Brilski form once they arrived in the United States. The name Brejlak appears only on the official passenger lists of the ship—such as for Leonora and Władysław, siblings of Frank Brilski, and the family of Victor Brylski—but never again in American records.
-
-The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexisted, linguistic and political factors encouraged variation, and both Polish and American environments contributed to the evolution.
+The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexist, linguistic and political factors encouraged variations, and both Polish and American environments contributed to the evolution.
 
 Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
-          },
-        ],
-      },
+    },
+  ],
+},
       {
         id: "brejlak",
         year: "1840s",
