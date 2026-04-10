@@ -13,7 +13,8 @@ const REGION_IMAGES = {
   brilski2: `${BASE_URL}region/brilski2.png`,
   brilski3: `${BASE_URL}region/brilski3.png`,
   stanislawanna: `${BASE_URL}region/4.slub stanislawa i anny 76.jpg`,
-  andrzejagnieszka:`${BASE_URL}region/slub andrzej brejlak agnieszka sobiesiak 27.jpg`,
+  andrzejagnieszka: `${BASE_URL}region/slub andrzej brejlak agnieszka sobiesiak 27.jpg`,
+  balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm8(1).jpg`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -71,19 +72,19 @@ Together, Przasnysz and Leszno illustrate the development of a Mazovian town and
         ],
       },
       {
-  id: "story-of-a-name",
-  year: "Late 19th c. – 1904+",
-  label: "Article",
-  title: "This is a story of a name",
-  subtitle: "From Brejlak to Brylski and Brilski",
-  preview:
-    "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
-  pages: [
-    {
-      title: "This is a story of a name",
-      subtitle: "Brejlak before emigration",
-      images: [REGION_IMAGES.brilski1],
-      content: `This is a story of a name
+        id: "story-of-a-name",
+        year: "Late 19th c. – 1904+",
+        label: "Article",
+        title: "This is a story of a name",
+        subtitle: "From Brejlak to Brylski and Brilski",
+        preview:
+          "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
+        pages: [
+          {
+            title: "This is a story of a name",
+            subtitle: "Brejlak before emigration",
+            images: [REGION_IMAGES.brilski1],
+            content: `This is a story of a name
 
 Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
 
@@ -92,12 +93,12 @@ There is no way to know with certainty why the change happened. Was it a conscio
 The first theory suggests that the surname change was a clear, deliberate shift that took place after the first family members arrived in the United States in 1904. This would not have been unusual. Many immigrants modified their surnames to simplify pronunciation, to fit English spelling patterns, or because the new form felt more practical in everyday American life. The ending -ski is strongly associated with Polish identity, so choosing Brylski or Brilski may have also been a way to signal their origins within Polish communities.
 
 However, this explanation does not fully match what happened later. Over time, the family went through naturalization, joined the U.S. military, and did not ephasize their Polish heritage. This makes it less likely that the change was motivated purely by a desire to highlight their Polish identity and traditions.`,
-    },
-    {
-      title: "A change already underway",
-      subtitle: "Why Brylski may have existed in Poland first",
-      images: [REGION_IMAGES.brilski2],
-      content: `The second theory argues that the name Brylski was already in use in Poland before emigration and several findings support this idea:
+          },
+          {
+            title: "A change already underway",
+            subtitle: "Why Brylski may have existed in Poland first",
+            images: [REGION_IMAGES.brilski2],
+            content: `The second theory argues that the name Brylski was already in use in Poland before emigration and several findings support this idea:
 
 In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej  A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Blirski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska. This gradual shift strongly supports the idea that the transformation began before emigration.
 
@@ -106,12 +107,12 @@ How did Brejlak became Brylski tho?
 The first part of the change—Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination ej can be pronounced closer to y, making Brejlak sound like Brylak. Especially in heavily russian influenced environment the softer way of pronouncing was encouraged.
 
 The second part of the change—from -ak to -ski—is much more complex and tied to the political and cultural situation of the late nineteenth century.`,
-    },
-    {
-      title: "From Brylski to Brilski",
-      subtitle: "Polish, American, and linguistic influences",
-      images: [REGION_IMAGES.brilski3],
-      content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity. Changing names to Polish-sounding forms became a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
+          },
+          {
+            title: "From Brylski to Brilski",
+            subtitle: "Polish, American, and linguistic influences",
+            images: [REGION_IMAGES.brilski3],
+            content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity. Changing names to Polish-sounding forms became a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
 
 The transition from Brylski to Brilski likely occurred later, most probably in the United States. The change from “y” to “i” fits English spelling habits making Brilski an Americanized verison of he nameki. The form Brylski is linguistically more natural in Polish, as the consonant cluster “bryl” fits typical phonetic patterns, whereas “bril” is unusual and does not sound natural in Polish usage.
 
@@ -120,23 +121,23 @@ What is clear is that the family consistently preferred the Brylski/Brilski form
 The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexist, linguistic and political factors encouraged variations, and both Polish and American environments contributed to the evolution.
 
 Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
-    },
-  ],
-},
-{
-  id: "brejlak",
-  year: "1840s",
-  label: "Family branch",
-  title: "The Brejlak Family",
-  subtitle: "Early branch notes",
-  preview:
-    "A collection of original applications, translations, and documents related to the Brejlak family.",
-  pages: [
-    {
-      title: "Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak)",
-      subtitle: "Written records",
-      images: [REGION_IMAGES.stanislawanna],
-      content: `Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak): “It happened in [place], on 9/21 November 1881, at 4 o’clock in the afternoon. In the presence of the witnesses, this day a religious marriage was concluded between Stanisław … and Anna …. The banns had been proclaimed on three occasions. No marriage contract was entered into. This act was read aloud to those present, and since they could not write, it was signed only by us.”
+          },
+        ],
+      },
+      {
+        id: "brejlak",
+        year: "1840s",
+        label: "Family branch",
+        title: "The Brejlak Family",
+        subtitle: "Early branch notes",
+        preview:
+          "A collection of original applications, translations, and documents related to the Brejlak family.",
+        pages: [
+          {
+            title: "Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak)",
+            subtitle: "Written records",
+            images: [REGION_IMAGES.stanislawanna],
+            content: `“It happened in [place], on 9/21 November 1881, at 4 o’clock in the afternoon. In the presence of the witnesses, this day a religious marriage was concluded between Stanisław … and Anna …. The banns had been proclaimed on three occasions. No marriage contract was entered into. This act was read aloud to those present, and since they could not write, it was signed only by us.”
 
 Record number: 76
 
@@ -148,12 +149,12 @@ The bride is Anna
 The record states that the usual marriage banns were announced
 It also says that no prenuptial agreement was made
 At the end it notes that the document was read aloud, and because the newlyweds and witnesses were illiterate / unable to write, the act was signed only by the priest / registrar`,
-    },
-    {
-      title: "Marriage of Andrzej Brejlak and Agnieszka Brejlak (Sobiesiak)",
-      subtitle: "Written records",
-      images: [REGION_IMAGES.andrzejagnieszka],
-      content: `"It happened in the town of Przasnysz on 21 October / 2 November 1888 at 2 o’clock in the afternoon.
+          },
+          {
+            title: "Marriage of Andrzej Brejlak and Agnieszka Brejlak (Sobiesiak)",
+            subtitle: "Written records",
+            images: [REGION_IMAGES.andrzejagnieszka],
+            content: `"It happened in the town of Przasnysz on 21 October / 2 November 1888 at 2 o’clock in the afternoon.
 We make it known that in the presence of the witnesses, a religious marriage was contracted on this day between Andrzej Brejlak, a bachelor, born in the village of Leszno in the parish of Przasnysz, son of Franciszek and Stanisława Brejlak, residents of Leszno, remaining with his parents, nineteen years of age; and Agnieszka Sobiesiak, maiden, daughter of Jan Sobiesiak and [mother’s name unclear], born in Leszno, residing there with her parents, twenty-one years of age.
 This marriage was preceded by three banns proclaimed in the parish of Przasnysz. The oral consent of the parents present was given. No prenuptial agreement was concluded. This act was read aloud to the illiterate parties present and signed only by us."
 
@@ -196,9 +197,35 @@ corresponding to 28 October, 4 November, and 11 November new style
 The record says that the oral consent of the parents present was given.
 It also states that the couple did not make a prenuptial agreement.
 The act was read aloud to those present, and because they did not know how to write, it was signed only by the priest / registrar.`,
-    },
-  ],
-},
+          },
+          {
+            title: "Death record for Balbina Łukasiak (Brejlak)",
+            subtitle: "Written records",
+            images: [REGION_IMAGES.balbinalukasiak],
+            content: `"It happened in the town of Przasnysz on the ninth day of January, one thousand eight hundred fifty, at [the stated hour]. There appeared Michał Łukasiak, forty years of age, and [second witness, name unclear], thirty years of age, both farmers from the village of Leszno, and declared that yesterday at eight o’clock in the morning there died in Leszno Balbina Łukasiak, thirty years of age, daughter of the late Andrzej Brejlak and Agnieszka, his surviving wife, leaving behind her widowed husband Jakub Łukasiak. After visual confirmation of Balbina’s death, this act was read aloud and signed by us only"
+
+Record no.: 8
+Place: Przasnysz
+Date of the act: 9 January 1850
+Reported by: two men from Leszno, including Michał Łukasiak, age about 40, and another witness whose name is harder to read
+
+The record says that:
+
+yesterday at 8 in the morning
+in the village of Leszno
+Balbina Łukasiak died
+she was 30 years old
+she was the daughter of the late Andrzej Brejlak and Agnieszka, his widow / surviving wife
+she left behind her husband Jakub Łukasiak
+
+At the end, it says the usual formula that:
+
+the death was confirmed
+the act was read aloud
+and signed by the priest / registrar, because the witnesses were unable to write`,
+          },
+        ],
+      },
       {
         id: "wojcicki",
         year: "1850s",
@@ -472,7 +499,7 @@ The act was read aloud to those present, and because they did not know how to wr
 const SPECIAL_ARTICLES = [
   {
     id: "a-word-for-matt",
-    year: "Today",
+    year: "2026",
     label: "Author note",
     title: "A Word for Matt",
     subtitle: "An opening note to a friend",
@@ -481,33 +508,21 @@ const SPECIAL_ARTICLES = [
     pages: [
       {
         title: "A Word for Matt",
-        subtitle: "How this all began",
+        subtitle: "An opening note to a friend",
         images: [],
-        content: `We honestly did not think this would turn into such a big thing. It all started pretty casually with a simple question: does the surname Brilski even exist in Poland? Because, apart from the ending, it did not really sound Polish. That was it. Just a bit of curiosity — and, well, look where it got us.
+        content: `We honestly didn’t think this would turn into such a big thing. It all started pretty casually with a question: does the surname Brilski even exist in Poland? Because it sure doesn't sound Polish, except for the ending. That was it. Just a bit of curiosity and well, look where it got us.
 
-I knew you had always been curious about your Polish roots, so we started digging. Before long, we found ourselves moving through archives, old records, church books, registers, and both Polish and American databases. We also horribly abused, misused, and overused ChatGPT, but honestly, I do not think we would have managed without it.
+I knew you were always curious about your Polish roots  so we started digging and soon enough   we were going through archives, old records, church books, registers, Polish and American databases. We also horribly abused, misused and overused ChatGTP, but honestly we wouldn't have managed without it.
 
-At first, small pieces seemed to form a bigger picture — or at least so we thought. Because with every extra hour and every new document, we often ended up more confused than before. And so it went, step by step, date by date, record by record.`,
-      },
-      {
-        title: "Trying to build the bigger picture",
-        subtitle: "What this archive is and what it is not",
-        images: [],
-        content: `What we are sharing here is based on all the documents and records we were lucky enough to find. At the same time, we also tried to build a larger picture around them by adding historical, cultural, and linguistic context, especially the context of Poland in the late nineteenth and early twentieth century.
+Small pieces started forming a bigger picture or usually so we thought. Because with every extra hour and every new document, we often ended up more confused than before. And so it went, step by step, date by date, record by record.
 
-I will not lie — we got pretty invested in this project, and it cost us a fair number of minor mental breakdowns. But it was worth it. There was something genuinely exciting in discovering the story piece by piece and trying to understand what happened, when it happened, and why.
+What we’re sharing here is based on all the documents and records we were lucky enough to find. We did try to build a bigger picture tho, adding the historical, cultural, and linguistic context, especially of Poland in the late 19th and early 20th century.
 
-We did our best to make sense of everything and connect the dots. At some point, though, we also had to accept that we might never know the full story.`,
-      },
-      {
-        title: "An incomplete story, still worth telling",
-        subtitle: "What we hope you find here",
-        images: [],
-        content: `We know this history is not complete. There are gaps, inconsistencies, and quite possibly a few things we got wrong. That is part of the nature of this kind of work. The past rarely survives in a neat and orderly way, and family history is often preserved through fragments rather than certainty.
+I will not lie, we got pretty invested in this project and it did cost us a fair amount of mental breakdowns but it was worth it. We had fun discovering the story piece by piece and trying to figure out what happened, when, and why. We did our best to make sense of everything and connect the dots, but eventually, we had to accept that we might never know the full story.
 
-Still, we wanted to bring everything together into one story and give you at least some of the answers you were looking for. Even if the archive cannot recover every missing detail, it can still restore connections, preserve memory, and make the past feel a little less distant.
+We know this history isn’t complete. There are gaps, inconsistencies, and possibly, we got a few things wrong. But we did our best to bring everything together into one story to give you some of the answers. Hopefully you will find here at least a little bit of what you were looking for.
 
-Hopefully, somewhere in these pages, you will find at least a little of what you came looking for.`,
+Ola & Wojtek`,
       },
     ],
   },
