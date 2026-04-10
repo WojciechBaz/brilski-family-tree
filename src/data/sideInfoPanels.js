@@ -17,6 +17,7 @@ const REGION_IMAGES = {
   balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm 8 (1).jpg`,
   slubstananna:`${BASE_URL}region/slub st brejlak, mar dobrzynska 73 (1).jpg`,
   teklaludwik: `${BASE_URL}region/1.slub Ludwika i Tekli 11 (1).jpg`,
+  ludwikur: `${BASE_URL}region/ludwik wojcicki ur 28 (1).jpg`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -317,12 +318,31 @@ the act was read aloud to those present
 because the parties and witnesses could not write, it was signed only by the priest`,
 },
           {
-            title: "Parish structure",
-            subtitle: "Old Poland background",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later describe church life, regional structure, local marriage patterns, and how the branch appears in parish material before migration reshapes the archive.",
-          },
+  title: "Baptism record of Ludwik Wójcicki",
+  subtitle: "Family entry",
+  images: [REGION_IMAGES.ludwikur],
+  content: `It happened in Opinogóra Hrabska, on the twelfth day of October in the year one thousand eight hundred twenty-nine, at the first hour after noon.
+
+There appeared Andrzej Wójcicki, owner of a part [of the village / estate], residing in Baraki Hrabskie, forty-one years of age, in the presence of Stanisław Pasierbik, forty-five years of age, and Józefa Siedlecka, thirty years of age, living in Baraki Hrabskie, and he showed to us a child of the male sex, born in the village of Baraki on the fifteenth day of September of this year, at the twelfth hour of the night, of his wife Agnieszka née Wiśniewska, thirty-three years of age.
+
+To this child, at holy baptism performed today, the name Ludwik was given, and his godparents were the above-mentioned Stanisław Pasierbik and Józefa Siedlecka.
+
+This document was read aloud to the declarant and the witnesses, and as they do not know how to write, it was signed by us only.
+
+[signed]
+Fr. Łukasz Karniewski
+Curate / parish administrator of the chapel of Opinogóra
+
+Key facts from the record
+Child: Ludwik Wójcicki
+Father: Andrzej Wójcicki, age 41
+Mother: Agnieszka née Wiśniewska, age 33
+Birth date: 15 September 1829
+Birth time: 12 at night
+Record / baptism date: 12 October 1829
+Place: Baraki / Baraki Hrabskie, act recorded in Opinogóra Hrabska
+Godparents: Stanisław Pasierbik and Józefa Siedlecka`,
+},
           {
             title: "Research notes",
             subtitle: "Open questions",
