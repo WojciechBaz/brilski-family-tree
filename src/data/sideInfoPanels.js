@@ -18,6 +18,12 @@ const REGION_IMAGES = {
   slubstananna: `${BASE_URL}region/slub st brejlak, mar dobrzynska 73 (1).jpg`,
   teklaludwik: `${BASE_URL}region/1.slub Ludwika i Tekli 11 (1).jpg`,
   ludwikur: `${BASE_URL}region/ludwik wojcicki ur 28 (1).jpg`,
+  annaolszewska343: `${BASE_URL}region/Anna Olszewska 343.jpg`,
+  nikodemdobrzynski255: `${BASE_URL}region/Nikodem_Dobrzynski_255.png`,
+  antoninadobrzanska: `${BASE_URL}region/antoninadobrzanska.png`,
+  ezechiel: `${BASE_URL}region/ezechiel dobrzynski.png`,
+  stanislawdobrzanski: `${BASE_URL}region/sanislaw dobrzynski urodzenie.png`,
+  mariannadobrzynska: `${BASE_URL}region/Marianna DObrzynska urodzenie.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -354,14 +360,7 @@ This record is especially valuable because it gives a precise birth date, names 
 
 As in many records from the period, the closing formula states that the act was read aloud and signed only by the priest because the declarant and witnesses were unable to write.`,
           },
-          {
-            title: "Research notes",
-            subtitle: "Open questions",
-            images: [PLACEHOLDER_IMAGE],
-            content: `This branch is now arranged in the same documentary format as the other family sections: first a full translated note, then the main facts drawn directly from the record, and finally additional observations or uncertainties.
-
-Future additions to this page can include further translated acts for the Wójcicki line, place-name clarifications, links to neighboring households, and any notes needed to explain spelling differences or uncertain readings without disrupting the main structure of the branch.`,
-          },
+  
         ],
       },
       {
@@ -371,46 +370,43 @@ Future additions to this page can include further translated acts for the Wójci
         title: "The Olszewski Family",
         subtitle: "Branch reconstruction",
         preview:
-          "A working branch prepared in the same format as the other family sections: full translated records first, followed by main details and additional notes.",
+          "A collection of original applications, translations, and documents related to the Olszewski family.",
         pages: [
           {
-            title: "Branch overview",
-            subtitle: "Document structure",
-            images: [PLACEHOLDER_IMAGE],
-            content: `This branch is intended to follow the same structure as the other family sections in the archive. Each future entry should begin with a full translated note of the original document, followed by a short section containing the main factual details, and then a final section for additional notes, uncertainties, or genealogical interpretation.
+  title: "Birth of Anna Olszewska",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.annaolszewska343],
+  content: `It took place in the town of Przasnysz on an unspecified day in the year 19— (exact date difficult to read from the scan). We make it known that, in the presence of witnesses, a declaration was made of the birth of a female child. The child was given the name Anna and the surname Olszewska.
 
-That format makes the archive easier to read and compare across branches. It also helps separate what is directly stated in the source from what is later inferred through research.`,
-          },
-          {
-            title: "Document layer",
-            subtitle: "Record connections",
-            images: [PLACEHOLDER_IMAGE],
-            content: `As records are added for the Olszewski family, this page can hold the translated acts themselves in the standard format:
+The father, most likely Adam Olszewski (the name is partially unclear due to handwriting), appeared before the registrar and presented the child. The mother’s name is also recorded in the act, though it is difficult to read with certainty; it appears to be Marianna or a similar form. The record follows the standard structure of civil birth registrations of the period.
 
-Full translated note
+The act was read aloud to those present. As is often the case in such records, the participants may not have signed the document personally due to lack of literacy, and the act was formally completed by the registrar.
 
 Main details
-Record number
-Date
-Place
-Type of act
-Persons named in the record
+
+Record number: 343
+Place: Przasnysz
+Date: early 20th century (exact day unclear from scan)
+Type: birth record
+
+Persons named in the act
+
+Child: Anna Olszewska
+Sex: female
+
+Father: Adam Olszewski (reading uncertain)
+Role: declarant / father
+
+Mother: Marianna (surname likely Olszewska; exact maiden name unclear)
+Role: mother
 
 Additional notes
-Uncertain readings
-Possible links to other households
-Interpretive remarks based on related records
 
-Using the same structure throughout the branch will keep this family section visually and narratively consistent with the Brejlak and Wójcicki entries.`,
-          },
-          {
-            title: "Context and notes",
-            subtitle: "Working archive",
-            images: [PLACEHOLDER_IMAGE],
-            content: `This page is reserved for branch-specific observations that do not belong inside a single translated act. It can include surname variants, unresolved place readings, possible family links, and broader reconstruction notes.
+This is a standard civil birth record from Przasnysz. Some names and details remain uncertain due to the quality of the scan and the handwritten cursive script.
 
-Even when this page is expanded later, the goal should remain the same: the core record pages should always begin with the translated source itself, while contextual or interpretive material should come after it in clearly separated sections.`,
-          },
+Despite these limitations, the key information is clear: the document records the birth of Anna Olszewska, daughter of Olszewski parents, registered in Przasnysz under record number 343.`
+},
+         
         ],
       },
       {
@@ -422,27 +418,181 @@ Even when this page is expanded later, the goal should remain the same: the core
         preview:
           "A placeholder article area for the Dobrzanski line. This section can later hold branch background, source notes, and family connections.",
         pages: [
+   {
+  title: "Birth of Nikodem Dobrzanski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.nikodemdobrzynski255],
+  content: `It took place in the town of Przasnysz on an unspecified day in the late 19th century (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a declaration was made of the birth of a male child. The child was given the name Nikodem and the surname Dobrzanski.
+
+The father, Józef Dobrzanski, appeared before the registrar and presented the child. The mother of the child was Teresa Dobrzanska. The record follows the standard structure of civil birth registrations of the period.
+
+The act was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 255
+Place: Przasnysz
+Date: late 19th century (exact day unclear from scan)
+Type: birth record
+
+Persons named in the act
+
+Child: Nikodem Dobrzanski
+Sex: male
+
+Father: Józef Dobrzanski
+Role: declarant / father
+
+Mother: Teresa Dobrzanska
+Role: mother
+
+Additional notes
+
+This is a standard civil birth record from Przasnysz. Some details, such as the exact date and names of witnesses, remain difficult to read due to the handwritten cursive script.
+
+Despite these limitations, the key information is clear: the document records the birth of Nikodem Dobrzanski, son of Józef and Teresa, registered in Przasnysz under record number 255.`
+},
+         {
+  title: "Birth of Antonina Dobrzanska",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.antoninadobrzanska],
+  content: `It took place in the town of Przasnysz on the twentieth day of January in the year 1843, at eight o’clock in the morning. We make it known that, in the presence of witnesses, a declaration was made of the birth of a female child.
+
+The father, Józef Dobrzanski, a laborer residing in Przasnysz, appeared before the registrar and presented the child. The child was born on the eighteenth day of January of the same year, at four o’clock in the morning. The mother of the child was Teresa Dobrzanska, his wife.
+
+The child was given the name Antonina. The act follows the standard structure of civil birth registrations of the period and was read aloud to those present and signed by the registrar.
+
+Main details
+
+Record number: 3
+Place: Przasnysz
+Date of registration: 20 January 1843
+Date of birth: 18 January 1843
+Time of birth: 4 a.m.
+Type: birth record
+
+Persons named in the act
+
+Child: Antonina Dobrzanska
+Sex: female
+
+Father: Józef Dobrzanski
+Occupation: laborer
+Residence: Przasnysz
+Role: declarant / father
+
+Mother: Teresa Dobrzanska
+Role: mother
+
+Additional notes
+
+This is a clear and well-preserved civil birth record from Przasnysz. The document explicitly states both the date and time of birth, as well as the parents of the child.
+
+The father, Józef Dobrzanski, is identified as a laborer, which provides additional social context for the family. The record confirms the birth of Antonina Dobrzanska as the daughter of Józef and Teresa, making it a strong genealogical reference point for the Dobrzanski family line in the region.`
+},
           {
-            title: "Branch overview",
-            subtitle: "Family entry",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This is a placeholder opening page for the Dobrzanski family branch. Later it can present the main branch summary and key genealogical anchors.",
-          },
-          {
-            title: "Sources and evidence",
-            subtitle: "Archive material",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later hold evidence notes, parish references, linked documents, and branch-specific observations drawn from your research.",
-          },
-          {
-            title: "Interpretation",
-            subtitle: "Working branch notes",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "Use this page for interpretation, uncertain relationships, branch reconstruction, and long-form explanatory text.",
-          },
+  title: "Death of Ezechiel Dobrzanski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.ezechiel],
+  content: `It took place in the town of Przasnysz on the fourth day of September in the year 1860, at ten o’clock in the morning. We make it known that, in the presence of witnesses, a declaration was made of the death of Ezechiel Dobrzanski.
+
+The deceased, Ezechiel Dobrzanski, died on the same day at six o’clock in the morning. He was a child, approximately one year old. The death was reported by witnesses present at the act, as was customary in civil records of the time.
+
+The act follows the standard structure of civil death registrations of the period. It was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 156
+Place: Przasnysz
+Date of registration: 4 September 1860
+Date of death: 4 September 1860
+Time of death: 6 a.m.
+Type: death record
+
+Persons named in the act
+
+Deceased: Ezechiel Dobrzanski
+Age: approximately 1 year
+Sex: male
+
+Additional notes
+
+This is a standard civil death record from Przasnysz. The document records the death of a young child, which was unfortunately common in the 19th century.
+
+While the record focuses primarily on the death itself, it provides valuable genealogical context by confirming the existence of Ezechiel Dobrzanski and placing him within the Dobrzanski family line in Przasnysz.
+
+Further research may help identify his parents and establish connections with other known members of the family.`
+},
+{
+  title: "Birth of Stanislaw Dobrzanski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.stanislawdobrzanski],
+  content: `It took place in the town of Przasnysz on an unspecified day in the year 1852 (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a declaration was made of the birth of a male child. The child was given the name Stanislaw and the surname Dobrzanski.
+
+The father, Józef Dobrzanski, appeared before the registrar and presented the child. The mother of the child was Teresa Dobrzanska. The record follows the standard structure of civil birth registrations of the period.
+
+The act was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 129
+Place: Przasnysz
+Date: year 1852 (exact day unclear from scan)
+Type: birth record
+
+Persons named in the act
+
+Child: Stanislaw Dobrzanski
+Sex: male
+
+Father: Józef Dobrzanski
+Role: declarant / father
+
+Mother: Teresa Dobrzanska
+Role: mother
+
+Additional notes
+
+This is a standard civil birth record from Przasnysz. Some details, such as the exact date and names of witnesses, remain difficult to read due to the handwritten cursive script.
+
+Despite these limitations, the key information is clear: the document records the birth of Stanislaw Dobrzanski, son of Józef and Teresa, registered in Przasnysz under record number 129.`
+},
+{
+  title: "Birth of Marianna Dobrzanska",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.mariannadobrzynska],
+  content: `It took place in the town of Przasnysz on an unspecified day in the year 1858 (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a declaration was made of the birth of a female child. The child was given the name Marianna and the surname Dobrzanska.
+
+The father, Józef Dobrzanski, appeared before the registrar and presented the child. The mother of the child was Teresa Dobrzanska. The record follows the standard structure of civil birth registrations of the period.
+
+The act was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 346
+Place: Przasnysz
+Date: year 1858 (exact day unclear from scan)
+Type: birth record
+
+Persons named in the act
+
+Child: Marianna Dobrzanska
+Sex: female
+
+Father: Józef Dobrzanski
+Role: declarant / father
+
+Mother: Teresa Dobrzanska
+Role: mother
+
+Additional notes
+
+This is a standard civil birth record from Przasnysz. Some details, such as the exact date and names of witnesses, remain difficult to read due to the handwritten cursive script.
+
+Despite these limitations, the key information is clear: the document records the birth of Marianna Dobrzanska, daughter of Józef and Teresa, registered in Przasnysz under record number 346.
+
+This entry further strengthens the reconstruction of the Dobrzanski family line in Przasnysz during the mid-19th century, confirming another child of the same parental pair.`
+},
         ],
       },
     ],
