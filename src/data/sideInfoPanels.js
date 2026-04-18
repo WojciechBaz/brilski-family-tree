@@ -27,6 +27,11 @@ const REGION_IMAGES = {
   stanislawwojcickimalzenstwo: `${BASE_URL}region/stanislawwojcickimalzenstwo.png`,
   tomaszolszewskiteofilia: `${BASE_URL}region/tomaszolszewskiteofilia.png`,
   tomaszolszewskismierc: `${BASE_URL}region/tomaszolszewskismierc.png`,
+  wawrzyniecsmierc: `${BASE_URL}region/wawrzyniecsmierc.png`,
+  frankmarriage: `${BASE_URL}region/frankmarriage.png`,
+  franknaturalizacja: `${BASE_URL}region/franknaturalizacja.png`,
+  frankpassangerlist:`${BASE_URL}region/frankpassangerlist.png`,
+  frankdraft: `${BASE_URL}region/frankdraft.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -275,6 +280,36 @@ This record follows the same formal pattern as the other parish marriage acts in
 
 Some parts of the text remain too unclear to state with complete certainty, especially the exact date and the precise ages of the bride and groom. Still, the core genealogical information is clear: the act documents the marriage of Stanisław Brejlak, son of Andrzej Brejlak, to Marianna Dobrzyńska, daughter of Józef and Teresa.`,
           },
+          {
+  title: "Death of Wawrzyniec Brejlak",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.wawrzyniecsmierc],
+  content: `It took place in the town of Przasnysz on an unspecified day in the year 1898 (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a declaration was made of the death of Wawrzyniec Brejlak.
+
+The deceased, Wawrzyniec Brejlak, died in Przasnysz. The death was reported by witnesses, as was customary in civil records of the period. Due to the quality of the handwritten script, details such as exact age and additional identifying information are difficult to confirm from the present image.
+
+The act follows the standard structure of civil death registrations of the period. It was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 50
+Place: Przasnysz
+Date: year 1898 (exact day unclear from scan)
+Type: death record
+
+Persons named in the act
+
+Deceased: Wawrzyniec Brejlak
+Sex: male
+
+Additional notes
+
+This is a standard civil death record from Przasnysz. Some details remain difficult to read due to the handwritten cursive script.
+
+Despite these limitations, the key information is clear: the document records the death of Wawrzyniec Brejlak in 1898, registered in Przasnysz under record number 50.
+
+Further analysis of the original text may help determine his age and establish his precise place within the Brejlak family line.`
+},
         ],
       },
       {
@@ -703,30 +738,192 @@ This entry further strengthens the reconstruction of the Dobrzanski family line 
       "A chapter for migration, arrival, guardianship, name changes, new records in America, and the disruption of older family structures.",
     items: [
       {
-        id: "migration-1",
-        year: "1890s",
-        label: "Article",
-        title: "Departure and crossing",
-        subtitle: "Placeholder article",
-        preview:
-          "A placeholder article for departure, transit, and the beginning of migration. Later this can cover ports, manifests, and family separation.",
-        pages: [
-          {
-            title: "Departure",
-            subtitle: "Leaving the old world",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This is a placeholder article page for departure. Later you can use it for port departure, family separation, first migration decisions, and the earliest traces of movement.",
-          },
-          {
-            title: "Crossing",
-            subtitle: "Transit and uncertainty",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later describe the crossing itself, incomplete information, travel conditions, and how migration began to reshape identity.",
-          },
-        ],
-      },
+  id: "frank-brilski",
+  year: "1904+",
+  label: "Person",
+  title: "Frank Brilski",
+  subtitle: "Migration, identity, and early American records",
+  preview:
+    "A documentary profile of Frank Brilski, tracing his departure from Poland, migration to the United States, early records, and the evolution of his identity across archives.",
+  pages: [
+    {
+  title: "Passenger list entry for Frank Brilski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.frankpassangerlist],
+  content: `This document is a ship passenger list created for the U.S. immigration authorities at the port of arrival. It records the arrival of immigrants traveling to the United States and provides detailed information about each individual.
+
+The document is titled “List or Manifest of Alien Passengers for the U.S. Immigration Officer at Port of Arrival” and was prepared for inspection upon arrival in New York. The manifest shows that Frank Brilski traveled on the S.S. Maine. The ship sailed from Bremen on 17 December 1904 and arrived at the port of New York on 30 December 1904. :contentReference[oaicite:1]{index=1}
+
+Frank Brilski appears on this passenger list as part of a group of emigrants traveling from Europe to the United States. The record documents a key stage in his migration from the old world to America.
+
+Main details
+
+Document type: passenger list / ship manifest
+Ship: S.S. Maine
+Port of departure: Bremen
+Date of departure: 17 December 1904
+Port of arrival: New York
+Date of arrival: 30 December 1904
+Destination country: United States
+
+Persons named in the record
+
+Primary subject: Frank Brilski
+Role: passenger / immigrant
+
+Additional notes
+
+This document represents a key migration record and serves as one of the earliest confirmed traces of Frank Brilski in American archival sources.
+
+Passenger lists such as this one are especially valuable because they connect the place of origin in Europe with the destination in the United States. They may also include references to family members, either left behind or already residing in America.
+
+The presence of Frank Brilski on this list confirms his physical passage across the Atlantic and marks a critical transition point in the family history—from the Polish records of the Brejlak line to the American records of the Brilski name.`
+},
+    {
+  title: "Naturalization records of Frank Brilski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.franknaturalizacja],
+  content: `This document consists of United States naturalization records relating to Frank Brilski, including a Declaration of Intention and a Petition for Naturalization. These records were created as part of the legal process through which an immigrant became a citizen of the United States. :contentReference[oaicite:0]{index=0}
+
+The Declaration of Intention shows that Frank Brilski was residing in Bellaire, Ohio, and working as a laborer at the time of the declaration. He declared his intent to become a citizen of the United States and formally renounced allegiance to foreign powers.
+
+The document records that Frank Brilski was born in Poland, then part of the Russian Empire, and that he emigrated to the United States in 1904. His arrival took place at the port of New York, and he traveled aboard the S.S. Maine, confirming the details found in the passenger list.
+
+The declaration appears to be dated 3 April 1917, marking the beginning of his formal naturalization process.
+
+The Petition for Naturalization, recorded in Belmont County, Ohio, represents the next stage of this process. It confirms that Frank Brilski had resided in the United States for the required period and had established his life in the region. The petition includes supporting witnesses and formal court validation of his eligibility for citizenship.
+
+Main details
+
+Document type: Declaration of Intention and Petition for Naturalization  
+Country: United States  
+State: Ohio  
+County: Belmont County  
+Residence: Bellaire, Ohio  
+Occupation: laborer  
+
+Immigration details
+
+Year of immigration: 1904  
+Port of arrival: New York  
+Ship: S.S. Maine  
+
+Persons named in the record
+
+Primary subject: Frank Brilski  
+Role: petitioner / immigrant  
+
+Additional notes
+
+These records represent a crucial turning point in the life of Frank Brilski. While earlier documents record his departure and arrival, this document confirms his permanent settlement and legal integration into American society.
+
+The consistency between this document and the passenger list—especially the year of arrival and the name of the ship—strongly supports the continuity of identity from the Polish Brejlak line to the American Brilski name.
+
+Naturalization records such as this are among the most valuable genealogical sources, as they consolidate key personal data and formally anchor an individual within the legal and social structure of the United States.`
+},
+   {
+  title: "Marriage of Frank Brilski and Josephine (Josie)",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.frankmarriage],
+  content: `This document consists of marriage records from Belmont County, Ohio, including an application for a marriage license and the official marriage certificate. :contentReference[oaicite:0]{index=0}
+
+The record documents the marriage of Frank Brilski and Josephine (recorded as Josie), providing details about their residence, origin, and status at the time of marriage.
+
+The application for a marriage license shows that Frank Brilski was residing in Belmont County, Ohio, and working as a laborer. His place of birth is recorded as Poland, confirming his origin from the same region as indicated in earlier migration and naturalization records.
+
+The bride, Josephine, is also recorded as residing in Belmont County. Her birthplace appears to be in Europe (likely Poland or a nearby region, though the exact wording is difficult to read from the document).
+
+The marriage certificate confirms that the marriage was officially performed in Belmont County, Ohio, under the authority of the local Probate Court. The act was recorded in the county marriage register and includes the formal entry and signature of the officiant.
+
+Main details
+
+Document type: marriage license application and certificate  
+Location: Belmont County, Ohio  
+Court: Probate Court  
+Type: marriage record  
+
+Persons named in the record
+
+Groom: Frank Brilski  
+Residence: Belmont County, Ohio  
+Occupation: laborer  
+Birthplace: Poland  
+
+Bride: Josephine (Josie)  
+Residence: Belmont County, Ohio  
+Birthplace: Europe (exact location unclear from the scan)  
+
+Additional notes
+
+This record represents a key stage in the life of Frank Brilski, marking the formation of his own household in the United States. It confirms that after his arrival and settlement, he married within the local immigrant community in Ohio.
+
+Marriage records such as this are especially valuable because they often connect migration history with family formation, showing how individuals transitioned from single immigrants into established members of American society.
+
+Together with the passenger list and naturalization documents, this record forms part of a continuous life trajectory: migration from Poland, settlement in Ohio, and the establishment of a family in the United States.
+
+Some details, particularly the exact spelling of the bride’s surname and her precise place of birth, remain difficult to confirm due to the quality of the handwritten record. However, the core information is clear and consistent with the broader archival context of Frank Brilski’s life.`
+},
+    {
+  title: "World War I draft registration card of Frank Brilski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.frankdraft],
+  content: `This document is a World War I draft registration card for Frank Brilski, completed as part of the United States military registration system in 1918.
+
+The card records detailed personal information provided by Frank Brilski, including his full name, place of residence, date of birth, occupation, and nearest relative.
+
+At the time of registration, Frank Brilski was living in Neffs, Belmont County, Ohio, and working as a miner. His employer is recorded as Tom Jones, likely connected with local mining operations in the region.
+
+The document states that Frank Brilski was born on 12 May 1878 in Russian Poland, confirming his origin within the territories of the former Russian partition of Poland.
+
+His nearest relative is listed as Josie Brilski, residing at the same address, confirming his marriage and household structure in the United States.
+
+The card also includes a physical description: he is described as of medium height and build, with brown eyes and brown hair. No physical disabilities are noted.
+
+The registration was completed on 12 September 1918 in Belmont County, Ohio.
+
+Main details
+
+Document type: World War I draft registration card  
+Date of registration: 12 September 1918  
+Place: Belmont County, Ohio  
+Residence: Neffs, Belmont County, Ohio  
+
+Personal data
+
+Name: Frank Brilski  
+Date of birth: 12 May 1878  
+Age: 40  
+Birthplace: Russian Poland  
+Citizenship status: alien  
+
+Occupation
+
+Occupation: miner  
+Employer: Tom Jones (mining work)  
+
+Family
+
+Nearest relative: Josie Brilski (wife)  
+Residence: same as registrant  
+
+Physical description
+
+Height: medium  
+Build: medium  
+Eye color: brown  
+Hair color: brown  
+
+Additional notes
+
+This document is one of the most precise and reliable records for establishing the identity of Frank Brilski. It provides an exact date of birth, place of origin, occupation, and family connection within the United States.
+
+The consistency of the data—especially the birthplace (Russian Poland), residence in Belmont County, and connection to Josie Brilski—strongly confirms that this is the same individual documented in earlier migration, marriage, and naturalization records.
+
+Draft registration cards are particularly valuable genealogically because they were filled out directly by the individual and often include a personal signature, making them one of the most direct links to the historical person themselves.`
+},
+  
+  ],
+},
       {
         id: "migration-2",
         year: "1900s",
