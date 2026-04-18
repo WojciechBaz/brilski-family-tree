@@ -22,8 +22,11 @@ const REGION_IMAGES = {
   nikodemdobrzynski255: `${BASE_URL}region/Nikodem_Dobrzynski_255.png`,
   antoninadobrzanska: `${BASE_URL}region/antoninadobrzanska.png`,
   ezechiel: `${BASE_URL}region/ezechiel dobrzynski.png`,
-  stanislawdobrzanski: `${BASE_URL}region/sanislaw dobrzynski urodzenie.png`,
+  stanislawdobrzanski: `${BASE_URL}region/stanislaw dobrzynski urodzenie.png`,
   mariannadobrzynska: `${BASE_URL}region/Marianna DObrzynska urodzenie.png`,
+  stanislawwojcickimalzenstwo: `${BASE_URL}region/stanislawwojcickimalzenstwo.png`,
+  tomaszolszewskiteofilia: `${BASE_URL}region/tomaszolszewskiteofilia.png`,
+  tomaszolszewskismierc: `${BASE_URL}region/tomaszolszewskismierc.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -360,7 +363,39 @@ This record is especially valuable because it gives a precise birth date, names 
 
 As in many records from the period, the closing formula states that the act was read aloud and signed only by the priest because the declarant and witnesses were unable to write.`,
           },
-  
+          {
+  title: "Marriage of Stanislaw Wojcicki and Anna Olszewska",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.stanislawwojcickimalzenstwo],
+  content: `It took place in the town of Przasnysz on an unspecified day in the late 19th century (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a religious marriage was concluded on this day between Stanislaw Wojcicki and Anna Olszewska.
+
+The groom, Stanislaw Wojcicki, appeared before the registrar as a bachelor. The bride, Anna Olszewska, appeared as a maiden. The record follows the standard structure of parish marriage registrations of the period.
+
+This marriage was preceded by the required banns. No impediment was discovered. No prenuptial agreement was entered into.
+
+The act was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 76
+Place: Przasnysz
+Date: late 19th century (exact day unclear from scan)
+Type: marriage record
+
+Persons named in the act
+
+Groom: Stanislaw Wojcicki
+Status: bachelor
+
+Bride: Anna Olszewska
+Status: maiden
+
+Additional notes
+
+This is a standard parish marriage record from Przasnysz. Some details, such as the exact date, ages, and names of witnesses, remain difficult to read due to the handwritten cursive script.
+
+Despite these limitations, the key information is clear: the document records the marriage of Stanislaw Wojcicki and Anna Olszewska, formally linking the Wojcicki and Olszewski family lines in the Przasnysz region.`
+},  
         ],
       },
       {
@@ -406,6 +441,68 @@ This is a standard civil birth record from Przasnysz. Some names and details rem
 
 Despite these limitations, the key information is clear: the document records the birth of Anna Olszewska, daughter of Olszewski parents, registered in Przasnysz under record number 343.`
 },
+{
+  title: "Marriage of Tomasz Olszewski and Teofila Rozenkranc",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.tomaszolszewskiteofilia],
+  content: `It took place in the town of Przasnysz on an unspecified day in the year 1855 (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a religious marriage was concluded on this day between Tomasz Olszewski and Teofila Rozenkranc.
+
+The groom, Tomasz Olszewski, appeared before the registrar as a bachelor. The bride, Teofila Rozenkranc, appeared as a maiden. The record follows the standard structure of parish marriage registrations of the period.
+
+This marriage was preceded by the required banns. No impediment was discovered. No prenuptial agreement was entered into.
+
+The act was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 76
+Place: Przasnysz
+Date: year 1855 (exact day unclear from scan)
+Type: marriage record
+
+Persons named in the act
+
+Groom: Tomasz Olszewski
+Status: bachelor
+
+Bride: Teofila Rozenkranc
+Status: maiden
+
+Additional notes
+
+This is a standard parish marriage record from Przasnysz. Some details, such as the exact date, ages, and names of witnesses, remain difficult to read due to the handwritten cursive script.
+
+Despite these limitations, the key information is clear: the document records the marriage of Tomasz Olszewski and Teofila Rozenkranc, establishing a connection between the Olszewski family and the Rozenkranc line.`
+},
+{
+  title: "Death of Tomasz Olszewski",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.tomaszolszewskismierc],
+  content: `It took place in the town of Przasnysz on an unspecified day in the year 1878 (the exact date is difficult to read from the scan). We make it known that, in the presence of witnesses, a declaration was made of the death of Tomasz Olszewski.
+
+The deceased, Tomasz Olszewski, died in Przasnysz. The death was reported by witnesses, as was customary in civil records of the period. Additional personal details, such as exact age and occupation, are not fully legible in the present scan.
+
+The act follows the standard structure of civil death registrations of the period. It was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Place: Przasnysz
+Date: year 1878 (exact day unclear from scan)
+Type: death record
+
+Persons named in the act
+
+Deceased: Tomasz Olszewski
+Sex: male
+
+Additional notes
+
+This is a standard civil death record from Przasnysz. Due to the quality of the handwritten cursive script, some details remain difficult to confirm with certainty.
+
+Despite these limitations, the key information is clear: the document records the death of Tomasz Olszewski in 1878. This entry likely corresponds to the same individual previously recorded in the marriage of Tomasz Olszewski and Teofila Rozenkranc, providing an important chronological endpoint for this line.
+
+Further research may help confirm additional details such as age, occupation, and family relationships recorded in the original act.`
+},
          
         ],
       },
@@ -413,10 +510,10 @@ Despite these limitations, the key information is clear: the document records th
         id: "dobrzanski",
         year: "1880s",
         label: "Family branch",
-        title: "Dobrzanski",
+        title: "The Dobrzanski Family",
         subtitle: "Family line placeholder",
         preview:
-          "A placeholder article area for the Dobrzanski line. This section can later hold branch background, source notes, and family connections.",
+           "A collection of original applications, translations, and documents related to the Dobrzanski family.",
         pages: [
    {
   title: "Birth of Nikodem Dobrzanski",
