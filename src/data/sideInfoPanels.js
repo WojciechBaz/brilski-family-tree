@@ -15,7 +15,7 @@ const REGION_IMAGES = {
   stanislawanna: `${BASE_URL}region/4.slub stanislawa i anny 76.jpg`,
   andrzejagnieszka: `${BASE_URL}region/slub andrzej brejlak agnieszka sobiesiak 27.jpg`,
   balbinalukasiak: `${BASE_URL}region/balbina brejlak -lukasiak sm 8 (1).jpg`,
-  slubstananna:`${BASE_URL}region/slub st brejlak, mar dobrzynska 73 (1).jpg`,
+  slubstananna: `${BASE_URL}region/slub st brejlak, mar dobrzynska 73 (1).jpg`,
   teklaludwik: `${BASE_URL}region/1.slub Ludwika i Tekli 11 (1).jpg`,
   ludwikur: `${BASE_URL}region/ludwik wojcicki ur 28 (1).jpg`,
 };
@@ -103,11 +103,11 @@ However, this explanation does not fully match what happened later. Over time, t
             images: [REGION_IMAGES.brilski2],
             content: `The second theory argues that the name Brylski was already in use in Poland before emigration and several findings support this idea:
 
-In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej  A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Blirski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska. This gradual shift strongly supports the idea that the transformation began before emigration.
+In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej. A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Brilski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska. This gradual shift strongly supports the idea that the transformation began before emigration.
 
-How did Brejlak became Brylski tho?
+How did Brejlak become Brylski?
 
-The first part of the change—Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination ej can be pronounced closer to y, making Brejlak sound like Brylak. Especially in heavily russian influenced environment the softer way of pronouncing was encouraged.
+The first part of the change—Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination ej can be pronounced closer to y, making Brejlak sound more like Brylak. In a heavily Russian-influenced environment, softer or altered pronunciation patterns were often reinforced.
 
 The second part of the change—from -ak to -ski—is much more complex and tied to the political and cultural situation of the late nineteenth century.`,
           },
@@ -115,13 +115,13 @@ The second part of the change—from -ak to -ski—is much more complex and tied
             title: "From Brylski to Brilski",
             subtitle: "Polish, American, and linguistic influences",
             images: [REGION_IMAGES.brilski3],
-            content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity. Changing names to Polish-sounding forms became a quiet act of resistance, even though it was difficult to do officially. At the same time, there was a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
+            content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity. Changing names to more Polish-sounding forms could become a quiet act of resistance, even though it was difficult to do officially. At the same time, there was also a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
 
-The transition from Brylski to Brilski likely occurred later, most probably in the United States. The change from “y” to “i” fits English spelling habits making Brilski an Americanized verison of he nameki. The form Brylski is linguistically more natural in Polish, as the consonant cluster “bryl” fits typical phonetic patterns, whereas “bril” is unusual and does not sound natural in Polish usage.
+The transition from Brylski to Brilski likely occurred later, most probably in the United States. The change from “y” to “i” fits English spelling habits, making Brilski an Americanized version of the name. The form Brylski is linguistically more natural in Polish, as the consonant cluster “bryl” fits typical phonetic patterns, whereas “bril” is unusual and does not sound natural in Polish usage.
 
-What is clear is that the family consistently preferred the Brylski/Brilski form once they arrived in the United States. The name Brejlak appears only on the official passenger lists of the ship—such as for Leonora, and Władysław, siblings of Frank Brilski and the family of Victor Brylski—but never again in American records.
+What is clear is that the family consistently preferred the Brylski / Brilski form once they arrived in the United States. The name Brejlak appears only on the official passenger lists of the ship—such as for Leonora and Władysław, siblings of Frank Brilski, and for the family of Victor Brylski—but never again in later American records.
 
-The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexist, linguistic and political factors encouraged variations, and both Polish and American environments contributed to the evolution.
+The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexist, linguistic and political factors encouraged variation, and both Polish and American environments contributed to the evolution.
 
 Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
           },
@@ -140,128 +140,132 @@ Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
             title: "Marriage of Stanisław Brejlak and Anna Brejlak (Łukasiak)",
             subtitle: "Written records",
             images: [REGION_IMAGES.stanislawanna],
-            content: `“It happened in [place], on 9/21 November 1881, at 4 o’clock in the afternoon. In the presence of the witnesses, this day a religious marriage was concluded between Stanisław … and Anna …. The banns had been proclaimed on three occasions. No marriage contract was entered into. This act was read aloud to those present, and since they could not write, it was signed only by us.”
+            content: `It happened in [place name unclear], on 9 / 21 November 1881, at four o’clock in the afternoon. In the presence of the witnesses named in the record, a religious marriage was concluded on this day between Stanisław Brejlak and Anna Łukasiak. The marriage had been preceded by three banns proclaimed in due form. No prenuptial agreement was entered into. This act was read aloud to those present, and because they were unable to write, it was signed only by the officiating priest / registrar.
+
+Main details
 
 Record number: 76
+Date of the act: 9 / 21 November 1881
+Place: the heading appears to read Leszno i Gołany / Golany or a very similar place name
+Type: marriage record
 
-Date of the act: written as 9 / 21 November and the year appears to be 1881
-Place: the heading looks like Leszno i Golany / Gołany or a very similar place name
-The marriage was performed in the presence of two witnesses
-The groom is Stanisław
-The bride is Anna
-The record states that the usual marriage banns were announced
-It also says that no prenuptial agreement was made
-At the end it notes that the document was read aloud, and because the newlyweds and witnesses were illiterate / unable to write, the act was signed only by the priest / registrar`,
+Persons named in the act
+
+Groom: Stanisław Brejlak
+Bride: Anna Łukasiak
+Witnesses: present, though their names are not fully clear in this image
+
+Additional notes
+
+This entry preserves the standard structure of a nineteenth-century parish marriage act: date, place, identification of the couple, publication of banns, confirmation that no marriage contract was made, and the closing note that the act was read aloud and signed only by the priest because the parties were unable to write.
+
+Some details remain difficult to confirm from the current image alone, especially the exact place name in the heading and the fuller identification of the witnesses. Even so, the central point of the record is clear: it documents the marriage of Stanisław Brejlak and Anna Łukasiak in late 1881.`,
           },
           {
             title: "Marriage of Andrzej Brejlak and Agnieszka Brejlak (Sobiesiak)",
             subtitle: "Written records",
             images: [REGION_IMAGES.andrzejagnieszka],
-            content: `"It happened in the town of Przasnysz on 21 October / 2 November 1888 at 2 o’clock in the afternoon.
-We make it known that in the presence of the witnesses, a religious marriage was contracted on this day between Andrzej Brejlak, a bachelor, born in the village of Leszno in the parish of Przasnysz, son of Franciszek and Stanisława Brejlak, residents of Leszno, remaining with his parents, nineteen years of age; and Agnieszka Sobiesiak, maiden, daughter of Jan Sobiesiak and [mother’s name unclear], born in Leszno, residing there with her parents, twenty-one years of age.
-This marriage was preceded by three banns proclaimed in the parish of Przasnysz. The oral consent of the parents present was given. No prenuptial agreement was concluded. This act was read aloud to the illiterate parties present and signed only by us."
+            content: `It happened in the town of Przasnysz on 21 October / 2 November 1888, at two o’clock in the afternoon. We make it known that, in the presence of witnesses, a religious marriage was contracted on this day between Andrzej Brejlak, a bachelor, born in the village of Leszno in the parish of Przasnysz, son of Franciszek and Stanisława Brejlak, residents of Leszno, remaining with his parents, nineteen years of age; and Agnieszka Sobiesiak, a maiden, daughter of Jan Sobiesiak and [mother’s name unclear], born in Leszno, residing there with her parents, twenty-one years of age. This marriage was preceded by three banns proclaimed in the parish of Przasnysz. The oral consent of the parents present was given. No prenuptial agreement was concluded. This act was read aloud to the illiterate parties present and signed only by us.
 
-Marriage record no. 27
+Main details
 
+Marriage record number: 27
 Place: Przasnysz
-Date: 21 October / 2 November 1888, at 2 p.m.
-(the record uses the old/new style double date)
+Date: 21 October / 2 November 1888
+Time: 2 p.m.
+Type: marriage record
 
-This record states that, in the presence of witnesses, a religious marriage was concluded between:
+Persons named in the act
 
-Groom
+Groom: Andrzej Brejlak
+Status: bachelor
+Birthplace: Leszno, parish of Przasnysz
+Parents: Franciszek Brejlak and Stanisława Brejlak
+Residence: Leszno
+Age: 19
 
-Andrzej Brejlak / Brylak
+Bride: Agnieszka Sobiesiak
+Status: maiden
+Father: Jan Sobiesiak
+Mother: name unclear in the present image
+Birthplace: Leszno
+Residence: Leszno
+Age: 21
 
-a bachelor
-born in the village of Leszno, parish of Przasnysz
-son of Franciszek (or a very similar name) Brejlak/Brylak and Stanisława
-his parents were living in Leszno
-he was 19 years old
-he was still living with his parents
+Additional notes
 
-Bride
+The act also records that the required banns had been proclaimed and that the parents present gave their oral consent to the marriage. It further notes that no prenuptial agreement was made.
 
-Agnieszka Sobiesiak
-
-a maiden
-daughter of Jan Sobiesiak and Marianna / Małgorzata? (the mother’s name is hard to read)
-connected with Grochowice / Trochowice or a similarly spelled place
-born in Leszno
-living in Leszno
-she was 21 years old
-she was also still living with her parents
-
-Additional details
-The marriage was preceded by the three banns.
-The banns were announced on:
-16, 23, and 30 October old style
-corresponding to 28 October, 4 November, and 11 November new style
-The record says that the oral consent of the parents present was given.
-It also states that the couple did not make a prenuptial agreement.
-The act was read aloud to those present, and because they did not know how to write, it was signed only by the priest / registrar.`,
+A few details remain uncertain, especially the reading of the mother’s name and some small orthographic variations in the surname. In some contexts the groom’s surname could be read as Brejlak / Brylak, which fits the broader spelling instability visible elsewhere in the family line. Despite those minor uncertainties, the meaning of the document is clear and stable: it is the marriage record of Andrzej Brejlak and Agnieszka Sobiesiak, entered in Przasnysz in 1888.`,
           },
           {
             title: "Death record for Balbina Łukasiak (Brejlak)",
             subtitle: "Written records",
             images: [REGION_IMAGES.balbinalukasiak],
-            content: `"It happened in the town of Przasnysz on the ninth day of January, one thousand eight hundred fifty, at [the stated hour]. There appeared Michał Łukasiak, forty years of age, and [second witness, name unclear], thirty years of age, both farmers from the village of Leszno, and declared that yesterday at eight o’clock in the morning there died in Leszno Balbina Łukasiak, thirty years of age, daughter of the late Andrzej Brejlak and Agnieszka, his surviving wife, leaving behind her widowed husband Jakub Łukasiak. After visual confirmation of Balbina’s death, this act was read aloud and signed by us only"
+            content: `It happened in the town of Przasnysz on the ninth day of January in the year one thousand eight hundred fifty, at the hour stated in the act. There appeared Michał Łukasiak, forty years of age, and a second witness whose name is difficult to read, thirty years of age, both farmers from the village of Leszno, and they declared that yesterday at eight o’clock in the morning there died in Leszno Balbina Łukasiak, thirty years of age, daughter of the late Andrzej Brejlak and Agnieszka, his surviving wife, leaving behind her widowed husband Jakub Łukasiak. After visual confirmation of Balbina’s death, this act was read aloud and signed by us only.
 
-Record no.: 8
+Main details
+
+Record number: 8
 Place: Przasnysz
 Date of the act: 9 January 1850
-Reported by: two men from Leszno, including Michał Łukasiak, age about 40, and another witness whose name is harder to read
+Type: death record
 
-The record says that:
+Persons named in the act
 
-yesterday at 8 in the morning
-in the village of Leszno
-Balbina Łukasiak died
-she was 30 years old
-she was the daughter of the late Andrzej Brejlak and Agnieszka, his widow / surviving wife
-she left behind her husband Jakub Łukasiak
+Deceased: Balbina Łukasiak
+Age: 30
+Place of death: Leszno
+Date and time of death: the previous day, at 8 in the morning
 
-At the end, it says the usual formula that:
+Father: Andrzej Brejlak, already deceased
+Mother: Agnieszka, alive at the time of the act
+Husband: Jakub Łukasiak, left behind as widower
 
-the death was confirmed
-the act was read aloud
-and signed by the priest / registrar, because the witnesses were unable to write`,
+Witnesses / informants
+
+Michał Łukasiak, age 40
+A second male witness from Leszno, age 30, name unclear in the image
+
+Additional notes
+
+This is an especially useful record because it identifies Balbina not only as the wife of Jakub Łukasiak, but also as the daughter of Andrzej Brejlak and Agnieszka. That makes it an important genealogical bridge between the Łukasiak household and the earlier Brejlak line.
+
+As in many records of this period, the closing formula explains that the act was read aloud and signed only by the priest / registrar because the witnesses did not know how to write.`,
           },
           {
-  title: "Marriage of Stanisław Brejlak and Marianna Dobrzyńska",
-  subtitle: "Written records",
-  images: [REGION_IMAGES.slubstananna],
-  content: `It happened in [Leszno / Przasnysz], on the stated date, in the presence of witnesses. On this day a religious marriage was concluded between Stanisław Brejlak, bachelor, son of Andrzej Brejlak, and Marianna Dobrzyńska, maiden, daughter of Józef Dobrzyński and Teresa. The banns had been proclaimed, no prenuptial agreement was entered into, and after the act was read aloud, it was signed by the officiating priest.
+            title: "Marriage of Stanisław Brejlak and Marianna Dobrzyńska",
+            subtitle: "Written records",
+            images: [REGION_IMAGES.slubstananna],
+            content: `It happened in [Leszno / Przasnysz], on the stated date, in the presence of witnesses. On this day a religious marriage was concluded between Stanisław Brejlak, bachelor, son of Andrzej Brejlak, and Marianna Dobrzyńska, maiden, daughter of Józef Dobrzyński and Teresa. The banns had been proclaimed, no prenuptial agreement was entered into, and after the act was read aloud, it was signed by the officiating priest.
 
-Record no.: 21
+Main details
+
+Record number: 21
 Place: Leszno / parish of Przasnysz
 Page: 110
 Type: marriage record
 
-From what can be read, this is the marriage of:
+Persons named in the act
 
-Stanisław Brejlak
-Marianna Dobrzyńska
+Groom: Stanisław Brejlak
+Status: bachelor
+Father: Andrzej Brejlak
+Residence / connection: appears to be connected with Leszno
+Age: appears to be in his twenties, but the exact number is not fully legible in this image
 
-Groom
+Bride: Marianna Dobrzyńska
+Status: maiden
+Parents: Józef Dobrzyński and Teresa Dobrzyńska
+Residence / connection: also appears connected with Leszno
+Age: appears to be in her twenties, though the exact number is difficult to confirm from the current scan
 
-Stanisław Brejlak
+Additional notes
 
-a bachelor
-son of Andrzej Brejlak
-connected with Leszno
-the text appears to say he was living there
-his age looks to be in the twenties, but the exact number is hard to read from this image
+This record follows the same formal pattern as the other parish marriage acts in the collection: identification of the couple, mention of banns, confirmation that no marriage contract was made, and the standard closing statement that the act was read aloud and signed by the priest.
 
-Bride
-
-Marianna Dobrzyńska
-
-a maiden
-daughter of Józef Dobrzyński and Teresa Dobrzyńska
-also connected with Leszno
-her age also looks to be in the twenties, but I would not want to overstate the exact number without a closer crop`,
-},
+Some parts of the text remain too unclear to state with complete certainty, especially the exact date and the precise ages of the bride and groom. Still, the core genealogical information is clear: the act documents the marriage of Stanisław Brejlak, son of Andrzej Brejlak, to Marianna Dobrzyńska, daughter of Józef and Teresa.`,
+          },
         ],
       },
       {
@@ -271,84 +275,92 @@ her age also looks to be in the twenties, but I would not want to overstate the 
         title: "The Wojcicki Family",
         subtitle: "Regional and parish context",
         preview:
-          "A placeholder article area for the Wojcicki family branch. Use this later for core records, church references, and local family structure before migration.",
+          "A collection of translated records and related notes for the Wojcicki family branch, arranged in a consistent documentary format.",
         pages: [
           {
-  title: "Marriage of Ludwik Wójcicki and Tekla Rosiakówna",
-  subtitle: "Written records",
-  images: [REGION_IMAGES.teklaludwik],
-  content: `It took place in Opinogóra Hrabska on 25 October / 6 November 1849, at one o’clock in the afternoon.
-We make it known that, in the presence of witnesses, a religious marriage was concluded on this day between Ludwik Wójcicki, a young man, son of Andrzej and Agnieszka Wójcicki, born in Brzaski or a similarly spelled village and residing there, twenty-nine years of age, and Tekla Rosiakówna, a maiden, daughter of Józef and Zofia Rosiak, born in Kotomań or a similarly spelled village and now residing in Duce / Ducze / Ducach, nineteen years of age.
-This marriage was preceded by three banns. No impediment was discovered. No prenuptial agreement was entered into. The act was read aloud to the persons present, and since they did not know how to write, it was signed only by the priest.
+            title: "Marriage of Ludwik Wójcicki and Tekla Rosiakówna",
+            subtitle: "Written records",
+            images: [REGION_IMAGES.teklaludwik],
+            content: `It took place in Opinogóra Hrabska on 25 October / 6 November 1849, at one o’clock in the afternoon. We make it known that, in the presence of witnesses, a religious marriage was concluded on this day between Ludwik Wójcicki, a young man, son of Andrzej and Agnieszka Wójcicki, born in Brzaski or a similarly spelled village and residing there, twenty-nine years of age, and Tekla Rosiakówna, a maiden, daughter of Józef and Zofia Rosiak, born in Kotomań or a similarly spelled village and now residing in Duce / Ducze / Ducach, nineteen years of age. This marriage was preceded by three banns. No impediment was discovered. No prenuptial agreement was entered into. The act was read aloud to the persons present, and since they did not know how to write, it was signed only by the priest.
 
 Main details
+
 Record number: 11
 Place: Opinogóra Hrabska
 Date: 25 October / 6 November 1849
 Time: 1 p.m.
+Type: marriage record
 
-Groom
+Persons named in the act
 
-Ludwik Wójcicki
+Groom: Ludwik Wójcicki
+Status: young man / bachelor
+Parents: Andrzej Wójcicki and Agnieszka Wójcicka
+Birthplace: Brzaski / Brzaskach or a similarly spelled place
+Residence: apparently the same place
+Age: 29
 
-described as a young man / bachelor
-son of Andrzej and Agnieszka Wójcicki
-apparently born in Brzaski / Brzaskach or a similarly spelled place
-apparently residing there as well
-29 years old
+Bride: Tekla Rosiakówna
+Status: maiden
+Parents: Józef Rosiak and Zofia Rosiak
+Birthplace: Kotomań / Kotomania or a similarly spelled place
+Residence at the time of marriage: Duce / Ducze / Ducach or a similar form
+Age: 19
 
-Bride
+Additional notes
 
-Tekla Rosiakówna
+The record clearly states that the required banns had been proclaimed and that no impediment to the marriage was found. It also notes that no prenuptial agreement was made.
 
-described as a maiden
-daughter of Józef and Zofia Rosiak
-apparently born in Kotomań / Kotomania or a similarly spelled place
-at the time of the marriage apparently residing in Duce / Ducze / Ducach or a similarly spelled place
-19 years old
-
-What else the record says
-
-The act also states that:
-
-the marriage was preceded by three banns
-no impediment to the marriage was found
-no prenuptial agreement was made
-the act was read aloud to those present
-because the parties and witnesses could not write, it was signed only by the priest`,
-},
+Several place names remain somewhat uncertain because of handwriting and image quality, but the family relationships are clear: this is the marriage record of Ludwik Wójcicki, son of Andrzej and Agnieszka, and Tekla Rosiakówna, daughter of Józef and Zofia.`,
+          },
           {
-  title: "Baptism record of Ludwik Wójcicki",
-  subtitle: "Family entry",
-  images: [REGION_IMAGES.ludwikur],
-  content: `It happened in Opinogóra Hrabska, on the twelfth day of October in the year one thousand eight hundred twenty-nine, at the first hour after noon.
+            title: "Baptism record of Ludwik Wójcicki",
+            subtitle: "Family entry",
+            images: [REGION_IMAGES.ludwikur],
+            content: `It happened in Opinogóra Hrabska, on the twelfth day of October in the year one thousand eight hundred twenty-nine, at the first hour after noon. There appeared Andrzej Wójcicki, owner of a part [of the village / estate], residing in Baraki Hrabskie, forty-one years of age, in the presence of Stanisław Pasierbik, forty-five years of age, and Józefa Siedlecka, thirty years of age, living in Baraki Hrabskie, and he showed to us a child of the male sex, born in the village of Baraki on the fifteenth day of September of this year, at the twelfth hour of the night, of his wife Agnieszka née Wiśniewska, thirty-three years of age. To this child, at holy baptism performed today, the name Ludwik was given, and his godparents were the above-mentioned Stanisław Pasierbik and Józefa Siedlecka. This document was read aloud to the declarant and the witnesses, and as they do not know how to write, it was signed by us only.
 
-There appeared Andrzej Wójcicki, owner of a part [of the village / estate], residing in Baraki Hrabskie, forty-one years of age, in the presence of Stanisław Pasierbik, forty-five years of age, and Józefa Siedlecka, thirty years of age, living in Baraki Hrabskie, and he showed to us a child of the male sex, born in the village of Baraki on the fifteenth day of September of this year, at the twelfth hour of the night, of his wife Agnieszka née Wiśniewska, thirty-three years of age.
+Main details
 
-To this child, at holy baptism performed today, the name Ludwik was given, and his godparents were the above-mentioned Stanisław Pasierbik and Józefa Siedlecka.
+Type: baptism / birth-baptism record
+Place of record: Opinogóra Hrabska
+Date of record / baptism: 12 October 1829
 
-This document was read aloud to the declarant and the witnesses, and as they do not know how to write, it was signed by us only.
+Child
 
-[signed]
-Fr. Łukasz Karniewski
-Curate / parish administrator of the chapel of Opinogóra
+Name: Ludwik Wójcicki
+Sex: male
+Date of birth: 15 September 1829
+Time of birth: 12 at night
+Place of birth: Baraki
 
-Key facts from the record
-Child: Ludwik Wójcicki
-Father: Andrzej Wójcicki, age 41
-Mother: Agnieszka née Wiśniewska, age 33
-Birth date: 15 September 1829
-Birth time: 12 at night
-Record / baptism date: 12 October 1829
-Place: Baraki / Baraki Hrabskie, act recorded in Opinogóra Hrabska
-Godparents: Stanisław Pasierbik and Józefa Siedlecka`,
-},
+Parents
+
+Father: Andrzej Wójcicki
+Age: 41
+Residence: Baraki Hrabskie
+Status: described as owner of a part [of the village / estate]
+
+Mother: Agnieszka née Wiśniewska
+Age: 33
+
+Godparents
+
+Stanisław Pasierbik
+Józefa Siedlecka
+
+Additional notes
+
+This record is especially valuable because it gives a precise birth date, names both parents, and identifies the mother by maiden name. It also places the family in Baraki / Baraki Hrabskie and gives the father a social description suggesting ownership of part of a holding or estate.
+
+As in many records from the period, the closing formula states that the act was read aloud and signed only by the priest because the declarant and witnesses were unable to write.`,
+          },
           {
             title: "Research notes",
             subtitle: "Open questions",
             images: [PLACEHOLDER_IMAGE],
-            content:
-              "This section is ideal for uncertainties, spelling shifts, related households, and hypotheses that connect the branch with neighboring lines.",
+            content: `This branch is now arranged in the same documentary format as the other family sections: first a full translated note, then the main facts drawn directly from the record, and finally additional observations or uncertainties.
+
+Future additions to this page can include further translated acts for the Wójcicki line, place-name clarifications, links to neighboring households, and any notes needed to explain spelling differences or uncertain readings without disrupting the main structure of the branch.`,
           },
         ],
       },
@@ -359,28 +371,45 @@ Godparents: Stanisław Pasierbik and Józefa Siedlecka`,
         title: "The Olszewski Family",
         subtitle: "Branch reconstruction",
         preview:
-          "A placeholder article area for the Olszewski line. This can later contain branch identity, record connections, and local context from Old Poland.",
+          "A working branch prepared in the same format as the other family sections: full translated records first, followed by main details and additional notes.",
         pages: [
           {
             title: "Branch overview",
-            subtitle: "Identity and structure",
+            subtitle: "Document structure",
             images: [PLACEHOLDER_IMAGE],
-            content:
-              "This is a placeholder first page for the Olszewski branch. Later it can contain the basic entry point into this family line and its place in the archive.",
+            content: `This branch is intended to follow the same structure as the other family sections in the archive. Each future entry should begin with a full translated note of the original document, followed by a short section containing the main factual details, and then a final section for additional notes, uncertainties, or genealogical interpretation.
+
+That format makes the archive easier to read and compare across branches. It also helps separate what is directly stated in the source from what is later inferred through research.`,
           },
           {
             title: "Document layer",
             subtitle: "Record connections",
             images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later be used for document interpretation, linked entries, and branch-specific notes that do not fit into the short preview.",
+            content: `As records are added for the Olszewski family, this page can hold the translated acts themselves in the standard format:
+
+Full translated note
+
+Main details
+Record number
+Date
+Place
+Type of act
+Persons named in the record
+
+Additional notes
+Uncertain readings
+Possible links to other households
+Interpretive remarks based on related records
+
+Using the same structure throughout the branch will keep this family section visually and narratively consistent with the Brejlak and Wójcicki entries.`,
           },
           {
             title: "Context and notes",
             subtitle: "Working archive",
             images: [PLACEHOLDER_IMAGE],
-            content:
-              "Use this page for open genealogical questions, name variants, branch ambiguities, and any notes that help reconstruct the family line.",
+            content: `This page is reserved for branch-specific observations that do not belong inside a single translated act. It can include surname variants, unresolved place readings, possible family links, and broader reconstruction notes.
+
+Even when this page is expanded later, the goal should remain the same: the core record pages should always begin with the translated source itself, while contextual or interpretive material should come after it in clearly separated sections.`,
           },
         ],
       },
@@ -606,15 +635,15 @@ const SPECIAL_ARTICLES = [
         images: [],
         content: `We honestly didn’t think this would turn into such a big thing. It all started pretty casually with a question: does the surname Brilski even exist in Poland? Because it sure doesn't sound Polish, except for the ending. That was it. Just a bit of curiosity and well, look where it got us.
 
-I knew you were always curious about your Polish roots  so we started digging and soon enough   we were going through archives, old records, church books, registers, Polish and American databases. We also horribly abused, misused and overused ChatGTP, but honestly we wouldn't have managed without it.
+I knew you were always curious about your Polish roots so we started digging, and soon enough we were going through archives, old records, church books, registers, Polish and American databases. We also horribly abused, misused, and overused ChatGPT, but honestly we wouldn't have managed without it.
 
-Small pieces started forming a bigger picture or usually so we thought. Because with every extra hour and every new document, we often ended up more confused than before. And so it went, step by step, date by date, record by record.
+Small pieces started forming a bigger picture, or usually so we thought. Because with every extra hour and every new document, we often ended up more confused than before. And so it went, step by step, date by date, record by record.
 
-What we’re sharing here is based on all the documents and records we were lucky enough to find. We did try to build a bigger picture tho, adding the historical, cultural, and linguistic context, especially of Poland in the late 19th and early 20th century.
+What we’re sharing here is based on all the documents and records we were lucky enough to find. We did try to build a bigger picture though, adding the historical, cultural, and linguistic context, especially of Poland in the late 19th and early 20th century.
 
-I will not lie, we got pretty invested in this project and it did cost us a fair amount of mental breakdowns but it was worth it. We had fun discovering the story piece by piece and trying to figure out what happened, when, and why. We did our best to make sense of everything and connect the dots, but eventually, we had to accept that we might never know the full story.
+I will not lie, we got pretty invested in this project and it did cost us a fair amount of mental breakdowns, but it was worth it. We had fun discovering the story piece by piece and trying to figure out what happened, when, and why. We did our best to make sense of everything and connect the dots, but eventually, we had to accept that we might never know the full story.
 
-We know this history isn’t complete. There are gaps, inconsistencies, and possibly, we got a few things wrong. But we did our best to bring everything together into one story to give you some of the answers. Hopefully you will find here at least a little bit of what you were looking for.
+We know this history isn’t complete. There are gaps, inconsistencies, and possibly we got a few things wrong. But we did our best to bring everything together into one story to give you some of the answers. Hopefully you will find here at least a little bit of what you were looking for.
 
 Ola & Wojtek`,
       },
