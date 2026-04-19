@@ -32,6 +32,12 @@ const REGION_IMAGES = {
   franknaturalizacja: `${BASE_URL}region/franknaturalizacja.png`,
   frankpassangerlist:`${BASE_URL}region/frankpassangerlist.png`,
   frankdraft: `${BASE_URL}region/frankdraft.png`,
+  jozefapassanger1:`${BASE_URL}region/jozefapassanger1.png`,
+  jozefapassanger2:`${BASE_URL}region/jozefapassanger2.png`,
+  rogalskinaturalizacja:`${BASE_URL}region/rogalskinaturalizacja.png`,
+  sophiewojcickapassanger:`${BASE_URL}region/sophiewojcickapassanger.png`,
+  frankbrilskiurodzony: `${BASE_URL}region/ur frank brilski 173.jpg`,
+
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -746,7 +752,46 @@ This entry further strengthens the reconstruction of the Dobrzanski family line 
   preview:
     "A documentary profile of Frank Brilski, tracing his departure from Poland, migration to the United States, early records, and the evolution of his identity across archives.",
   pages: [
-    {
+{
+  title: "Birth of Franciszek Brejlak (Frank Brilski)",
+  subtitle: "Written records",
+  images: [REGION_IMAGES.frankbrilskiurodzony],
+  content: `It took place in the village of Leszno, parish of Przasnysz, on an unspecified day in the year 1878. We make it known that, in the presence of witnesses, a declaration was made of the birth of a male child. The child was given the name Franciszek and the surname Brejlak.
+
+The father, Stanisław Brejlak, a laborer residing in Leszno, appeared before the registrar and presented the child. The mother of the child was Marianna Brejlak, his wife. The record follows the standard structure of civil birth registrations of the period.
+
+The act was read aloud to those present and formally completed by the registrar.
+
+Main details
+
+Record number: 173
+Place: Leszno, parish of Przasnysz
+Date: year 1878 (exact day unclear from scan)
+Type: birth record
+
+Persons named in the act
+
+Child: Franciszek Brejlak
+Sex: male
+
+Father: Stanisław Brejlak
+Occupation: laborer
+Residence: Leszno
+
+Mother: Marianna Brejlak
+Role: mother
+
+Additional notes
+
+This record is highly significant because it provides the Polish birth entry for the individual later known in American records as Frank Brilski.
+
+The name Franciszek corresponds directly to Frank, and the surname Brejlak represents the earlier Polish form that later evolved into Brylski / Brilski after migration.
+
+The date of birth recorded here aligns with later American records, including the World War I draft registration card, which gives a birth date of 12 May 1878. This consistency strongly confirms that Franciszek Brejlak and Frank Brilski are the same individual.
+
+This entry establishes a clear link between the Polish parish records in Leszno and the American records in Ohio, making it a key genealogical anchor for the Brilski family line.`
+},
+  {
   title: "Passenger list entry for Frank Brilski",
   subtitle: "Written records",
   images: [REGION_IMAGES.frankpassangerlist],
@@ -923,6 +968,171 @@ Draft registration cards are particularly valuable genealogically because they w
 },
   
   ],
+},
+{
+  id: "jozefa-wojcicka",
+  year: "1910",
+  label: "Person",
+  title: "Jozefa Wojcicka",
+  subtitle: "Arrival in New York and first migration record",
+  preview:
+    "A documentary profile of Jozefa Wojcicka based on her passenger list entry, tracing her voyage from Hamburg to New York in 1910 and the first confirmed details of her arrival in the United States.",
+  pages: [
+    {
+      title: "Passenger list entry for Jozefa Wojcicka",
+      subtitle: "Written records",
+      images: [REGION_IMAGES.jozefapassanger1,REGION_IMAGES.jozefapassanger2],
+      content: `This document consists of two pages from a United States passenger manifest recording the arrival of Jozefa Wojcicka in New York in September 1910. The first page identifies the ship as the S.S. Kaiserin Auguste Victoria, sailing from Hamburg on 16 September 1910, while the continuation sheet records arrival at the port of New York on 26 September 1910. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+
+Jozefa Wojcicka appears on the manifest as a twenty-year-old female passenger. Her surname is written as Wojcicka and her given name as Jozefa. The entry places her among steerage passengers traveling from Europe to the United States. :contentReference[oaicite:2]{index=2}
+
+The record indicates that her last permanent residence was Leszno, in the Russian partition of Poland, and that her nationality was recorded under Russia, with Polish identity noted in the ethnic or race column. Her final destination in the United States was Neffs, Ohio. :contentReference[oaicite:3]{index=3}
+
+The passenger list also preserves family connections on both sides of the Atlantic. In the column for the nearest relative or friend in the country whence the alien came, the entry appears to name her father, Stanisław Wojcicki, in Leszno. In the column asking whom she was going to join in the United States, the continuation sheet appears to identify a cousin, also named Stanisław Wojcicki, living in Neffs, Ohio. Some parts of these handwritten entries are difficult to read, but the family connection is clear. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+
+The second sheet also includes personal description data. Jozefa is recorded as 5 feet 2 inches tall, with brown hair and blue eyes. Her place of birth is written in the far-right columns, though the town name is difficult to read with certainty from the present image. :contentReference[oaicite:6]{index=6}
+
+Main details
+
+Document type: passenger list / ship manifest  
+Ship: S.S. Kaiserin Auguste Victoria  
+Port of departure: Hamburg  
+Date of departure: 16 September 1910  
+Port of arrival: New York  
+Date of arrival: 26 September 1910  
+Travel class: steerage passenger  
+
+Persons named in the record
+
+Primary subject: Jozefa Wojcicka  
+Age: 20  
+Sex: female  
+Last residence: Leszno  
+Political nationality: Russia  
+Ethnic identity: Polish  
+Final destination: Neffs, Ohio  
+
+Family connections noted in the record
+
+Nearest relative in country of origin: appears to be her father, Stanisław Wojcicki, in Leszno  
+Person she was going to join in the United States: appears to be her cousin, Stanisław Wojcicki, in Neffs, Ohio  
+
+Physical description
+
+Height: 5 ft 2 in  
+Hair: brown  
+Eyes: blue  
+
+Additional notes
+
+This passenger list is a key migration record for Jozefa Wojcicka and appears to be her earliest confirmed trace in American archival material. It documents not only the voyage itself, but also her place of origin, destination, and family contacts on both sides of the journey. :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
+
+The record is especially valuable because it links Leszno and the Wojcicki family in Poland with Neffs, Ohio, where she was headed after arrival. This makes it an important bridge between the Polish parish records and the American branch of the family. :contentReference[oaicite:9]{index=9} :contentReference[oaicite:10]{index=10}
+
+Some details remain slightly uncertain because of the handwriting and image quality, especially the exact wording of the family addresses and the place of birth entry. Even so, the core information is clear and stable: Jozefa Wojcicka, age twenty, sailed from Hamburg on the S.S. Kaiserin Auguste Victoria and arrived in New York on 26 September 1910, bound for Neffs, Ohio. :contentReference[oaicite:11]{index=11} :contentReference[oaicite:12]{index=12}`
+    }
+  ]
+},
+{
+  id: "sophie-wojcicki",
+  year: "1913",
+  label: "Article",
+  title: "Sophie Wójcicki",
+  subtitle: "Arrival in the United States",
+  preview:
+    "A reconstruction of the migration record of Sophie Wójcicki, documenting her journey from Europe to the United States and her place within the broader Wójcicki migration story.",
+  pages: [
+    {
+      title: "Arrival of Sophie Wójcicki",
+      subtitle: "Passenger records",
+      images: [REGION_IMAGES.sophiewojcickapassanger],
+      content: `This document records the arrival of Sophie Wójcicki in the United States as part of a passenger list manifest. The record comes from a List or Manifest of Alien Passengers for the United States, documenting individuals entering the country by sea.
+
+The ship on which she traveled was the S.S. President Lincoln, which sailed from Hamburg in September 1913 and arrived in New York later that same month. :contentReference[oaicite:0]{index=0}
+
+Sophie Wójcicki appears among a group of passengers listed together, most likely traveling within the same regional or community network. As with many such records, the manifest includes details such as age, marital status, occupation, nationality, last place of residence, and intended destination in the United States.
+
+The document reflects the standard immigration procedure of the early 20th century, when passengers were recorded upon arrival and assigned entries based on declarations made during inspection. These manifests often served as the first official record of an immigrant’s presence in the United States.
+
+Main details
+
+Type: passenger arrival record  
+Ship: S.S. President Lincoln  
+Port of departure: Hamburg  
+Date of departure: September 1913  
+Port of arrival: New York  
+Date of arrival: September 1913  
+
+Person named in the record
+
+Name: Sophie Wójcicki  
+Nationality: recorded under the Russian Empire (Polish origin)  
+Travel context: listed among multiple passengers from the same region  
+
+Additional notes
+
+This record is an important migration document connecting the Wójcicki family to the broader pattern of early 20th-century transatlantic movement. Travel from Hamburg to New York was one of the most common migration routes for individuals from the Polish lands under partition.
+
+The manifest suggests that Sophie was part of a wider migration flow rather than an isolated case. Individuals listed nearby may represent relatives, neighbors, or members of the same local community, which was a common pattern in chain migration.
+
+This document forms a key link between European parish records and the American phase of the Wójcicki family history, placing Sophie within the documented migration wave of 1913.`
+    },
+    {
+  title: "Naturalization of Józef Rogalski (husband of Sophie Wójcicki)",
+  subtitle: "Declaration of intention",
+  images: [REGION_IMAGES.rogalskinaturalizacja],
+  content: `This document records the Declaration of Intention submitted by Józef Rogalski, the husband of Sophie Wójcicki, as part of the United States naturalization process. The record was filed in Lucas County, Ohio, in 1921.
+
+Józef Rogalski, aged thirty-one, declared his intention to become a citizen of the United States. He was employed as a laborer and resided at 343 Oakland Street in Toledo, Ohio.
+
+The document provides a physical description: he was of white complexion, with blue eyes and blonde hair, and measured approximately five feet seven inches in height.
+
+He stated that he was born in Northern Poland (recorded under the Russian Empire context) on 19 March 1891. He emigrated to the United States from Rotterdam, Netherlands, traveling on the vessel Nieuw Amsterdam. His last foreign residence is recorded as Leszno, Poland.
+
+The declaration explicitly names his wife as Sophie, born in Leszno, Poland, and residing with him at the same address in Toledo, Ohio. This confirms the marital connection between Sophie Wójcicki and Józef Rogalski within American records.
+
+The document also records his formal renunciation of allegiance to any foreign sovereign, specifically naming the Republic of Poland.
+
+Main details
+
+Type: Declaration of Intention (naturalization record)  
+Place: Lucas County, Ohio (Toledo)  
+Date of filing: 3 September 1921  
+
+Person named in the act
+
+Name: Józef Rogalski  
+Age: 31  
+Birth date: 19 March 1891  
+Birthplace: Northern Poland (Russian Empire context)  
+Occupation: laborer  
+Residence: 343 Oakland Street, Toledo, Ohio  
+
+Immigration details
+
+Port of departure: Rotterdam, Netherlands  
+Vessel: Nieuw Amsterdam  
+Port of arrival: New York  
+Date of arrival: 17 March 1912  
+
+Family
+
+Wife: Sophie (Sophie Wójcicki)  
+Birthplace: Leszno, Poland  
+Residence: Toledo, Ohio  
+
+Additional notes
+
+This document is especially important because it directly links Sophie Wójcicki to her husband Józef Rogalski in an official U.S. record.
+
+It also confirms the family’s residence in Toledo, Ohio, and provides precise migration details, including the ship and arrival date. These details allow further tracing of both Józef and Sophie in immigration, census, and naturalization records.
+
+The declaration reflects a standard first step in the naturalization process, in which the applicant formally declares intent to become a U.S. citizen and renounces allegiance to their country of origin.
+
+This record serves as a key anchor connecting the European Wójcicki line with the American Rogalski household.`
+},
+    
+  ]
 },
     {
   id: "arrival-guardianship-context",
