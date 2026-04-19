@@ -145,86 +145,88 @@ export default function ArchiveScreen({
       <section className="relative z-10 min-h-screen px-6 py-10 md:px-10 lg:px-14">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
-            <div className="rounded-[2rem] border border-[#b68a57]/24 bg-[linear-gradient(180deg,rgba(70,46,29,0.58),rgba(25,15,10,0.72))] p-6 shadow-[inset_0_0_40px_rgba(0,0,0,0.25)] backdrop-blur-sm md:p-7">
-              <div className="flex items-start justify-between gap-6">
-                <div className="max-w-4xl">
-                  <div className="text-[11px] uppercase tracking-[0.32em] text-[#d9bf8e]/62">
-                    Enter the archive
-                  </div>
-
-                  <h1 className="mt-4 font-serif text-4xl text-[#f2dfb7] md:text-5xl">
-                    Family Archive
-                  </h1>
-
-                  <p className="mt-5 max-w-3xl text-sm leading-8 text-[#e8d6b0]/70 md:text-base">
-                    The archive is arranged in chapters. Choose a historical
-                    period, then browse its family branches or articles through
-                    the reader panel below.
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-3">
-                    <button
-                      onClick={handlePlaybackToggle}
-                      className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
-                    >
-                      {isPlaying ? "Pause ambience" : "Play ambience"}
-                    </button>
-
-                    <button
-                      onClick={toggleMute}
-                      className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
-                    >
-                      {isMuted ? "Unmute" : "Mute"}
-                    </button>
-                  </div>
-
-                  {SPECIAL_ARTICLES?.length > 0 && (
-                    <div className="mt-10">
-                      <div className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#d9bf8e]/58">
-                        Side notes
-                      </div>
-
-                      <div className="grid gap-3 md:grid-cols-2">
-                        {SPECIAL_ARTICLES.map((article) => (
-                          <button
-                            key={article.id}
-                            onClick={() => openArticle(article)}
-                            className="group relative overflow-hidden rounded-[1.35rem] border border-[#b68a57]/18 bg-[linear-gradient(180deg,rgba(56,36,24,0.56),rgba(29,18,12,0.7))] p-4 text-left transition hover:border-[#c79860]/28 hover:bg-[linear-gradient(180deg,rgba(64,42,28,0.62),rgba(33,21,14,0.76))]"
-                          >
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,187,134,0.08),transparent_50%)]" />
-                            <div className="absolute inset-[1px] rounded-[1.25rem] border border-[#f1d9ac]/[0.04]" />
-
-                            <div className="relative z-10">
-                              <div className="text-[10px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
-                                {article.label}
-                              </div>
-
-                              <div className="mt-2 font-serif text-xl leading-tight text-[#f0ddb4] md:text-[1.45rem]">
-                                {article.title}
-                              </div>
-
-                              <div className="mt-2 text-sm leading-6 text-[#e8d6b0]/60">
-                                {article.subtitle}
-                              </div>
-
-                              <div className="mt-4 inline-flex items-center rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/44 px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] text-[#ead7b0]/70">
-                                Open article
-                              </div>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
+            <div className="grid gap-6">
+              <div className="rounded-[2rem] border border-[#b68a57]/24 bg-[linear-gradient(180deg,rgba(70,46,29,0.58),rgba(25,15,10,0.72))] p-6 shadow-[inset_0_0_40px_rgba(0,0,0,0.25)] backdrop-blur-sm md:p-7">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="max-w-4xl">
+                    <div className="text-[11px] uppercase tracking-[0.32em] text-[#d9bf8e]/62">
+                      Enter the archive
                     </div>
-                  )}
-                </div>
 
-                <button
-                  onClick={onBack}
-                  className="h-11 shrink-0 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/65 px-5 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
-                >
-                  Back
-                </button>
+                    <h1 className="mt-4 font-serif text-4xl text-[#f2dfb7] md:text-5xl">
+                      Family Archive
+                    </h1>
+
+                    <p className="mt-5 max-w-3xl text-sm leading-8 text-[#e8d6b0]/70 md:text-base">
+                      The archive is arranged in chapters. Choose a historical
+                      period, then browse its family branches or articles
+                      through the reader panel below.
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap items-center gap-3">
+                      <button
+                        onClick={handlePlaybackToggle}
+                        className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                      >
+                        {isPlaying ? "Pause ambience" : "Play ambience"}
+                      </button>
+
+                      <button
+                        onClick={toggleMute}
+                        className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                      >
+                        {isMuted ? "Unmute" : "Mute"}
+                      </button>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={onBack}
+                    className="h-11 shrink-0 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/65 px-5 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
+                  >
+                    Back
+                  </button>
+                </div>
               </div>
+
+              {SPECIAL_ARTICLES?.length > 0 && (
+                <div>
+                  <div className="mb-4 text-[11px] uppercase tracking-[0.28em] text-[#d9bf8e]/58">
+                    Side notes
+                  </div>
+
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {SPECIAL_ARTICLES.map((article) => (
+                      <button
+                        key={article.id}
+                        onClick={() => openArticle(article)}
+                        className="group relative overflow-hidden rounded-[1.35rem] border border-[#b68a57]/18 bg-[linear-gradient(180deg,rgba(56,36,24,0.56),rgba(29,18,12,0.7))] p-4 text-left transition hover:border-[#c79860]/28 hover:bg-[linear-gradient(180deg,rgba(64,42,28,0.62),rgba(33,21,14,0.76))]"
+                      >
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,187,134,0.08),transparent_50%)]" />
+                        <div className="absolute inset-[1px] rounded-[1.25rem] border border-[#f1d9ac]/[0.04]" />
+
+                        <div className="relative z-10">
+                          <div className="text-[10px] uppercase tracking-[0.24em] text-[#d9bf8e]/58">
+                            {article.label}
+                          </div>
+
+                          <div className="mt-2 font-serif text-xl leading-tight text-[#f0ddb4] md:text-[1.45rem]">
+                            {article.title}
+                          </div>
+
+                          <div className="mt-2 text-sm leading-6 text-[#e8d6b0]/60">
+                            {article.subtitle}
+                          </div>
+
+                          <div className="mt-4 inline-flex items-center rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/44 px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] text-[#ead7b0]/70">
+                            Open article
+                          </div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             <FamilyTreeOrbit onEnterTree={onEnterTree} />
