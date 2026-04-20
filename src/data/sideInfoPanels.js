@@ -94,59 +94,41 @@ Together, Przasnysz and Leszno illustrate the development of a Mazovian town and
           },
         ],
       },
-      {
-        id: "story-of-a-name",
-        year: "Late 19th c. – 1904+",
-        label: "Article",
-        title: "This is a story of a name",
-        subtitle: "From Brejlak to Brylski and Brilski",
-        preview:
-          "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
-        pages: [
-          {
-            title: "This is a story of a name",
-            subtitle: "Brejlak before emigration",
-            images: [REGION_IMAGES.brilski1],
-            content: `This is a story of a name
-
-Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
+{
+  id: "story-of-a-name",
+  year: "Late 19th c. – 1904+",
+  label: "Article",
+  title: "This is a story of a name",
+  subtitle: "From Brejlak to Brylski and Brilski",
+  preview:
+    "An article exploring the likely evolution of the family surname from Brejlak in Polish records to Brylski and Brilski in later Polish and American documents.",
+  pages: [
+    {
+      title: "This is a story of a name",
+      subtitle: "From Brejlak to Brylski and Brilski",
+      images: [REGION_IMAGES.brilski1],
+      content: `Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
 
 There is no way to know with certainty why the change happened. Was it a conscious decision made by Victor Brylski and Frank Brilski, when they came in 1904 with the rest of the family simply following later? Was it the result of deeper cultural, historical, and linguistic processes already underway in Poland? Or perhaps a combination of both. We will probably never know the exact moment or motivation, but we can explore the most likely explanations by looking at the broader context.
 
 The first theory suggests that the surname change was a clear, deliberate shift that took place after the first family members arrived in the United States in 1904. This would not have been unusual. Many immigrants modified their surnames to simplify pronunciation, to fit English spelling patterns, or because the new form felt more practical in everyday American life. The ending -ski is strongly associated with Polish identity, so choosing Brylski or Brilski may have also been a way to signal their origins within Polish communities.
 
-However, this explanation does not fully match what happened later. Over time, the family went through naturalization, joined the U.S. military, and did not ephasize their Polish heritage. This makes it less likely that the change was motivated purely by a desire to highlight their Polish identity and traditions.`,
-          },
-          {
-            title: "A change already underway",
-            subtitle: "Why Brylski may have existed in Poland first",
-            images: [REGION_IMAGES.brilski2],
-            content: `The second theory argues that the name Brylski was already in use in Poland before emigration and several findings support this idea:
+However, this explanation does not fully match what happened later. Over time, the family went through naturalization, joined the U.S. military, and did not emphasize their Polish heritage. This makes it less likely that the change was motivated purely by a desire to highlight their Polish identity and traditions.
 
-In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej. A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Brilski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska. This gradual shift strongly supports the idea that the transformation began before emigration.
+The second theory argues that the name Brylski was already in use in Poland before emigration and several findings support this idea. In birth records, Balbina Łukasiak—identified as the aunt of Frank Brilski—is listed as Balbina Brejlak, yet in the Polish note written at the time of her death she is described as the daughter of Andrzej Brylski. A similar pattern appears in the case of Michalina Brejlak, the sister of Frank Brilski, who remained in Poland. She was born as Brejlak, and the birth records of her children with Władysław Sobierajski initially list her maiden name as Brejlak. In later entries, however, her maiden name appears as Brylska.
 
-How did Brejlak become Brylski?
-
-The first part of the change—Brejl- to Bryl-—can be explained by pronunciation. In some Polish dialects, the vowel combination ej can be pronounced closer to y, making Brejlak sound more like Brylak. In a heavily Russian-influenced environment, softer or altered pronunciation patterns were often reinforced.
-
-The second part of the change—from -ak to -ski—is much more complex and tied to the political and cultural situation of the late nineteenth century.`,
-          },
-          {
-            title: "From Brylski to Brilski",
-            subtitle: "Polish, American, and linguistic influences",
-            images: [REGION_IMAGES.brilski3],
-            content: `At the time, Poland did not exist as an independent state and was divided between the Russian, Prussian, and Austro-Hungarian empires. The Brejlak family lived in the Russian Partition, where strong Russification policies were enforced, especially after the January Uprising of 1863. These policies pushed Polish families toward Russian-style forms and discouraged anything that emphasized Polish cultural identity. Changing names to more Polish-sounding forms could become a quiet act of resistance, even though it was difficult to do officially. At the same time, there was also a broader trend toward Polonizing surnames by adopting endings such as -ski, which sounded more Polish and carried associations of respectability. This cultural tendency makes the appearance of Brylski in Polish records easier to understand.
+This gradual shift reflected in the records strongly supports the idea that the transformation began before emigration, which would not be unusual. It is worth mentioning that in nineteenth-century Mazovia it was not uncommon for a single family to appear under several versions of the same surname and to use them simultaneously. Spelling depended largely on how a priest or civil registrar wrote it down based on what they heard. Local dialect features often altered pronunciation, producing parallel forms such as Brejlak, Brylak, or Brylski that were treated as equivalent rather than distinct identities. From a linguistic perspective, this variation is not surprising: in some Mazovian dialects, vowel sounds could shift so that a name like “Brejlak” might be heard and recorded as “Brylak,” with the “ej” sound moving closer to a shorter “y.” The ending “-ski,” meanwhile, is a traditional Polish suffix often used to form surnames, sometimes indicating association with a place or simply functioning as a common adjectival ending. Another important factor is that much of this region was under Russian administration at the time, where official records were mostly kept in Cyrillic rather than the Latin alphabet used for Polish. When names like “Brejlak” were written phonetically in Cyrillic and later transliterated back into Latin script, additional variations could easily emerge. With no standardized orthography and little attention paid to consistent spelling, these variants could coexist in official records for generations, all referring to the same family line.
 
 The transition from Brylski to Brilski likely occurred later, most probably in the United States. The change from “y” to “i” fits English spelling habits, making Brilski an Americanized version of the name. The form Brylski is linguistically more natural in Polish, as the consonant cluster “bryl” fits typical phonetic patterns, whereas “bril” is unusual and does not sound natural in Polish usage.
 
-What is clear is that the family consistently preferred the Brylski / Brilski form once they arrived in the United States. The name Brejlak appears only on the official passenger lists of the ship—such as for Leonora and Władysław, siblings of Frank Brilski, and for the family of Victor Brylski—but never again in later American records.
+What is clear is that the family consistently preferred the Brylski / Brilski form once they arrived in the United States. The name Brejlak (Breilak) appears only on the official passenger lists of the ship but never in official American records.
 
-The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexist, linguistic and political factors encouraged variation, and both Polish and American environments contributed to the evolution.
+The exact path from Brejlak to Brilski cannot be reconstructed with complete certainty. What can be said is that multiple surname forms coexist, linguistic and political factors encouraged variations, and both Polish and American environments contributed to the evolution.
 
-Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`,
-          },
-        ],
-      },
+Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`
+    },
+  ],
+},
       {
         id: "brejlak",
         year: "1840s",
@@ -743,6 +725,66 @@ This entry further strengthens the reconstruction of the Dobrzanski family line 
     intro:
       "A chapter for migration, arrival, guardianship, name changes, new records in America, and the disruption of older family structures.",
     items: [
+      {
+  id: "family-on-the-way",
+  year: "1904–1913",
+  label: "Article",
+  title: "Family on the Way",
+  subtitle: "Chain migration from Poland to the United States",
+  preview:
+    "An article tracing the staged migration of the Brilski family and their relatives, showing how earlier arrivals created the path for later family members to reach the United States.",
+  pages: [
+    {
+      title: "Family on the Way",
+      subtitle: "Chain migration and family connections",
+      images: [PLACEHOLDER_IMAGE],
+      content: `The Brilski family’s migration to the United States began with Frank Brilski, listed on the passenger list as Franz Berilak, who arrived on December 30, 1904. He first went to Franklin, Pennsylvania, to join his cousin Stanislaw Lukasiak.
+
+Frank was the first member of the immediate family to come to America, and his arrival created the contact point for the rest of the family.
+
+Like many Polish families at the time, the Brilskis did not travel together. They came in stages, each person relying on relatives already in the United States. Not all dates and routes are known, but several important arrivals are documented.
+
+The next group most likely included Antoni, Jozefa (Josephine), and Victor, who were Frank’s siblings. According to the 1930 census, Victor arrived in 1908. Passenger lists have not been found, but Victor’s death certificate and most probably other documents list Jozefa and Antoni as his guardians. This suggests that the three of them traveled together, probably already heading to Neffs, Ohio, where Frank had settled.
+
+Josephine Wojcicki arrived on September 16, 1910. She listed Stanislaw Wódkiewicz, living in Neffs, Ohio, as her relative in the United States. He was her cousin on her mother’s side, showing how extended family connections supported the migration process and that there was already a bigger Polish community in Neffs.
+
+In 1913, Władysław and Leonora came to the United States, also going directly to Neffs, Ohio. They traveled with Sophie, the sister of Josephine Wojcicki. On her immigration documents, Sophie listed Frank Brilski (Franz Breilak) as her relative in America and identified him as her brother-in-law.
+
+These records show a clear pattern of chain migration, where each arrival depended on the presence of earlier family members. Although some details remain unknown, the available documents show the gradual movement of the Brilski family and their relatives from Poland to the United States in the early 1900s.`
+    }
+  ]
+},
+{
+  id: "one-way-ticket-to-a-better-world",
+  year: "Late 19th c. – Early 20th c.",
+  label: "Article",
+  title: "One Way Ticket to a Better World",
+  subtitle: "Why so many families left the Russian partition",
+  preview:
+    "An article explaining why emigration from the Polish lands under Russian rule became so widespread, and why America came to be seen as a necessary path toward survival and stability.",
+  pages: [
+    {
+      title: "One Way Ticket to a Better World",
+      subtitle: "Poverty, pressure, and the promise of America",
+      images: [PLACEHOLDER_IMAGE],
+      content: `At the beginning of the twentieth century, many people from the Polish lands controlled by the Russian Empire faced a difficult choice: stay and struggle, or leave everything behind in search of a better life. For thousands of families, emigration to the United States was not just an opportunity, but a necessity. This movement became part of a wider wave of migration from Europe, but in the case of Poles it was deeply rooted in everyday hardship.
+
+Life in the countryside was especially difficult. Most people depended on small farms that could no longer support growing families. Land was divided into smaller and smaller plots, and even hard work often did not bring enough income to survive comfortably. There were few alternatives, as towns and cities could not offer enough jobs. For many young people, the future looked uncertain, with little chance of improving their situation.
+
+At the same time, political conditions added to this sense of pressure. After the January Uprising, the Russian authorities tightened their control over Polish society. The use of the Polish language was limited, education was restricted, and political activity was closely monitored. Even for those not directly involved in resistance, these policies shaped daily life and reduced personal freedom. Leaving the country meant not only seeking work, but also escaping these limitations.
+
+Against this background, America began to appear as a real alternative. Stories spread from those who had already left—letters describing steady work, higher wages, and the possibility of building a more stable life. These stories encouraged others to follow. Migration often happened step by step: one person would leave first, find work, and then help relatives or neighbors make the same journey.
+
+The scale of this movement was significant. Between the late nineteenth century and the outbreak of World War I, about 1.3 million people left the Russian partition, which was roughly 10–15% of the population. The process became especially intense in the early twentieth century, when nearly one million people emigrated within just a decade. In small rural communities, the effects were clearly visible. In a village like Leszno, of around 700–800 inhabitants, it is likely that 70 to 120 people left during this period, and in some cases even more—perhaps up to 150 or 200—especially when migration followed family and neighbor connections. This meant that almost every household was touched by emigration in some way.
+
+The journey itself required courage and preparation. People had to gather money for the trip, often by selling possessions or borrowing from others. They traveled by train to ports such as Hamburg or Bremen, and from there boarded ships to cross the Atlantic. The voyage could last several weeks, and conditions on board were often crowded and uncomfortable, especially for those traveling in the cheapest class.
+
+Arrival in America was another important moment. Most immigrants passed through Ellis Island, where they were inspected and registered before being allowed to enter the country. From there, many continued on to large industrial cities such as Chicago, Detroit, and New York. They found work mainly in factories, mines, and other demanding jobs. Although the work was hard, it offered better pay and more stability than what they had left behind.
+
+In the end, emigration from the Russian partition was shaped by a mix of necessity and hope. People were pushed by poverty and limited opportunities at home, but also pulled by the promise of work and a more secure life abroad. For many, the decision to leave was not easy, but it became a turning point that changed not only their own lives, but also the future of their families and communities.`
+    }
+  ]
+},
       {
   id: "frank-brilski",
   year: "1904+",
