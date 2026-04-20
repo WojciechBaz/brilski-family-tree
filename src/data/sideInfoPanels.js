@@ -9,6 +9,7 @@ const REGION_IMAGES = {
   parishModern: `${BASE_URL}region/przasnysz-parish-modern.jpg`,
   streetArchive: `${BASE_URL}region/przasnysz-street-archive.PNG`,
   townhallModern: `${BASE_URL}region/przasnysz-townhall-modern.jpg`,
+  brilskibrejlak: `${BASE_URL}region/brilskibrejlak.png`,
   brilski1: `${BASE_URL}region/brilski1.png`,
   brilski2: `${BASE_URL}region/brilski2.png`,
   brilski3: `${BASE_URL}region/brilski3.png`,
@@ -37,7 +38,8 @@ const REGION_IMAGES = {
   rogalskinaturalizacja:`${BASE_URL}region/rogalskinaturalizacja.png`,
   sophiewojcickapassanger:`${BASE_URL}region/sophiewojcickapassanger.png`,
   frankbrilskiurodzony: `${BASE_URL}region/ur frank brilski 173.jpg`,
-
+  migration1: `${BASE_URL}region/migration.png`,
+  migration2: `${BASE_URL}region/migration2.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -106,7 +108,7 @@ Together, Przasnysz and Leszno illustrate the development of a Mazovian town and
     {
       title: "This is a story of a name",
       subtitle: "From Brejlak to Brylski and Brilski",
-      images: [REGION_IMAGES.brilski1],
+      images: [REGION_IMAGES.brilskibrejlak],
       content: `Research into the family history shows that before the start of their emigration to the United States in 1904, the surname recorded in Polish documents was Brejlak. This form appears consistently in civil and parish records from the region, yet it never appears in American documents.
 
 There is no way to know with certainty why the change happened. Was it a conscious decision made by Victor Brylski and Frank Brilski, when they came in 1904 with the rest of the family simply following later? Was it the result of deeper cultural, historical, and linguistic processes already underway in Poland? Or perhaps a combination of both. We will probably never know the exact moment or motivation, but we can explore the most likely explanations by looking at the broader context.
@@ -737,7 +739,7 @@ This entry further strengthens the reconstruction of the Dobrzanski family line 
     {
       title: "Family on the Way",
       subtitle: "Chain migration and family connections",
-      images: [PLACEHOLDER_IMAGE],
+      images: [REGION_IMAGES.migration2],
       content: `The Brilski family’s migration to the United States began with Frank Brilski, listed on the passenger list as Franz Berilak, who arrived on December 30, 1904. He first went to Franklin, Pennsylvania, to join his cousin Stanislaw Lukasiak.
 
 Frank was the first member of the immediate family to come to America, and his arrival created the contact point for the rest of the family.
@@ -766,7 +768,7 @@ These records show a clear pattern of chain migration, where each arrival depend
     {
       title: "One Way Ticket to a Better World",
       subtitle: "Poverty, pressure, and the promise of America",
-      images: [PLACEHOLDER_IMAGE],
+      images: [REGION_IMAGES.migration1],
       content: `At the beginning of the twentieth century, many people from the Polish lands controlled by the Russian Empire faced a difficult choice: stay and struggle, or leave everything behind in search of a better life. For thousands of families, emigration to the United States was not just an opportunity, but a necessity. This movement became part of a wider wave of migration from Europe, but in the case of Poles it was deeply rooted in everyday hardship.
 
 Life in the countryside was especially difficult. Most people depended on small farms that could no longer support growing families. Land was divided into smaller and smaller plots, and even hard work often did not bring enough income to survive comfortably. There were few alternatives, as towns and cities could not offer enough jobs. For many young people, the future looked uncertain, with little chance of improving their situation.
