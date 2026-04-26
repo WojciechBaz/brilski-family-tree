@@ -1,6 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+function getImageSrc(image) {
+  if (!image) return null;
+  if (typeof image === "string") return image;
+  return image.src ?? image.url ?? null;
+}
+
+function getImageAlt(image, fallback) {
+  if (!image) return fallback;
+  if (typeof image === "string") return fallback;
+  return image.alt ?? image.caption ?? fallback;
+}
+
 export default function RecordsArticleModal({ article, onClose }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -37,11 +49,14 @@ export default function RecordsArticleModal({ article, onClose }) {
 
   const activeImage = useMemo(() => {
     if (currentImages.length === 0) return null;
+
     return (
       currentImages[Math.min(activeImageIndex, currentImages.length - 1)] ??
       currentImages[0]
     );
   }, [currentImages, activeImageIndex]);
+
+  const activeImageSrc = getImageSrc(activeImage);
 
   useEffect(() => {
     setPageIndex(0);
@@ -79,6 +94,7 @@ export default function RecordsArticleModal({ article, onClose }) {
         if (pages.length > 0) {
           setPageIndex((prev) => (prev === pages.length - 1 ? 0 : prev + 1));
         }
+
         return;
       }
 
@@ -98,7 +114,13 @@ export default function RecordsArticleModal({ article, onClose }) {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [article, onClose, pages, isImageExpanded, currentImages.length]);
+  }, [
+    article,
+    onClose,
+    pages,
+    isImageExpanded,
+    currentImages.length,
+  ]);
 
   useEffect(() => {
     if (article || isImageExpanded) {
@@ -122,6 +144,7 @@ export default function RecordsArticleModal({ article, onClose }) {
 
   const goPrevImage = () => {
     if (currentImages.length <= 1) return;
+
     setActiveImageIndex((prev) =>
       prev === 0 ? currentImages.length - 1 : prev - 1
     );
@@ -129,6 +152,7 @@ export default function RecordsArticleModal({ article, onClose }) {
 
   const goNextImage = () => {
     if (currentImages.length <= 1) return;
+
     setActiveImageIndex((prev) =>
       prev === currentImages.length - 1 ? 0 : prev + 1
     );
@@ -174,19 +198,23 @@ export default function RecordsArticleModal({ article, onClose }) {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-2">
-                    <button
-                      onClick={goPrevPage}
-                      className="h-11 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/65 px-5 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
-                    >
-                      Prev
-                    </button>
+                    {pages.length > 1 && (
+                      <>
+                        <button
+                          onClick={goPrevPage}
+                          className="h-11 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/65 px-5 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
+                        >
+                          Prev
+                        </button>
 
-                    <button
-                      onClick={goNextPage}
-                      className="h-11 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/65 px-5 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
-                    >
-                      Next
-                    </button>
+                        <button
+                          onClick={goNextPage}
+                          className="h-11 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/65 px-5 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
+                        >
+                          Next
+                        </button>
+                      </>
+                    )}
 
                     <button
                       onClick={onClose}
@@ -198,154 +226,127 @@ export default function RecordsArticleModal({ article, onClose }) {
                 </div>
               </div>
 
-              <div className="grid min-h-0 flex-1 gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="min-h-0 border-b border-[#b68a57]/12 lg:border-b-0 lg:border-r lg:border-[#b68a57]/12">
-                  <div className="flex h-full flex-col p-5 md:p-7">
-                    {activeImage ? (
-                      <>
-                        <div className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]">
-                          <button
-                            type="button"
-                            onClick={() => setIsImageExpanded(true)}
-                            className="relative block w-full cursor-zoom-in"
-                            title="Open full image"
-                          >
-                            <div className="aspect-[4/5] bg-[#120b07]">
-                              <img
-                                src={activeImage}
-                                alt={currentPage?.title ?? "Article image"}
-                                className="h-full w-full object-contain object-center"
-                                draggable={false}
-                              />
-                            </div>
-                          </button>
+              <div className="min-h-0 flex-1 overflow-y-auto px-5 py-5 md:px-8 md:py-7">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`${article.id ?? "article"}-${safePageIndex}`}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.22 }}
+                    className="mx-auto max-w-4xl"
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
+                      {currentPage?.subtitle ?? "No subtitle"}
+                    </div>
+
+                    <h4 className="mt-3 font-serif text-3xl text-[#f1deba] md:text-4xl">
+                      {currentPage?.title ?? "No page title"}
+                    </h4>
+
+                    <div className="mt-6 whitespace-pre-line text-sm leading-8 text-[#ead7b0]/78 md:text-[15px]">
+                      {currentPage?.content ??
+                        "No content available for this page yet."}
+                    </div>
+
+                    {currentImages.length > 0 && (
+                      <div className="mt-8 border-t border-[#b68a57]/16 pt-6">
+                        <div className="mb-4 text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
+                          Archive images
                         </div>
 
-                        <div className="mt-3 text-xs text-[#d9bf8e]/55">
-                          Click the image to enlarge
-                        </div>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                          {currentImages.map((image, index) => {
+                            const imageSrc = getImageSrc(image);
+                            const imageAlt = getImageAlt(
+                              image,
+                              `${currentPage?.title ?? "Article"} image ${
+                                index + 1
+                              }`
+                            );
 
-                        {currentImages.length > 1 && (
-                          <>
-                            <div className="mt-4 flex items-center justify-between gap-3">
+                            if (!imageSrc) return null;
+
+                            const isActive = index === activeImageIndex;
+
+                            return (
                               <button
-                                onClick={goPrevImage}
-                                className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                                key={`${imageSrc}-${index}`}
+                                type="button"
+                                onClick={() => {
+                                  setActiveImageIndex(index);
+                                  setIsImageExpanded(true);
+                                }}
+                                className={`overflow-hidden rounded-[1.35rem] border bg-[#26180f]/55 text-left transition ${
+                                  isActive
+                                    ? "border-[#e4c58f]/60"
+                                    : "border-[#b68a57]/16 hover:border-[#c79860]/30"
+                                }`}
                               >
-                                Prev image
-                              </button>
+                                <div className="aspect-[4/3] overflow-hidden bg-[#1c110b]">
+                                  <img
+                                    src={imageSrc}
+                                    alt={imageAlt}
+                                    className="h-full w-full object-contain opacity-90 transition duration-500 hover:scale-[1.02] hover:opacity-100"
+                                    draggable={false}
+                                  />
+                                </div>
 
-                              <div className="text-sm text-[#ead7b0]/68">
-                                {String(activeImageIndex + 1).padStart(2, "0")}{" "}
-                                / {String(currentImages.length).padStart(2, "0")}
-                              </div>
-
-                              <button
-                                onClick={goNextImage}
-                                className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
-                              >
-                                Next image
-                              </button>
-                            </div>
-
-                            <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
-                              {currentImages.map((imageSrc, index) => {
-                                const isActive = index === activeImageIndex;
-
-                                return (
-                                  <button
-                                    key={`${imageSrc}-${index}`}
-                                    onClick={() => setActiveImageIndex(index)}
-                                    className={`overflow-hidden rounded-[1rem] border transition ${
-                                      isActive
-                                        ? "border-[#e4c58f]/70 shadow-[0_0_20px_rgba(228,197,143,0.15)]"
-                                        : "border-[#b68a57]/18 hover:border-[#c79860]/28"
-                                    }`}
-                                  >
-                                    <div className="aspect-square bg-[#120b07]">
-                                      <img
-                                        src={imageSrc}
-                                        alt={`Thumbnail ${index + 1}`}
-                                        className="h-full w-full object-cover"
-                                      />
+                                {typeof image !== "string" &&
+                                  (image.caption || image.alt) && (
+                                    <div className="px-4 py-3 text-xs leading-5 text-[#e8d6b0]/55">
+                                      {image.caption ?? image.alt}
                                     </div>
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </>
-                        )}
-
-                        <div className="mt-4 rounded-[1.3rem] border border-[#b68a57]/14 bg-[#24170f]/45 p-4">
-                          <div className="text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
-                            Page
-                          </div>
-
-                          <div className="mt-2 text-sm text-[#ead7b0]/72">
-                            {pages.length > 0
-                              ? `${String(safePageIndex + 1).padStart(
-                                  2,
-                                  "0"
-                                )} / ${String(pages.length).padStart(2, "0")}`
-                              : "No pages"}
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      <div className="overflow-hidden rounded-[1.5rem] border border-[#b68a57]/18 bg-[#24170f]/55 shadow-[inset_0_0_30px_rgba(0,0,0,0.2)]">
-                        <div className="flex aspect-[4/5] items-center justify-center bg-[#120b07] text-sm text-[#d9bf8e]/45">
-                          No image available
+                                  )}
+                              </button>
+                            );
+                          })}
                         </div>
                       </div>
                     )}
-                  </div>
-                </div>
 
-                <div className="min-h-0 overflow-y-auto px-5 py-5 md:px-8 md:py-7">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={`${article.id ?? "article"}-${safePageIndex}`}
-                      initial={{ opacity: 0, y: 14 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.22 }}
-                      className="max-w-3xl"
-                    >
-                      <div className="text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
-                        {currentPage?.subtitle ?? "No subtitle"}
+                    {pages.length > 1 && (
+                      <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#b68a57]/16 pt-6">
+                        <button
+                          onClick={goPrevPage}
+                          className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-5 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                        >
+                          Previous page
+                        </button>
+
+                        <div className="flex flex-wrap justify-center gap-2">
+                          {pages.map((page, index) => (
+                            <button
+                              key={`${page.title ?? "page"}-${index}`}
+                              onClick={() => setPageIndex(index)}
+                              className={`h-9 min-w-9 rounded-full border px-3 text-xs transition ${
+                                index === safePageIndex
+                                  ? "border-[#e4c58f]/70 bg-[#e4c58f]/18 text-[#f5e4bd]"
+                                  : "border-[#b68a57]/18 bg-[#2d1d12]/48 text-[#e8d6b0]/58 hover:bg-[#372418]"
+                              }`}
+                            >
+                              {index + 1}
+                            </button>
+                          ))}
+                        </div>
+
+                        <button
+                          onClick={goNextPage}
+                          className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-5 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                        >
+                          Next page
+                        </button>
                       </div>
-
-                      <h4 className="mt-3 font-serif text-3xl text-[#f1deba] md:text-4xl">
-                        {currentPage?.title ?? "No page title"}
-                      </h4>
-
-                      <div className="mt-6 whitespace-pre-line text-sm leading-8 text-[#ead7b0]/78 md:text-[15px]">
-                        {currentPage?.content ??
-                          "No content available for this page yet."}
-                      </div>
-
-                      <div className="mt-8 flex items-center gap-2">
-                        {pages.map((_, index) => (
-                          <div
-                            key={index}
-                            className={`h-2.5 rounded-full transition-all ${
-                              index === safePageIndex
-                                ? "w-8 bg-[#ead7b0]"
-                                : "w-2.5 bg-[#ead7b0]/22"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </motion.div>
           </div>
         </motion.div>
 
         <AnimatePresence>
-          {isImageExpanded && activeImage && (
+          {isImageExpanded && activeImageSrc && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -388,8 +389,11 @@ export default function RecordsArticleModal({ article, onClose }) {
                   )}
 
                   <img
-                    src={activeImage}
-                    alt={currentPage?.title ?? "Expanded article image"}
+                    src={activeImageSrc}
+                    alt={getImageAlt(
+                      activeImage,
+                      currentPage?.title ?? "Expanded article image"
+                    )}
                     className="max-h-full max-w-full rounded-[1.2rem] object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
                     draggable={false}
                   />

@@ -6,6 +6,18 @@ import ARCHIVE_CHAPTERS, { SPECIAL_ARTICLES } from "../data/sideInfoPanels";
 
 const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-loops-058-harp-piano-long-loop-60-bpm-17254.mp3`;
 
+function getImageSrc(image) {
+  if (!image) return null;
+  if (typeof image === "string") return image;
+  return image.src ?? image.url ?? null;
+}
+
+function getImageAlt(image, fallback) {
+  if (!image) return fallback;
+  if (typeof image === "string") return fallback;
+  return image.alt ?? image.caption ?? fallback;
+}
+
 export default function ArchiveScreen({
   onBack,
   onEnterTree,
@@ -24,6 +36,9 @@ export default function ArchiveScreen({
     )
   );
   const [expandedArticle, setExpandedArticle] = useState(null);
+  const [activePageIndex, setActivePageIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isImageExpanded, setIsImageExpanded] = useState(false);
   const [scrollOffset, setScrollOffset] = useState(0);
 
   useEffect(() => {
@@ -50,6 +65,76 @@ export default function ArchiveScreen({
   const activeItem =
     activeChapter.items.find((item) => item.id === activeItemId) ??
     activeChapter.items[0];
+
+  const activePages = Array.isArray(activeItem.pages) ? activeItem.pages : [];
+
+  const activePage =
+    activePages[activePageIndex] ??
+    activePages[0] ?? {
+      title: activeItem.title,
+      subtitle: activeItem.subtitle,
+      content: activeItem.preview,
+      images: [],
+    };
+
+  const activePageImages = Array.isArray(activePage.images)
+    ? activePage.images.filter(Boolean)
+    : activePage.image
+      ? [activePage.image]
+      : [];
+
+  const activeImage =
+    activePageImages.length > 0
+      ? activePageImages[
+          Math.min(activeImageIndex, activePageImages.length - 1)
+        ]
+      : null;
+
+  const activeImageSrc = getImageSrc(activeImage);
+
+  useEffect(() => {
+    setActivePageIndex(0);
+    setActiveImageIndex(0);
+    setIsImageExpanded(false);
+  }, [activeItem.id]);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+    setIsImageExpanded(false);
+  }, [activePageIndex]);
+
+  useEffect(() => {
+    if (!isImageExpanded) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsImageExpanded(false);
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        goNextImage();
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        goPreviousImage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isImageExpanded, activePageImages.length]);
+
+  useEffect(() => {
+    if (isImageExpanded) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isImageExpanded]);
 
   const setActiveItem = (itemId) => {
     setActiveItemMap((prev) => ({
@@ -81,6 +166,38 @@ export default function ArchiveScreen({
     if (article && Array.isArray(article.pages)) {
       setExpandedArticle(article);
     }
+  };
+
+  const goPreviousPage = () => {
+    if (activePages.length === 0) return;
+
+    setActivePageIndex((prev) =>
+      prev === 0 ? activePages.length - 1 : prev - 1
+    );
+  };
+
+  const goNextPage = () => {
+    if (activePages.length === 0) return;
+
+    setActivePageIndex((prev) =>
+      prev === activePages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const goPreviousImage = () => {
+    if (activePageImages.length <= 1) return;
+
+    setActiveImageIndex((prev) =>
+      prev === 0 ? activePageImages.length - 1 : prev - 1
+    );
+  };
+
+  const goNextImage = () => {
+    if (activePageImages.length <= 1) return;
+
+    setActiveImageIndex((prev) =>
+      prev === activePageImages.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
@@ -336,8 +453,8 @@ export default function ArchiveScreen({
               </div>
 
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeItem.id}
+                <motion.article
+                  key={`${activeItem.id}-${activePageIndex}`}
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -352,38 +469,115 @@ export default function ArchiveScreen({
                     <div className="rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/52 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[#ead7b0]/58">
                       {activeItem.label}
                     </div>
+
+                    {activePages.length > 1 && (
+                      <div className="rounded-full border border-[#b68a57]/18 bg-[#2d1d12]/52 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[#ead7b0]/58">
+                        Page {activePageIndex + 1} of {activePages.length}
+                      </div>
+                    )}
                   </div>
 
                   <h4 className="mt-5 font-serif text-4xl leading-tight text-[#f1deba]">
-                    {activeItem.title}
+                    {activePage.title ?? activeItem.title}
                   </h4>
 
-                  <div className="mt-3 text-sm text-[#e8d6b0]/52">
-                    {activeItem.subtitle}
-                  </div>
-
-                  <p className="mt-5 max-w-3xl text-sm leading-8 text-[#e8d6b0]/72 md:text-[15px]">
-                    {activeItem.preview}
-                  </p>
-
-                  <div className="mt-7 rounded-[1.4rem] border border-[#b68a57]/16 bg-[#26180f]/55 p-5">
-                    <div className="text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
-                      Article pages
+                  {(activePage.subtitle || activeItem.subtitle) && (
+                    <div className="mt-3 text-sm text-[#e8d6b0]/52">
+                      {activePage.subtitle ?? activeItem.subtitle}
                     </div>
+                  )}
 
-                    <p className="mt-4 text-sm leading-7 text-[#e8d6b0]/68">
-                      Open the full-screen reader to browse this family or
-                      article page by page with image and text layout.
-                    </p>
+                  <div className="mt-6 max-w-3xl whitespace-pre-line text-sm leading-8 text-[#e8d6b0]/72 md:text-[15px]">
+                    {activePage.content ?? activeItem.preview}
                   </div>
 
-                  <button
-                    onClick={() => openArticle(activeItem)}
-                    className="mt-7 inline-flex items-center gap-2 rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-5 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
-                  >
-                    Open full article
-                  </button>
-                </motion.div>
+                  {activePageImages.length > 0 && (
+                    <div className="mt-8 border-t border-[#b68a57]/16 pt-6">
+                      <div className="mb-4 text-[11px] uppercase tracking-[0.22em] text-[#d9bf8e]/58">
+                        Archive images
+                      </div>
+
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        {activePageImages.map((image, index) => {
+                          const imageSrc = getImageSrc(image);
+                          const imageAlt = getImageAlt(
+                            image,
+                            `${activePage.title ?? activeItem.title} image ${
+                              index + 1
+                            }`
+                          );
+
+                          if (!imageSrc) return null;
+
+                          const isActiveImage = index === activeImageIndex;
+
+                          return (
+                            <button
+                              key={`${imageSrc}-${index}`}
+                              type="button"
+                              onClick={() => {
+                                setActiveImageIndex(index);
+                                setIsImageExpanded(true);
+                              }}
+                              className={`group overflow-hidden rounded-[1.35rem] border bg-[#26180f]/55 text-left transition ${
+                                isActiveImage
+                                  ? "border-[#e4c58f]/55"
+                                  : "border-[#b68a57]/16 hover:border-[#c79860]/30"
+                              }`}
+                            >
+                              <div className="aspect-[4/3] overflow-hidden bg-[#1c110b]">
+                                <img
+                                  src={imageSrc}
+                                  alt={imageAlt}
+                                  className="h-full w-full object-contain opacity-90 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100"
+                                  draggable={false}
+                                />
+                              </div>
+
+                              <div className="px-4 py-3 text-xs leading-5 text-[#e8d6b0]/55">
+                                Click to enlarge
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {activePages.length > 1 && (
+                    <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#b68a57]/16 pt-6">
+                      <button
+                        onClick={goPreviousPage}
+                        className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-5 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                      >
+                        Previous page
+                      </button>
+
+                      <div className="flex flex-wrap justify-center gap-2">
+                        {activePages.map((page, index) => (
+                          <button
+                            key={`${page.title ?? "page"}-${index}`}
+                            onClick={() => setActivePageIndex(index)}
+                            className={`h-9 min-w-9 rounded-full border px-3 text-xs transition ${
+                              index === activePageIndex
+                                ? "border-[#e4c58f]/70 bg-[#e4c58f]/18 text-[#f5e4bd]"
+                                : "border-[#b68a57]/18 bg-[#2d1d12]/48 text-[#e8d6b0]/58 hover:bg-[#372418]"
+                            }`}
+                          >
+                            {index + 1}
+                          </button>
+                        ))}
+                      </div>
+
+                      <button
+                        onClick={goNextPage}
+                        className="rounded-full border border-[#b68a57]/22 bg-[#2d1d12]/60 px-5 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#372418]"
+                      >
+                        Next page
+                      </button>
+                    </div>
+                  )}
+                </motion.article>
               </AnimatePresence>
             </div>
           </div>
@@ -398,6 +592,71 @@ export default function ArchiveScreen({
         }
         onClose={() => setExpandedArticle(null)}
       />
+
+      <AnimatePresence>
+        {isImageExpanded && activeImageSrc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[140] bg-black/92 backdrop-blur-md"
+            onClick={() => setIsImageExpanded(false)}
+          >
+            <div className="flex h-full w-full items-center justify-center p-4 md:p-8">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.2 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative flex h-full max-h-[92vh] w-full max-w-7xl items-center justify-center rounded-[1.8rem] border border-[#b68a57]/20 bg-[#120b07]/96 p-4 md:p-6"
+              >
+                <button
+                  onClick={() => setIsImageExpanded(false)}
+                  className="absolute right-4 top-4 z-20 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/75 px-4 py-2 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
+                >
+                  Close image
+                </button>
+
+                {activePageImages.length > 1 && (
+                  <>
+                    <button
+                      onClick={goPreviousImage}
+                      className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/75 px-4 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
+                    >
+                      Prev image
+                    </button>
+
+                    <button
+                      onClick={goNextImage}
+                      className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/75 px-4 py-3 text-sm text-[#f0ddb4] transition hover:bg-[#382419]"
+                    >
+                      Next image
+                    </button>
+                  </>
+                )}
+
+                <img
+                  src={activeImageSrc}
+                  alt={getImageAlt(
+                    activeImage,
+                    activePage.title ?? "Expanded article image"
+                  )}
+                  className="max-h-full max-w-full rounded-[1.2rem] object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
+                  draggable={false}
+                />
+
+                {activePageImages.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-[#b68a57]/24 bg-[#2b1c12]/75 px-4 py-2 text-sm text-[#ead7b0]/75">
+                    {String(activeImageIndex + 1).padStart(2, "0")} /{" "}
+                    {String(activePageImages.length).padStart(2, "0")}
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
