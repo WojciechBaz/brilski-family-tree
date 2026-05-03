@@ -10,7 +10,7 @@ const HOME_AUDIO = `${import.meta.env.BASE_URL}audio/freesound_community-dark-lo
 const CHAPTER_AUDIO_MAP = {
   "old-poland": `${import.meta.env.BASE_URL}audio/freesound_community-village-79043.mp3`,
   "migration-times": `${import.meta.env.BASE_URL}audio/freesound_community-120616-boat-horn-harbour-tour-nyc-35905.mp3`,
-  // "modern-times": `${import.meta.env.BASE_URL}audio/your-modern-track.mp3`,
+  "modern-times": `${import.meta.env.BASE_URL}audio/freesound_community-ohio-chant-77456.mp3`,
 };
 
 export default function App() {
@@ -39,7 +39,10 @@ export default function App() {
     };
   }, []);
 
-  const playTrack = async (src, { loop = true, volume = 0.45, forceRestart = false } = {}) => {
+  const playTrack = async (
+    src,
+    { loop = true, volume = 0.45, forceRestart = false } = {}
+  ) => {
     const audio = audioRef.current;
     if (!audio || !src) return false;
 
