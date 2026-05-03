@@ -40,6 +40,13 @@ const REGION_IMAGES = {
   frankbrilskiurodzony: `${BASE_URL}region/ur frank brilski 173.jpg`,
   migration1: `${BASE_URL}region/migration.png`,
   migration2: `${BASE_URL}region/migration2.png`,
+  hanksallymarriage: `${BASE_URL}region/migration2.png`,
+  henrybirth: `${BASE_URL}region/henrybirth.png`,
+henrybrilskideath: `${BASE_URL}region/henrybrilskideath.png`,
+henrywarren: `${BASE_URL}region/henrywarren.png`,
+marrywedding: `${BASE_URL}region/marrywedding.png`,
+sallydeath: `${BASE_URL}region/sallydeath.png`,
+suebrilski: `${BASE_URL}region/suebrilski.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -1201,31 +1208,7 @@ The example illustrates how immigration reshaped family structures and how offic
     }
   ]
 },
-      {
-        id: "migration-3",
-        year: "1910s–1920s",
-        label: "Article",
-        title: "Settlement and new branches",
-        subtitle: "Placeholder article",
-        preview:
-          "A placeholder article about settlement, census records, marriages, name variants, and the formation of later branches.",
-        pages: [
-          {
-            title: "Settlement",
-            subtitle: "New households",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later be used for marriages, census appearances, first settled addresses, and the creation of new family units in America.",
-          },
-          {
-            title: "New branches",
-            subtitle: "Identity after migration",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can describe surname shifts, branch splitting, and the early shape of descendant lines after settlement.",
-          },
-        ],
-      },
+     
     ],
   },
   {
@@ -1236,84 +1219,68 @@ The example illustrates how immigration reshaped family structures and how offic
     intro:
       "A chapter for later generations, photographs, family memory, surviving branches, and present-day efforts to reconnect the archive.",
     items: [
-      {
-        id: "modern-1",
-        year: "Mid 20th c.",
-        label: "Article",
-        title: "Later descendants",
-        subtitle: "Placeholder article",
-        preview:
-          "A placeholder article for descendants, later generations, and the transition from formal records into family memory.",
-        pages: [
-          {
-            title: "Later descendants",
-            subtitle: "Family continuity",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later summarise later generations, branch continuity, and the way family structure continues beyond migration-era records.",
-          },
-          {
-            title: "Branch development",
-            subtitle: "Expanding lines",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page is useful for showing how branches grew, separated, or stayed connected across the twentieth century.",
-          },
-        ],
-      },
-      {
-        id: "modern-2",
-        year: "Late 20th c.",
-        label: "Article",
-        title: "Memory and photographs",
-        subtitle: "Placeholder article",
-        preview:
-          "A placeholder article for oral history, letters, photographs, and surviving family recollections.",
-        pages: [
-          {
-            title: "Memory",
-            subtitle: "Oral history and recollection",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later hold remembered stories, oral family tradition, and the traces that survive outside official documentation.",
-          },
-          {
-            title: "Photographs",
-            subtitle: "Visual archive",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later be used for photos, captions, visual notes, and the emotional layer of the archive.",
-          },
-        ],
-      },
-      {
-        id: "modern-3",
-        year: "Today",
-        label: "Article",
-        title: "Rebuilding the archive",
-        subtitle: "Placeholder article",
-        preview:
-          "A placeholder article for the present-day reconstruction of the family archive and the effort to reconnect branches across time.",
-        pages: [
-          {
-            title: "Reconstruction",
-            subtitle: "The archive today",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can later describe the research process itself, the current reconstruction effort, and the method behind reconnecting scattered lines.",
-          },
-          {
-            title: "Looking forward",
-            subtitle: "Future work",
-            images: [PLACEHOLDER_IMAGE],
-            content:
-              "This page can close the chapter by describing future research directions, remaining uncertainties, and the living nature of the archive.",
-          },
+{
+  id: "establishing-new-life",
+  year: "1910s–1970s",
+  label: "Article",
+  title: "Establishing new life",
+  subtitle: "Settlement, work, family, and American roots",
+  preview:
+    "An article about the Brilski family establishing a new life in the United States, from settlement in Neffs, Ohio, through mining work, marriage, children, naturalization, and later family branches.",
+  pages: [
+    {
+      title: "Establishing new life",
+      subtitle: "Settlement, work, family, and American roots",
+      images: [PLACEHOLDER_IMAGE],
+      content: `In the United States the family first settled in Neffs, Ohio. It appears that some relatives or people from the same area in Poland were already living there, and Frank Brilski was the first of his immediate family to arrive. His siblings followed later. Like many Polish immigrants of the early 20th century, the Brilskis came with limited formal education and faced a significant language barrier. These conditions, together with economic necessity, directed them toward physically demanding, low-skilled work in mining and related industries. Coal mining, general labor, and other manual jobs are the occupations most often found in their records.
+
+Frank married Josephine in November 1910. She had arrived in the United States only a few months earlier. The age difference between them and the fact that she listed a cousin—not Frank—as her closest relative on the passenger list suggest that they were not closely connected before she came to America, even though both came from the same village in Poland. After their marriage, Frank worked in the coal mines to support the household, and Josephine managed the home and raised their children. They had three sons: Stanley, born in 1911, Henry, born in 1914, and Chester, born in 1917.
+
+Frank was drafted during both World War I and World War II. He became a naturalized U.S. citizen in 1922. His working life remained tied to mining and physical labor, reflecting the limited opportunities available to immigrants of his background.
+
+Frank’s siblings who later came to the United States settled mainly in West Virginia, Pennsylvania, and later in the Detroit region, where similar industrial work was available. His brother Victor Brilski married Julia Miller, and his sisters Leonora and Pelagia married Ignacius Dobrzeniecki and Marian Siennicki. Although they lived in different states, the family maintained contact, and their presence at Frank’s funeral in 1944 shows that the relationships continued even after they moved away from Ohio.
+
+Josephine’s sister Sophie also immigrated, coming to the United States in 1913 at the invitation of Frank and Josephine. She married twice, had three children, worked in a cafeteria and lived in Toledo, Ohio.
+
+Josephine lived for thirty years after Frank’s death. She died in 1974 at the age of 84. During her lifetime she experienced the loss of two of her sons: Chester, who died in a mining accident in 1967, and Stanley, who died in 1970.
+
+Over time, members of the Brilski family became more established in the United States. They married, raised families, went through the naturalization process, and some served in the military. The second generation grew up more integrated into American society, with weaker ties to their Polish origins.`
+    }
+  ]
+},
+{
+  id: "the-history-continues",
+  year: "1940s–1980s",
+  label: "Article",
+  title: "The history continues",
+  subtitle: "Second generation, family memory, and continuation",
+  preview:
+    "An article about the second generation of the Brilski family in the United States, focusing on Henry Brilski, his military service, marriage, work, family, and remembered legacy.",
+  pages: [
+    {
+      title: "The history continues",
+      subtitle: "Second generation, family memory, and continuation",
+      images: [REGION_IMAGES.hanksallymarriage, REGION_IMAGES.henrybirth, REGION_IMAGES.henrybrilskideath, REGION_IMAGES.henrywarren,REGION_IMAGES.marrywedding,REGION_IMAGES.sallydeath],
+      content: `The second generation of the family, that was already born and raised in the US, blended into the American middle class and lived their lives.
+
+Henry Brilski served in the U.S. military during the Second World War, including service on Attu in the Aleutian Islands.
+
+In 1952 he married Sally Ann Burgett. They had four children: Brian, Sue, Merry Ann, and Jane.
+
+Henry worked in an industrial manufacturing company. Sally worked as a nurse. Their marriage continued until Henry’s death in 1988.
+
+
+Newspaper mentions and short articles provide small pieces of information about their work, family life, and community involvement. The most accurate picture comes from the family, who remember them, keep their memory, and continue adding new chapters to the family history.`
+    }
+  ]
+},
+
+
         ],
       },
     ],
-  },
-];
+  
+
 
 const SPECIAL_ARTICLES = [
   {
