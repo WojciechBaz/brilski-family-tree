@@ -1044,16 +1044,16 @@ Draft registration cards are particularly valuable genealogically because they w
     {
       title: "Passenger list entry for Jozefa Wojcicka",
       subtitle: "Written records",
-      images: [REGION_IMAGES.jozefapassanger1,REGION_IMAGES.jozefapassanger2],
-      content: `This document consists of two pages from a United States passenger manifest recording the arrival of Jozefa Wojcicka in New York in September 1910. The first page identifies the ship as the S.S. Kaiserin Auguste Victoria, sailing from Hamburg on 16 September 1910, while the continuation sheet records arrival at the port of New York on 26 September 1910. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+      images: [REGION_IMAGES.jozefapassanger1, REGION_IMAGES.jozefapassanger2],
+      content: `This document consists of two pages from a United States passenger manifest recording the arrival of Jozefa Wojcicka in New York in September 1910. The first page identifies the ship as the S.S. Kaiserin Auguste Victoria, sailing from Hamburg on 16 September 1910, while the continuation sheet records arrival at the port of New York on 26 September 1910.
 
-Jozefa Wojcicka appears on the manifest as a twenty-year-old female passenger. Her surname is written as Wojcicka and her given name as Jozefa. The entry places her among steerage passengers traveling from Europe to the United States. :contentReference[oaicite:2]{index=2}
+Jozefa Wojcicka appears on the manifest as a twenty-year-old female passenger. Her surname is written as Wojcicka and her given name as Jozefa. The entry places her among steerage passengers traveling from Europe to the United States.
 
-The record indicates that her last permanent residence was Leszno, in the Russian partition of Poland, and that her nationality was recorded under Russia, with Polish identity noted in the ethnic or race column. Her final destination in the United States was Neffs, Ohio. :contentReference[oaicite:3]{index=3}
+The record indicates that her last permanent residence was Leszno, in the Russian partition of Poland, and that her nationality was recorded under Russia, with Polish identity noted in the ethnic or race column. Her final destination in the United States was Neffs, Ohio.
 
-The passenger list also preserves family connections on both sides of the Atlantic. In the column for the nearest relative or friend in the country whence the alien came, the entry appears to name her father, Stanisław Wojcicki, in Leszno. In the column asking whom she was going to join in the United States, the continuation sheet appears to identify a cousin, also named Stanisław Wojcicki, living in Neffs, Ohio. Some parts of these handwritten entries are difficult to read, but the family connection is clear. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}
+The passenger list also preserves family connections on both sides of the Atlantic. In the column for the nearest relative or friend in the country whence the alien came, the entry appears to name her father, Stanisław Wojcicki, in Leszno. In the column asking whom she was going to join in the United States, the continuation sheet appears to identify a cousin, also named Stanisław Wojcicki, living in Neffs, Ohio. Some parts of these handwritten entries are difficult to read, but the family connection is clear.
 
-The second sheet also includes personal description data. Jozefa is recorded as 5 feet 2 inches tall, with brown hair and blue eyes. Her place of birth is written in the far-right columns, though the town name is difficult to read with certainty from the present image. :contentReference[oaicite:6]{index=6}
+The second sheet also includes personal description data. Jozefa is recorded as 5 feet 2 inches tall, with brown hair and blue eyes. Her place of birth is written in the far-right columns, though the town name is difficult to read with certainty from the present image.
 
 Main details
 
@@ -1092,7 +1092,7 @@ This passenger list is a key migration record for Jozefa Wojcicka and appears to
 
 The record is especially valuable because it links Leszno and the Wojcicki family in Poland with Neffs, Ohio, where she was headed after arrival. This makes it an important bridge between the Polish parish records and the American branch of the family.
 
-Some details remain slightly uncertain because of the handwriting and image quality, especially the exact wording of the family addresses and the place of birth entry. Even so, the core information is clear and stable: Jozefa Wojcicka, age twenty, sailed from Hamburg on the S.S. Kaiserin Auguste Victoria and arrived in New York on 26 September 1910, bound for Neffs, Ohio. :contentReference[oaicite:11]{index=11} :contentReference[oaicite:12]{index=12}`
+Some details remain slightly uncertain because of the handwriting and image quality, especially the exact wording of the family addresses and the place of birth entry. Even so, the core information is clear and stable: Jozefa Wojcicka, age twenty, sailed from Hamburg on the S.S. Kaiserin Auguste Victoria and arrived in New York on 26 September 1910, bound for Neffs, Ohio.`
     }
   ]
 },
