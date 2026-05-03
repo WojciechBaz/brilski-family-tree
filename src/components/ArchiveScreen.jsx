@@ -327,14 +327,7 @@ export default function ArchiveScreen({
 
           <div className="mt-10 grid gap-7 lg:grid-cols-[0.98fr_0.92fr] lg:items-start">
             {SPECIAL_ARTICLES?.length > 0 && (
-              <section className="flex flex-col gap-5 border-y border-[#b68a57]/16 py-5 lg:py-6">
-                <div className="flex items-center gap-4">
-                  <div className="text-[11px] uppercase tracking-[0.28em] text-[#d9bf8e]/58">
-                    Opening notes
-                  </div>
-                  <div className="h-px flex-1 bg-[linear-gradient(to_right,rgba(182,138,87,0.25),transparent)]" />
-                </div>
-
+              <section className="flex flex-col gap-5 py-5 lg:py-6">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
                   {SPECIAL_ARTICLES.map((article) => (
                     <button
