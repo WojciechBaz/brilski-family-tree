@@ -1267,6 +1267,7 @@ Over time, members of the Brilski family became more established in the United S
               REGION_IMAGES.henrywarden,
               REGION_IMAGES.marrywedding,
               REGION_IMAGES.sallydeath,
+              REGION_IMAGES.suebrilski,
             ],
             content: `The second generation of the family, that was already born and raised in the US, blended into the American middle class and lived their lives.
 
