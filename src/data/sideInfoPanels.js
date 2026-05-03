@@ -72,7 +72,7 @@ const ARCHIVE_CHAPTERS = [
     items: [
       {
         id: "przasnysz-leszno-overview",
-        year: "1840s–1890s",
+        year: "",
         label: "Article",
         title: "Przasnysz and Leszno: A Concise Historical Overview",
         subtitle: "Regional setting, parish life, and local historical context",
@@ -117,7 +117,7 @@ Together, Przasnysz and Leszno illustrate the development of a Mazovian town and
       },
 {
   id: "story-of-a-name",
-  year: "Late 19th c. – 1904+",
+  year: "",
   label: "Article",
   title: "This is a story of a name",
   subtitle: "From Brejlak to Brylski and Brilski",
@@ -152,7 +152,7 @@ Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`
 },
       {
         id: "brejlak",
-        year: "1840s",
+        year: "",
         label: "Family branch",
         title: "The Brejlak Family",
         subtitle: "Early branch notes",
@@ -323,7 +323,7 @@ Further analysis of the original text may help determine his age and establish h
       },
       {
         id: "wojcicki",
-        year: "1850s",
+        year: "",
         label: "Family branch",
         title: "The Wojcicki Family",
         subtitle: "Regional and parish context",
@@ -444,7 +444,7 @@ Despite these limitations, the key information is clear: the document records th
       },
       {
         id: "olszewski",
-        year: "1870s",
+        year: "",
         label: "Family branch",
         title: "The Olszewski Family",
         subtitle: "Branch reconstruction",
@@ -552,7 +552,7 @@ Further research may help confirm additional details such as age, occupation, an
       },
       {
         id: "dobrzanski",
-        year: "1880s",
+        year: "",
         label: "Family branch",
         title: "The Dobrzanski Family",
         subtitle: "Family line placeholder",
@@ -748,7 +748,7 @@ This entry further strengthens the reconstruction of the Dobrzanski family line 
     items: [
       {
   id: "family-on-the-way",
-  year: "1904–1913",
+  year: "",
   label: "Article",
   title: "Family on the Way",
   subtitle: "Chain migration from Poland to the United States",
@@ -777,7 +777,7 @@ These records show a clear pattern of chain migration, where each arrival depend
 },
 {
   id: "one-way-ticket-to-a-better-world",
-  year: "Late 19th c. – Early 20th c.",
+  year: "",
   label: "Article",
   title: "One Way Ticket to a Better World",
   subtitle: "Why so many families left the Russian partition",
@@ -808,7 +808,7 @@ In the end, emigration from the Russian partition was shaped by a mix of necessi
 },
       {
   id: "frank-brilski",
-  year: "1904+",
+  year: "",
   label: "Person",
   title: "Frank Brilski",
   subtitle: "Migration, identity, and early American records",
@@ -1034,7 +1034,7 @@ Draft registration cards are particularly valuable genealogically because they w
 },
 {
   id: "jozefa-wojcicka",
-  year: "1910",
+  year: "",
   label: "Person",
   title: "Jozefa Wojcicka",
   subtitle: "Arrival in New York and first migration record",
@@ -1098,7 +1098,7 @@ Some details remain slightly uncertain because of the handwriting and image qual
 },
 {
   id: "sophie-wojcicki",
-  year: "1913",
+  year: "",
   label: "Article",
   title: "Sophie Wójcicki",
   subtitle: "Arrival in the United States",
@@ -1199,7 +1199,7 @@ This record serves as a key anchor connecting the European Wójcicki line with t
 },
     {
   id: "arrival-guardianship-context",
-  year: "1900s",
+  year: "",
   label: "Article",
   title: "Arrival, guardianship, and identity",
   subtitle: "How migration reshaped family records",
@@ -1272,7 +1272,7 @@ Over time, members of the Brilski family became more established in the United S
       },
       {
         id: "the-history-continues",
-        year: "1940s–1980s",
+        year: "",
         label: "Article",
         title: "The history continues",
         subtitle: "Second generation, family memory, and continuation",
