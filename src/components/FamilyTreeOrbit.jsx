@@ -37,7 +37,7 @@ function OrbitRing({ radius, duration, items, reverse = false }) {
           >
             <div className="flex flex-col items-center gap-1.5">
               <div className="h-2 w-2 rounded-full bg-[#ead7b0]/70 shadow-[0_0_10px_rgba(234,215,176,0.26)]" />
-              <div className="rounded-full border border-[#b68a57]/14 bg-[#2b1c12]/65 px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-[#e7cf9e]/70 backdrop-blur-sm">
+              <div className="rounded-full border border-[#b68a57]/14 bg-[#2b1c12]/54 px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-[#e7cf9e]/70 backdrop-blur-sm">
                 {item}
               </div>
             </div>
@@ -50,13 +50,13 @@ function OrbitRing({ radius, duration, items, reverse = false }) {
 
 export default function FamilyTreeOrbit({ onEnterTree }) {
   return (
-    <div className="relative flex min-h-[330px] flex-col overflow-hidden rounded-[1.8rem] border border-[#b68a57]/22 bg-[linear-gradient(180deg,rgba(70,46,29,0.48),rgba(25,15,10,0.68))] p-4 shadow-[inset_0_0_34px_rgba(0,0,0,0.24)] backdrop-blur-sm md:p-5">
-      <div className="relative flex-1 overflow-hidden rounded-[1.45rem] border border-[#b68a57]/14 bg-[radial-gradient(circle_at_center,rgba(210,170,110,0.08),transparent_28%),linear-gradient(180deg,rgba(44,28,18,0.58),rgba(22,14,9,0.68))] min-h-[300px]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,220,180,0.04),transparent_42%)]" />
+    <div className="relative min-h-[330px] overflow-visible">
+      <div className="relative min-h-[330px] overflow-visible">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(210,170,110,0.08),transparent_62%)]" />
 
         <svg
           viewBox="0 0 500 360"
-          className="absolute inset-0 h-full w-full"
+          className="pointer-events-none absolute inset-0 h-full w-full"
           preserveAspectRatio="none"
         >
           <motion.line
@@ -184,11 +184,11 @@ export default function FamilyTreeOrbit({ onEnterTree }) {
           />
         </svg>
 
-        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(234,215,176,0.12),transparent)]" />
-        <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[linear-gradient(to_right,transparent,rgba(234,215,176,0.08),transparent)]" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,rgba(234,215,176,0.12),transparent)]" />
+        <div className="pointer-events-none absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-[linear-gradient(to_right,transparent,rgba(234,215,176,0.08),transparent)]" />
 
         <motion.div
-          className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           animate={{
             boxShadow: [
               "0 0 0 rgba(234,215,176,0)",
@@ -217,7 +217,7 @@ export default function FamilyTreeOrbit({ onEnterTree }) {
         />
 
         <motion.div
-          className="absolute left-1/2 top-1/2 h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d7bb86]/22 bg-[radial-gradient(circle_at_center,rgba(234,215,176,0.18),rgba(58,38,24,0.8))] shadow-[0_0_22px_rgba(234,215,176,0.06)]"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[104px] w-[104px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d7bb86]/22 bg-[radial-gradient(circle_at_center,rgba(234,215,176,0.16),rgba(58,38,24,0.54),transparent_78%)] shadow-[0_0_22px_rgba(234,215,176,0.06)]"
           animate={{
             scale: [1, 1.035, 1],
             boxShadow: [
@@ -233,7 +233,7 @@ export default function FamilyTreeOrbit({ onEnterTree }) {
           onClick={onEnterTree}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.98 }}
-          className="absolute left-1/2 top-1/2 z-10 flex h-[86px] w-[86px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#e4c58f]/28 bg-[#2f1e13]/82 px-3 text-center text-base font-medium text-[#f2dfb7] shadow-[0_0_18px_rgba(234,215,176,0.08)] transition hover:bg-[#3a2618]"
+          className="absolute left-1/2 top-1/2 z-10 flex h-[86px] w-[86px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#e4c58f]/28 bg-[#2f1e13]/72 px-3 text-center text-base font-medium text-[#f2dfb7] shadow-[0_0_18px_rgba(234,215,176,0.08)] backdrop-blur-sm transition hover:bg-[#3a2618]/86"
         >
           <span className="font-serif leading-tight">
             Family
