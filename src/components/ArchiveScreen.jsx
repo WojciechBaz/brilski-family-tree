@@ -295,7 +295,7 @@ export default function ArchiveScreen({
               </button>
             </div>
 
-            <div className="mt-7 border-y border-[#b68a57]/22 py-6 text-center">
+            <div className="mt-7 border-y border-[#b68a57]/22 py-7 text-center">
               <h1 className="font-serif text-[3.65rem] leading-[0.82] tracking-[-0.065em] text-[#f2dfb7] drop-shadow-[0_14px_30px_rgba(0,0,0,0.46)] md:text-[6.1rem] lg:text-[7.6rem] xl:text-[8.8rem]">
                 Family Archive
               </h1>
@@ -325,9 +325,12 @@ export default function ArchiveScreen({
             </div>
           </header>
 
-          <div className="mt-10 grid gap-7 lg:grid-cols-[0.98fr_0.92fr] lg:items-start">
+          <ArchiveDivider thick />
+
+          <div className="mt-8 grid gap-7 lg:grid-cols-[0.98fr_0.92fr] lg:items-start">
             {SPECIAL_ARTICLES?.length > 0 && (
-              <section className="flex flex-col gap-5 py-5 lg:py-6">
+              <section className="flex flex-col gap-5 border-y border-[#b68a57]/16 py-5 lg:py-6">
+
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
                   {SPECIAL_ARTICLES.map((article) => (
                     <button
