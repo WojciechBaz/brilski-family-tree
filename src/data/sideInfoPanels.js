@@ -47,6 +47,9 @@ henrywarren: `${BASE_URL}region/henrywarren.png`,
 marrywedding: `${BASE_URL}region/marrywedding.png`,
 sallydeath: `${BASE_URL}region/sallydeath.png`,
 suebrilski: `${BASE_URL}region/suebrilski.png`,
+picture1: `${BASE_URL}region/1000003995.jpg`,
+picture2: `${BASE_URL}region/1000004005.jpg`,
+picture3:`${BASE_URL}region/1000004331.jpg`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -1264,7 +1267,7 @@ Over time, members of the Brilski family became more established in the United S
               REGION_IMAGES.hanksallymarriage,
               REGION_IMAGES.henrybirth,
               REGION_IMAGES.henrybrilskideath,
-              REGION_IMAGES.henrywarren,
+              REGION_IMAGES.henrywarden,
               REGION_IMAGES.marrywedding,
               REGION_IMAGES.sallydeath,
             ],
@@ -1298,7 +1301,7 @@ const SPECIAL_ARTICLES = [
       {
         title: "A Word for Matt",
         subtitle: "An opening note to a friend",
-        images: [],
+        images: [REGION_IMAGES.picture1, REGION_IMAGES.picture2, REGION_IMAGES.picture3],
         content: `We honestly didn’t think this would turn into such a big thing. It all started pretty casually with a question: does the surname Brilski even exist in Poland? Because it sure doesn't sound Polish, except for the ending. That was it. Just a bit of curiosity and well, look where it got us.
 
 I knew you were always curious about your Polish roots so we started digging, and soon enough we were going through archives, old records, church books, registers, Polish and American databases. We also horribly abused, misused, and overused ChatGPT, but honestly we wouldn't have managed without it.
