@@ -155,7 +155,7 @@ Today, three forms appear most commonly: Brilski, Brylski, and Brilsky.`
         year: "",
         label: "Family branch",
         title: "The Brejlak Family",
-        subtitle: "Early branch notes",
+        subtitle: "Found records",
         preview:
           "A collection of original applications, translations, and documents related to the Brejlak family.",
         pages: [
@@ -326,7 +326,7 @@ Further analysis of the original text may help determine his age and establish h
         year: "",
         label: "Family branch",
         title: "The Wojcicki Family",
-        subtitle: "Regional and parish context",
+        subtitle: "Found records",
         preview:
           "A collection of translated records and related notes for the Wojcicki family branch, arranged in a consistent documentary format.",
         pages: [
@@ -447,7 +447,7 @@ Despite these limitations, the key information is clear: the document records th
         year: "",
         label: "Family branch",
         title: "The Olszewski Family",
-        subtitle: "Branch reconstruction",
+        subtitle: "Found records",
         preview:
           "A collection of original applications, translations, and documents related to the Olszewski family.",
         pages: [
@@ -555,7 +555,7 @@ Further research may help confirm additional details such as age, occupation, an
         year: "",
         label: "Family branch",
         title: "The Dobrzanski Family",
-        subtitle: "Family line placeholder",
+        subtitle: "Found records",
         preview:
            "A collection of original applications, translations, and documents related to the Dobrzanski family.",
         pages: [
@@ -1088,9 +1088,9 @@ Eyes: blue
 
 Additional notes
 
-This passenger list is a key migration record for Jozefa Wojcicka and appears to be her earliest confirmed trace in American archival material. It documents not only the voyage itself, but also her place of origin, destination, and family contacts on both sides of the journey. :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
+This passenger list is a key migration record for Jozefa Wojcicka and appears to be her earliest confirmed trace in American archival material. It documents not only the voyage itself, but also her place of origin, destination, and family contacts on both sides of the journey.
 
-The record is especially valuable because it links Leszno and the Wojcicki family in Poland with Neffs, Ohio, where she was headed after arrival. This makes it an important bridge between the Polish parish records and the American branch of the family. :contentReference[oaicite:9]{index=9} :contentReference[oaicite:10]{index=10}
+The record is especially valuable because it links Leszno and the Wojcicki family in Poland with Neffs, Ohio, where she was headed after arrival. This makes it an important bridge between the Polish parish records and the American branch of the family.
 
 Some details remain slightly uncertain because of the handwriting and image quality, especially the exact wording of the family addresses and the place of birth entry. Even so, the core information is clear and stable: Jozefa Wojcicka, age twenty, sailed from Hamburg on the S.S. Kaiserin Auguste Victoria and arrived in New York on 26 September 1910, bound for Neffs, Ohio. :contentReference[oaicite:11]{index=11} :contentReference[oaicite:12]{index=12}`
     }
@@ -1111,7 +1111,7 @@ Some details remain slightly uncertain because of the handwriting and image qual
       images: [REGION_IMAGES.sophiewojcickapassanger],
       content: `This document records the arrival of Sophie Wójcicki in the United States as part of a passenger list manifest. The record comes from a List or Manifest of Alien Passengers for the United States, documenting individuals entering the country by sea.
 
-The ship on which she traveled was the S.S. President Lincoln, which sailed from Hamburg in September 1913 and arrived in New York later that same month. :contentReference[oaicite:0]{index=0}
+The ship on which she traveled was the S.S. President Lincoln, which sailed from Hamburg in September 1913 and arrived in New York later that same month.
 
 Sophie Wójcicki appears among a group of passengers listed together, most likely traveling within the same regional or community network. As with many such records, the manifest includes details such as age, marital status, occupation, nationality, last place of residence, and intended destination in the United States.
 
@@ -1197,30 +1197,8 @@ This record serves as a key anchor connecting the European Wójcicki line with t
     
   ]
 },
-    {
-  id: "arrival-guardianship-context",
-  year: "",
-  label: "Article",
-  title: "Arrival, guardianship, and identity",
-  subtitle: "How migration reshaped family records",
-  preview:
-    "An article explaining how immigration and guardianship affected family records, using the case of Victor Brilski as an example of discrepancies between Polish and American documents.",
-  pages: [
-    {
-      title: "Guardianship and identity in migration records",
-      subtitle: "Entry into a new archival reality",
-      images: [PLACEHOLDER_IMAGE],
-      content: `Research into the Brilski family history highlights a common issue faced by many immigrant families: inconsistencies between Polish and American documents. Apart from the changed name another clear example is the case of Victor Brilski, born in 1890 in Poland. Polish parish records list his parents as Stanisław and Marianna, while his American death certificate names Antoni and Josephine (Józefa) as his parents. These differences can appear confusing, but they reflect the historical realities of migration rather than errors in the family line.
-
-In Victor’s case, Antoni and Josephine were his older siblings, not his biological parents. Victor arrived in the United States as a minor, and older siblings often acted as guardians for younger children. When later documents were created in the U.S., the individuals who had taken on parental responsibilities were sometimes recorded as the parents, especially if the informant did not know the full biological details. This was a widespread pattern among immigrant families whose members were separated, orphaned, or traveling without their parents.
-
-A major factor behind these inconsistencies was the way U.S. immigration authorities handled unaccompanied minors. At the turn of the 20th century, a child could not be admitted into the country unless an adult or older sibling was recognized as their guardian. If a minor arrived with an older brother or sister, that sibling was automatically treated as the responsible party, regardless of age, and officials recorded them as the head of the family. When a child arrived completely alone, immigration officers attempted to locate a relative already living in the United States. If no guardian could be identified, the child was kept at Ellis Island under supervision until a suitable adult or sponsoring organization agreed to take responsibility. Because all information was provided verbally and often by children who did not know full details about their parents, later American documents frequently reflected the names of guardians rather than biological parents.
-
-The example illustrates how immigration reshaped family structures and how official documents captured those changes. Rather than indicating mistakes, the differing records reflect the realities faced by minors who migrated without parents and relied on older siblings for survival. Understanding this context helps clarify why Victor’s documents differ and provides a more accurate picture of the family’s early years in the United States.`
-    }
-  ]
-},
-     
+    
+   
     ],
   },
   {
