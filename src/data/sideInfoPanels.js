@@ -64,8 +64,8 @@ wladnaturalization:`${BASE_URL}region/wladnaturalization.png`,
 const ARCHIVE_CHAPTERS = [
   {
     id: "old-poland",
-    years: "1840s–1890s",
-    title: "Old Poland",
+    years: "1800–1904",
+    title: "Poland",
     subtitle: "Parish life, villages, first known records",
     intro:
       "The earliest chapter of the archive, focused on villages, parish records, branch origins, and the first stable anchors of identity.",
@@ -740,8 +740,8 @@ This entry further strengthens the reconstruction of the Dobrzanski family line 
   },
   {
     id: "migration-times",
-    years: "1890s–1930s",
-    title: "Migration Times",
+    years: "1905–1920",
+    title: "Migration",
     subtitle: "Passage, arrival, identity shifts",
     intro:
       "A chapter for migration, arrival, guardianship, name changes, new records in America, and the disruption of older family structures.",
@@ -1225,8 +1225,8 @@ The example illustrates how immigration reshaped family structures and how offic
   },
   {
     id: "modern-times",
-    years: "1940s–Today",
-    title: "Modern Times",
+    years: "1920s–Today",
+    title: "America",
     subtitle: "Descendants, memory, present-day links",
     intro:
       "A chapter for later generations, photographs, family memory, surviving branches, and present-day efforts to reconnect the archive.",
