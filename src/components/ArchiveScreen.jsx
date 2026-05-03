@@ -18,16 +18,22 @@ function getImageAlt(image, fallback) {
   return image.alt ?? image.caption ?? fallback;
 }
 
-function ArchiveDivider({ label }) {
+function ArchiveDivider({ label, thick = false }) {
   return (
-    <div className="my-8 flex items-center gap-5">
-      <div className="h-px flex-1 bg-[linear-gradient(to_right,transparent,rgba(182,138,87,0.34))]" />
-      {label && (
-        <div className="text-[10px] uppercase tracking-[0.36em] text-[#d9bf8e]/46">
-          {label}
-        </div>
+    <div className={thick ? "my-9" : "my-8 flex items-center gap-5"}>
+      {thick ? (
+        <div className="h-[3px] w-full rounded-full bg-[linear-gradient(to_right,transparent,rgba(182,138,87,0.58),rgba(228,197,143,0.38),rgba(182,138,87,0.58),transparent)] shadow-[0_0_18px_rgba(228,197,143,0.08)]" />
+      ) : (
+        <>
+          <div className="h-px flex-1 bg-[linear-gradient(to_right,transparent,rgba(182,138,87,0.34))]" />
+          {label && (
+            <div className="text-[10px] uppercase tracking-[0.36em] text-[#d9bf8e]/46">
+              {label}
+            </div>
+          )}
+          <div className="h-px flex-1 bg-[linear-gradient(to_left,transparent,rgba(182,138,87,0.34))]" />
+        </>
       )}
-      <div className="h-px flex-1 bg-[linear-gradient(to_left,transparent,rgba(182,138,87,0.34))]" />
     </div>
   );
 }
@@ -289,8 +295,8 @@ export default function ArchiveScreen({
               </button>
             </div>
 
-            <div className="mt-7 border-y border-[#b68a57]/22 py-7 text-center">
-              <h1 className="font-serif text-[4.8rem] leading-[0.78] tracking-[-0.075em] text-[#f2dfb7] drop-shadow-[0_16px_34px_rgba(0,0,0,0.48)] md:text-[8.2rem] lg:text-[10.4rem] xl:text-[11.8rem]">
+            <div className="mt-7 border-y border-[#b68a57]/22 py-6 text-center">
+              <h1 className="font-serif text-[3.65rem] leading-[0.82] tracking-[-0.065em] text-[#f2dfb7] drop-shadow-[0_14px_30px_rgba(0,0,0,0.46)] md:text-[6.1rem] lg:text-[7.6rem] xl:text-[8.8rem]">
                 Family Archive
               </h1>
             </div>
@@ -319,7 +325,7 @@ export default function ArchiveScreen({
             </div>
           </header>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
+          <div className="mt-10 grid gap-7 lg:grid-cols-[0.98fr_0.92fr] lg:items-start">
             {SPECIAL_ARTICLES?.length > 0 && (
               <section className="flex flex-col gap-5 border-y border-[#b68a57]/16 py-5 lg:py-6">
                 <div className="flex items-center gap-4">
@@ -359,18 +365,11 @@ export default function ArchiveScreen({
             )}
 
             <section>
-              <div className="mb-4 flex items-center gap-4">
-                <div className="text-[11px] uppercase tracking-[0.28em] text-[#d9bf8e]/58">
-                  Family tree
-                </div>
-                <div className="h-px flex-1 bg-[linear-gradient(to_right,rgba(182,138,87,0.25),transparent)]" />
-              </div>
-
               <FamilyTreeOrbit onEnterTree={onEnterTree} />
             </section>
           </div>
 
-          <ArchiveDivider label="Choose a historical period" />
+          <ArchiveDivider thick />
 
           <nav className="mx-auto max-w-5xl border-y border-[#b68a57]/18 py-3">
             <div className="grid gap-1 md:grid-cols-3">
