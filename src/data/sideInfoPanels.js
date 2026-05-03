@@ -40,7 +40,7 @@ const REGION_IMAGES = {
   frankbrilskiurodzony: `${BASE_URL}region/ur frank brilski 173.jpg`,
   migration1: `${BASE_URL}region/migration.png`,
   migration2: `${BASE_URL}region/migration2.png`,
-  hanksallymarriage: `${BASE_URL}region/migration2.png`,
+  hanksallymarriage: `${BASE_URL}region/hanksallymarriage.png`,
   henrybirth: `${BASE_URL}region/henrybirth.png`,
 henrybrilskideath: `${BASE_URL}region/henrybrilskideath.png`,
 henrywarren: `${BASE_URL}region/henrywarren.png`,
@@ -1219,20 +1219,20 @@ The example illustrates how immigration reshaped family structures and how offic
     intro:
       "A chapter for later generations, photographs, family memory, surviving branches, and present-day efforts to reconnect the archive.",
     items: [
-{
-  id: "establishing-new-life",
-  year: "1910s–1970s",
-  label: "Article",
-  title: "Establishing new life",
-  subtitle: "Settlement, work, family, and American roots",
-  preview:
-    "An article about the Brilski family establishing a new life in the United States, from settlement in Neffs, Ohio, through mining work, marriage, children, naturalization, and later family branches.",
-  pages: [
-    {
-      title: "Establishing new life",
-      subtitle: "Settlement, work, family, and American roots",
-      images: [PLACEHOLDER_IMAGE],
-      content: `In the United States the family first settled in Neffs, Ohio. It appears that some relatives or people from the same area in Poland were already living there, and Frank Brilski was the first of his immediate family to arrive. His siblings followed later. Like many Polish immigrants of the early 20th century, the Brilskis came with limited formal education and faced a significant language barrier. These conditions, together with economic necessity, directed them toward physically demanding, low-skilled work in mining and related industries. Coal mining, general labor, and other manual jobs are the occupations most often found in their records.
+      {
+        id: "establishing-new-life",
+        year: "1910s–1970s",
+        label: "Article",
+        title: "Establishing new life",
+        subtitle: "Settlement, work, family, and American roots",
+        preview:
+          "An article about the Brilski family establishing a new life in the United States, from settlement in Neffs, Ohio, through mining work, marriage, children, naturalization, and later family branches.",
+        pages: [
+          {
+            title: "Establishing new life",
+            subtitle: "Settlement, work, family, and American roots",
+            images: [PLACEHOLDER_IMAGE],
+            content: `In the United States the family first settled in Neffs, Ohio. It appears that some relatives or people from the same area in Poland were already living there, and Frank Brilski was the first of his immediate family to arrive. His siblings followed later. Like many Polish immigrants of the early 20th century, the Brilskis came with limited formal education and faced a significant language barrier. These conditions, together with economic necessity, directed them toward physically demanding, low-skilled work in mining and related industries. Coal mining, general labor, and other manual jobs are the occupations most often found in their records.
 
 Frank married Josephine in November 1910. She had arrived in the United States only a few months earlier. The age difference between them and the fact that she listed a cousin—not Frank—as her closest relative on the passenger list suggest that they were not closely connected before she came to America, even though both came from the same village in Poland. After their marriage, Frank worked in the coal mines to support the household, and Josephine managed the home and raised their children. They had three sons: Stanley, born in 1911, Henry, born in 1914, and Chester, born in 1917.
 
@@ -1245,23 +1245,30 @@ Josephine’s sister Sophie also immigrated, coming to the United States in 1913
 Josephine lived for thirty years after Frank’s death. She died in 1974 at the age of 84. During her lifetime she experienced the loss of two of her sons: Chester, who died in a mining accident in 1967, and Stanley, who died in 1970.
 
 Over time, members of the Brilski family became more established in the United States. They married, raised families, went through the naturalization process, and some served in the military. The second generation grew up more integrated into American society, with weaker ties to their Polish origins.`
-    }
-  ]
-},
-{
-  id: "the-history-continues",
-  year: "1940s–1980s",
-  label: "Article",
-  title: "The history continues",
-  subtitle: "Second generation, family memory, and continuation",
-  preview:
-    "An article about the second generation of the Brilski family in the United States, focusing on Henry Brilski, his military service, marriage, work, family, and remembered legacy.",
-  pages: [
-    {
-      title: "The history continues",
-      subtitle: "Second generation, family memory, and continuation",
-      images: [REGION_IMAGES.hanksallymarriage, REGION_IMAGES.henrybirth, REGION_IMAGES.henrybrilskideath, REGION_IMAGES.henrywarren,REGION_IMAGES.marrywedding,REGION_IMAGES.sallydeath],
-      content: `The second generation of the family, that was already born and raised in the US, blended into the American middle class and lived their lives.
+          }
+        ]
+      },
+      {
+        id: "the-history-continues",
+        year: "1940s–1980s",
+        label: "Article",
+        title: "The history continues",
+        subtitle: "Second generation, family memory, and continuation",
+        preview:
+          "An article about the second generation of the Brilski family in the United States, focusing on Henry Brilski, his military service, marriage, work, family, and remembered legacy.",
+        pages: [
+          {
+            title: "The history continues",
+            subtitle: "Second generation, family memory, and continuation",
+            images: [
+              REGION_IMAGES.hanksallymarriage,
+              REGION_IMAGES.henrybirth,
+              REGION_IMAGES.henrybrilskideath,
+              REGION_IMAGES.henrywarren,
+              REGION_IMAGES.marrywedding,
+              REGION_IMAGES.sallydeath,
+            ],
+            content: `The second generation of the family, that was already born and raised in the US, blended into the American middle class and lived their lives.
 
 Henry Brilski served in the U.S. military during the Second World War, including service on Attu in the Aleutian Islands.
 
@@ -1271,16 +1278,12 @@ Henry worked in an industrial manufacturing company. Sally worked as a nurse. Th
 
 
 Newspaper mentions and short articles provide small pieces of information about their work, family life, and community involvement. The most accurate picture comes from the family, who remember them, keep their memory, and continue adding new chapters to the family history.`
-    }
-  ]
-},
-
-
-        ],
-      },
-    ],
-  
-
+          }
+        ]
+      }
+    ]
+  }
+];
 
 const SPECIAL_ARTICLES = [
   {
