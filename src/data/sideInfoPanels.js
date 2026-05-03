@@ -50,6 +50,15 @@ suebrilski: `${BASE_URL}region/suebrilski.png`,
 picture1: `${BASE_URL}region/1000003995.jpg`,
 picture2: `${BASE_URL}region/1000004005.jpg`,
 picture3:`${BASE_URL}region/1000004331.jpg`,
+chesterdeath:`${BASE_URL}region/chesterdeath.png`,
+eleonoracensus:`${BASE_URL}region/eleonoracensus.png`,
+sophienaturalization:`${BASE_URL}region/sophienaturalization.png`,
+sophierogalskideath:`${BASE_URL}region/sophierogalskideath.png`,
+stanleydeath:`${BASE_URL}region/stanleydeath.png`,
+vbrilskideath:`${BASE_URL}region/vbrilskideath.png`,
+victorcensus:`${BASE_URL}region/victorcensus.png`,
+victordeath:`${BASE_URL}region/victordeath.png`,
+wladnaturalization:`${BASE_URL}region/wladnaturalization.png`,
 };
 
 const ARCHIVE_CHAPTERS = [
@@ -1234,7 +1243,17 @@ The example illustrates how immigration reshaped family structures and how offic
           {
             title: "Establishing new life",
             subtitle: "Settlement, work, family, and American roots",
-            images: [PLACEHOLDER_IMAGE],
+            images: [
+              REGION_IMAGES.chesterdeath,
+              REGION_IMAGES.eleonoracensus,
+              REGION_IMAGES.sophienaturalization,
+              REGION_IMAGES.sophierogalskideath,
+              REGION_IMAGES.stanleydeath,
+              REGION_IMAGES.vbrilskideath,
+              REGION_IMAGES.victorcensus,
+              REGION_IMAGES.victordeath,
+              REGION_IMAGES.wladnaturalization,
+              ],
             content: `In the United States the family first settled in Neffs, Ohio. It appears that some relatives or people from the same area in Poland were already living there, and Frank Brilski was the first of his immediate family to arrive. His siblings followed later. Like many Polish immigrants of the early 20th century, the Brilskis came with limited formal education and faced a significant language barrier. These conditions, together with economic necessity, directed them toward physically demanding, low-skilled work in mining and related industries. Coal mining, general labor, and other manual jobs are the occupations most often found in their records.
 
 Frank married Josephine in November 1910. She had arrived in the United States only a few months earlier. The age difference between them and the fact that she listed a cousin—not Frank—as her closest relative on the passenger list suggest that they were not closely connected before she came to America, even though both came from the same village in Poland. After their marriage, Frank worked in the coal mines to support the household, and Josephine managed the home and raised their children. They had three sons: Stanley, born in 1911, Henry, born in 1914, and Chester, born in 1917.
